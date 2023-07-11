@@ -9,7 +9,7 @@ type Props = {}
 
 export default function Header({ }: Props) {
     return (
-        <header className=' sticky top-0 p-5 flex flex-row items-center justify-between max-w-7xl mx-auto z-20'>
+        <header className='sticky top-0 p-5 flex flex-row items-center justify-between max-w-7xl mx-auto z-20'>
             <motion.div
                 initial={{
                     x: -500,
@@ -45,7 +45,7 @@ export default function Header({ }: Props) {
                 transition={{
                     duration: 1.5,
                 }}
-                className=' cursor-pointer flex flex-row items-center'>
+                className='cursor-pointer flex flex-row items-center'>
                 <SocialIcon network='email' fgColor='gray' bgColor='transparent' />
                 <p className='uppercase text-sm text-gray-400 hidden md:inline-flex'>Get In Touch</p>
             </motion.div>

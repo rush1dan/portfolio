@@ -25,6 +25,11 @@ export default function Hero({ }: Props) {
                             <Cursor cursorBlinking={true} cursorColor='#777777' />
                         </span>
                     </div>
+                    <div className='h-6'>
+                    </div>
+                    <button className='bg-transparent hover:bg-[rgb(255,239,156,0.75)] px-3 py-3 font-semibold rounded-lg border-4 border-[rgb(255,239,156)] text-[rgb(255,239,156)] text-lg'>
+                        Contact Me
+                    </button>
                 </div>
                 <div></div>
                 <div className='dp-div'>

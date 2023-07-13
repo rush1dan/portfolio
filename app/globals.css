@@ -31,10 +31,9 @@ body {
 
 .dp-div {
   position: relative;
-  margin: 10% auto 0;
-  width: 250px;
-  height: 250px;
-  border-radius: 250px;
+  width: 256px;
+  height: 256px;
+  border-radius: 256px;
 }
 
 .dp {
@@ -50,10 +49,10 @@ body {
   left: 0px;
   top: 0px;
   background: conic-gradient(#dddddd, #aaaaaa, #888888);
-  background-size: 260px;
-  width: 250px;
-  height: 250px;
-  border-radius: 250px;
+  background-size: 256px;
+  width: 256px;
+  height: 256px;
+  border-radius: 256px;
   z-index: 0;
   animation: spin1 3s infinite linear;
 }
@@ -75,10 +74,10 @@ body {
   left: -2px;
   top: -2px;
   background: conic-gradient(#dddddd, #aaaaaa, #888888);
-  background-size: 250px;
-  width: 255px;
-  height: 255px;
-  border-radius: 250px;
+  background-size: 256px;
+  width: 260px;
+  height: 260px;
+  border-radius: 256px;
   z-index: 1;
   animation: spin2 3s infinite linear;
   opacity: 0.5;
@@ -87,5 +86,105 @@ body {
 @keyframes spin2 {
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .dp-div {
+    position: relative;
+    width: 288px;
+    height: 288px;
+    border-radius: 288px;
+  }
+
+  .dp {
+    clip-path: circle(50%);
+    position: absolute;
+    z-index: 2;
+  }
+
+  .glow1::before,
+  .glow1::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: conic-gradient(#dddddd, #aaaaaa, #888888);
+    background-size: 288px;
+    width: 288px;
+    height: 288px;
+    border-radius: 288px;
+    z-index: 0;
+    animation: spin1 3s infinite linear;
+  }
+
+  .glow1::after {
+    filter: blur(15px);
+  }
+
+  .glow2::before,
+  .glow2::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: conic-gradient(#dddddd, #aaaaaa, #888888);
+    background-size: 288px;
+    width: 292px;
+    height: 292px;
+    border-radius: 288px;
+    z-index: 1;
+    animation: spin2 3s infinite linear;
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dp-div {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 320px;
+  }
+
+  .dp {
+    clip-path: circle(50%);
+    position: absolute;
+    z-index: 2;
+  }
+
+  .glow1::before,
+  .glow1::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: conic-gradient(#dddddd, #aaaaaa, #888888);
+    background-size: 320px;
+    width: 320px;
+    height: 320px;
+    border-radius: 320px;
+    z-index: 0;
+    animation: spin1 3s infinite linear;
+  }
+
+  .glow1::after {
+    filter: blur(15px);
+  }
+
+  .glow2::before,
+  .glow2::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: conic-gradient(#dddddd, #aaaaaa, #888888);
+    background-size: 320px;
+    width: 324px;
+    height: 324px;
+    border-radius: 320px;
+    z-index: 1;
+    animation: spin2 3s infinite linear;
+    opacity: 0.5;
   }
 }

@@ -27,8 +27,14 @@ export default function Hero({ }: Props) {
                     </div>
                 </div>
                 <div></div>
-                <div className='w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80'>
-                    <img src='/dp.png' alt='profile picture' />
+                <div className='dp-div'>
+                    <div className='glow1'>
+                        <div className="glow2">
+                            <div>
+                                <img src="dp.jpg" alt="profile picture" className='dp' />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

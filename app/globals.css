@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -21,10 +21,71 @@ body {
   background: linear-gradient(to bottom,
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-}
+} */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.dp-div {
+  position: relative;
+  margin: 10% auto 0;
+  width: 250px;
+  height: 250px;
+  border-radius: 250px;
+}
+
+.dp {
+  clip-path: circle(50%);
+  position: absolute;
+  z-index: 2;
+}
+
+.glow1::before,
+.glow1::after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background: conic-gradient(#dddddd, #aaaaaa, #888888);
+  background-size: 260px;
+  width: 250px;
+  height: 250px;
+  border-radius: 250px;
+  z-index: 0;
+  animation: spin1 3s infinite linear;
+}
+
+.glow1::after {
+  filter: blur(15px);
+}
+
+@keyframes spin1 {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.glow2::before,
+.glow2::after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: conic-gradient(#dddddd, #aaaaaa, #888888);
+  background-size: 250px;
+  width: 255px;
+  height: 255px;
+  border-radius: 250px;
+  z-index: 1;
+  animation: spin2 3s infinite linear;
+  opacity: 0.5;
+}
+
+@keyframes spin2 {
+  100% {
+    transform: rotate(360deg);
+  }
 }

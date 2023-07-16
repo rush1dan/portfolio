@@ -31,15 +31,11 @@ body {
 
 @layer components {
   .nav-button {
-    @apply md:text-lg md:px-4 lg:text-xl lg:px-8 hover:text-[rgb(255,239,156)] relative
+    @apply md:text-lg lg:text-xl hover:text-[rgb(255,239,156)] relative
   }
 }
 
-.nav-heading {
-  position: relative;
-}
-
-.nav-heading:after {
+.nav-button:after {
   content: "";
   position: absolute;
   background-color: rgb(255,239,156);
@@ -50,7 +46,7 @@ body {
   transition: 0.3s;
 }
 
-.nav-heading:hover:after{
+.nav-button:hover:after{
   width: 100%;
 }
 

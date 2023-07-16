@@ -1,9 +1,11 @@
+import About from '@/components/About'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 
 export default function Home() {
   return (
-    <div className='bg-[rgb(36,36,36)] text-white h-screen'>
+    <div className="bg-[rgb(36,36,36)] text-white h-screen 
+    snap-y snap-mandatory scroll-smooth overflow-y-scroll overflow-x-hidden">
       <head>
         <title>Rushidan's Portfolio</title>
       </head>
@@ -12,11 +14,14 @@ export default function Home() {
       <Header />
 
       {/* Hero */}
-      <section id='hero' className='snap-center'>
+      <section id="hero">
         <Hero />
       </section>
 
       {/* About */}
+      <section id="about">
+        <About />
+      </section>
 
       {/* Experience */}
 

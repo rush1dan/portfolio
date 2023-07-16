@@ -12,9 +12,9 @@ export default function Hero({ }: Props) {
         delaySpeed: 2000
     })
     return (
-        <div>
+        <div className='h-screen'>
             {/* Hero flex container */}
-            <div className='flex flex-col-reverse items-center justify-center space-y-10 mt-32
+            <div className='snap-center flex flex-col-reverse items-center justify-center space-y-10 mt-32
             md:flex-row md:space-x-2 md:mt-40 lg:space-x-12'>
 
                 {/* Self Description */}

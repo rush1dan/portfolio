@@ -209,3 +209,43 @@ body {
     opacity: 0.5;
   }
 }
+
+.experience-section::after {
+  content: '';
+  position: absolute;
+  background: rgb(100,100,120);
+  width: 10px;
+  left: 0;
+  top: 1.875rem;
+  height: 100%;
+}
+
+.experience-line {
+  content: '';
+  position: absolute;
+  background: rgb(100,100,120);
+  width: 5px;
+  left: 0;
+  top: 1.875rem;
+  height: 100%;
+}
+
+.experience-line::after {
+  content: '';
+  position: absolute;
+  background: rgb(100,100,120);
+  width: 5px;
+  left: 20px;
+  top: 1.875rem;
+  height: 100%;
+}
+
+.experience-line::after::after {
+  content: '';
+  position: absolute;
+  background: rgb(100,100,120);
+  width: 5px;
+  left: 40px;
+  top: 1.875rem;
+  height: 100%;
+}

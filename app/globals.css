@@ -31,8 +31,27 @@ body {
 
 @layer components {
   .nav-button {
-    @apply md:text-lg md:px-4 lg:text-xl lg:px-8 hover:text-[rgb(255,239,156)]
+    @apply md:text-lg md:px-4 lg:text-xl lg:px-8 hover:text-[rgb(255,239,156)] relative
   }
+}
+
+.nav-heading {
+  position: relative;
+}
+
+.nav-heading:after {
+  content: "";
+  position: absolute;
+  background-color: rgb(255,239,156);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+.nav-heading:hover:after{
+  width: 100%;
 }
 
 .dp-div {

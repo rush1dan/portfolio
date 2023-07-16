@@ -47,10 +47,10 @@ export default function Header({ }: Props) {
                     duration: 1.5,
                 }}
                 className='hidden md:flex flex-row items-center justify-center'>
-                <Link href="#About" className='nav-button'>About</Link>
-                <Link href="#Skills" className='nav-button'>Skills</Link>
-                <Link href="#Projects" className='nav-button'>Projects</Link>
-                <Link href="#About" className='nav-button'>Contact</Link>
+                <Link href="#about" className='nav-button'><span className='nav-heading'>About</span></Link>
+                <Link href="#skills" className='nav-button'><span className='nav-heading'>Skills</span></Link>
+                <Link href="#projects" className='nav-button'><span className='nav-heading'>Projects</span></Link>
+                <Link href="#contact" className='nav-button'><span className='nav-heading'>Contact</span></Link>
             </motion.div>
         </header>
     )

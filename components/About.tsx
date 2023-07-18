@@ -29,14 +29,27 @@ export default function About({ }: Props) {
                 
                 {/* Education/Experience Description Section */}
                 <div className='bg-gray-600 w-1 h-[48rem] flex flex-col justify-around'>
-                    <div className='bg-gray-600 w-12 h-1'>
-
+                    <div className='relative bg-gray-600 w-12 h-1'>
+                        <div className='absolute left-16 h-12 -top-8 w-96'>
+                            <p>Game Programmer</p>
+                            <p>Kolpoverse Studio</p>
+                            <p>November, 2022 - March, 2023</p>
+                        </div>
                     </div>
-                    <div className='bg-gray-600 w-12 h-1 -scale-x-100 -translate-x-12'>
-
+                    <div className='relative bg-gray-600 w-12 h-1 -scale-x-100 -translate-x-12'>
+                        <div className='absolute left-16 h-12 -top-12 w-[26rem] -scale-x-100 text-right'>
+                            <p>BSc in Mechanical Engineering,</p>
+                            <p>Bangladesh University of Engineering and Technology</p>
+                            <p>CGPA 3.45 out of 4.00</p>
+                            <p>Attended: 2016-2021</p>
+                        </div>
                     </div>
-                    <div className='bg-gray-600 w-12 h-1'>
-
+                    <div className='relative bg-gray-600 w-12 h-1'>
+                        <div className='absolute left-16 h-12 -top-8 w-96'>
+                            <p>Game Programmer</p>
+                            <p>Alpha Potato</p>
+                            <p>March, 2020 - November, 2022</p>
+                        </div>
                     </div>
                 </div>
             </div>

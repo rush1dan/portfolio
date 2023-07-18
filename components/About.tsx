@@ -1,10 +1,25 @@
+'use client'
+
 import React from 'react'
+import { motion, useAnimation, useInView } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 
 type Props = {}
 
 export default function About({ }: Props) {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
+    const slideInControls = useAnimation();
+    
+    useEffect(() => {
+        if (isInView) {
+            slideInControls.start("visible");
+        }
+    }, [isInView]);
+
     return (
-        <div className='h-screen snap-center'>
+        <div ref={ref} className='h-screen snap-center'>
             
             {/* Main Flex Container */}
             <div className='h-full p-24 flex flex-col items-center justify-start space-y-8'>
@@ -17,18 +32,46 @@ export default function About({ }: Props) {
 
                 {/* Experience/Education Headings Section*/}
                 <div className='w-full flex flex-col items-center justify-around md:flex-row'>
+                    
                     {/* Education Heading */}
-                    <div>
+                    <motion.div
+                        variants={{
+                            hidden: {
+                                x: -500,
+                                opacity: 0,
+                            },
+                            visible: {
+                                x: 0,
+                                opacity: 1,
+                            }
+                        }}
+                        initial="hidden"
+                        animate={slideInControls}
+                        transition={{duration: 0.75}}>
                         <h1 className='text-3xl font-bold text-gray-600'>Education</h1>
-                    </div>
+                    </motion.div>
+
                     {/* Experience Heading */}
-                    <div>
+                    <motion.div
+                        variants={{
+                            hidden: {
+                                x: 500,
+                                opacity: 0,
+                            },
+                            visible: {
+                                x: 0,
+                                opacity: 1,
+                            }
+                        }}
+                        initial="hidden"
+                        animate={slideInControls}
+                        transition={{duration: 0.75}}>
                         <h1 className='text-3xl font-bold text-gray-600'>Experience</h1>
-                    </div>
+                    </motion.div>
                 </div>
                 
                 {/* Education/Experience Description Section */}
-                <div className='bg-gray-600 w-1 h-[48rem] flex flex-col justify-around'>
+                <div className='bg-gray-600 w-1 h-[48rem] top-0 flex flex-col justify-around'>
                     <div className='relative bg-gray-600 w-12 h-1'>
                         <div className='absolute left-16 h-12 -top-8 w-96'>
                             <p>Game Programmer</p>

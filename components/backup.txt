@@ -1,0 +1,10 @@
+<p>
+                            BSc in Mechanical Engineering,
+                        </p>
+                        <p> Bangladesh University of Engineering and Technology</p>
+                        <p>
+                            CGPA 3.45 out of 4.00
+                        </p>
+                        <p>
+                            Attended: 2016-2021
+                        </p>

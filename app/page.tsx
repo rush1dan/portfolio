@@ -1,7 +1,7 @@
-import About from '@/components/About'
-import Header from '@/components/Header'
-import Hero from '@/components/Hero'
-import Skills from '@/components/Skills'
+import About from '@/pages/About'
+import Header from '@/pages/Header'
+import Hero from '@/pages/Hero'
+import Skills from '@/pages/Skills'
 
 export default function Home() {
   return (

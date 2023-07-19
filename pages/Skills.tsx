@@ -1,7 +1,8 @@
 'use client'
 
-import { Player, Controls } from '@lottiefiles/react-lottie-player'
+import { Player,} from '@lottiefiles/react-lottie-player'
 import React from 'react'
+import Skillcard from '@/components/Skillcard'
 
 type Props = {}
 
@@ -16,6 +17,7 @@ export default function Skills({ }: Props) {
           src="developer_lottie.json"
           style={{ height: "300px", width: "300px" }} 
         ></Player>
+        <Skillcard />
       </div>
     </div>
   )

@@ -8,7 +8,21 @@ type Props = {}
 
 export default function Skills({ }: Props) {
 
-  const skillIconList = []
+  const skillIconDirectory = "skillicons/"
+
+  const frontEndSkillList = [
+    ["html5-original.svg", "HTML"],
+    ["css3-original.svg", "CSS"],
+    ["tailwindcss-plain.svg", "TailwindCSS"],
+    ["javascript-original.svg", "JavaScript"],
+    ["typescript-original.svg", "TypeScript"],
+    ["react-original.svg", "React"],
+    ["redux-original.svg", "Redux"],
+    ["flutter-original.svg", "Flutter"]
+  ]
+  const backEndSkillList = []
+  const gameDevSkillList = []
+  const languageSkillList = []
 
   return (
     <div className='h-screen snap-center bg-gradient-radial from-[rgb(54,54,54)] from-5% to-[rgb(36,36,36)] to-70%'>

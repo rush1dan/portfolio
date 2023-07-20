@@ -17,7 +17,7 @@ export default function Skills({ }: Props) {
           src="developer_lottie.json"
           style={{ height: "300px", width: "300px" }} 
         ></Player>
-        <Skillcard />
+        <Skillcard iconSrc='skillicons/javascript-original.svg' altText='JavaScript'/>
       </div>
     </div>
   )

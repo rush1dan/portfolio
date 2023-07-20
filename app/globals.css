@@ -249,3 +249,7 @@ body {
   top: 1.875rem;
   height: 100%;
 }
+
+.skill-icon {
+  clip-path: circle(50%);
+}

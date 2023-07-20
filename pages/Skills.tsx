@@ -2,7 +2,7 @@
 
 import { Player,} from '@lottiefiles/react-lottie-player'
 import React from 'react'
-import Skillcard from '@/components/Skillcard'
+import Skill from '@/components/Skill'
 
 type Props = {}
 
@@ -20,7 +20,7 @@ export default function Skills({ }: Props) {
           src="developer_lottie.json"
           style={{ height: "300px", width: "300px" }} 
         ></Player>
-        <Skillcard iconSrc='skillicons/javascript-original.svg' altText='JavaScript'/>
+        <Skill iconSrc='skillicons/javascript-original.svg' altText='JavaScript'/>
       </div>
     </div>
   )

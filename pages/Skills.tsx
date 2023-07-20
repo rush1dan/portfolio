@@ -7,10 +7,13 @@ import Skillcard from '@/components/Skillcard'
 type Props = {}
 
 export default function Skills({ }: Props) {
+
+  const skillIconList = []
+
   return (
     <div className='h-screen snap-center bg-gradient-radial from-[rgb(54,54,54)] from-5% to-[rgb(36,36,36)] to-70%'>
       {/* Lottie animation */}
-      <div className='h-full flex flex-col items-center justify-center'>     
+      <div className='h-full flex flex-row items-center justify-around space-x-96 max-w-7xl'>     
         <Player
           autoplay
           loop

@@ -23,13 +23,14 @@ export default function Skills({ }: Props) {
   ]
   const backEndSkillList = [
     ["nodejs-original.svg", "NodeJS"],
-    ["mongodb-original-wordmark.svg", "MongoDB"],
-    ["dotnetcore-original.svg", ".Net Core"],
-    ["microsoft-sql-server-logo-svgrepo-com.svg", "MS Sql Server"],
+    ["express-js.svg", "ExpressJS"],
+    ["mongodb-original.svg", "MongoDB"],
+    ["dotnet-framework.svg", ".Net Core"],
+    ["microsoft-sql-server.svg", "MS Sql Server"],
     ["nextjs-original.svg"]
   ]
   const gameDevSkillList = [
-    ["Unity_2021.svg", "Unity"],
+    ["Unity_2021_White.svg", "Unity"],
     ["blender-original.svg", "Blender"]
   ]
   const languageSkillList = [
@@ -40,15 +41,19 @@ export default function Skills({ }: Props) {
 
   return (
     <div className='h-screen snap-center bg-gradient-radial from-[rgb(54,54,54)] from-5% to-[rgb(36,36,36)] to-70%'>
-      {/* Lottie animation */}
-      <div className='h-full flex flex-row items-center justify-around max-w-7xl'>
+      {/* Main Flex Container */}
+      <div className='h-full flex flex-row items-center justify-center space-x-48'>
+        
+        {/* Lottie animation */}
         <Player
           autoplay
           loop
           src="developer_lottie.json"
           style={{ height: "300px", width: "300px" }}
         ></Player>
-        <div className='flex flex-col w-1/2'>
+        
+        {/* Skill flex container */}
+        <div className='flex flex-col space-y-24'>
           <SkillCategory category='Front End' skillIconDir={skillIconDirectory} skillList={frontEndSkillList} />
           <SkillCategory category='Back End' skillIconDir={skillIconDirectory} skillList={backEndSkillList} />
           <SkillCategory category='Game Dev' skillIconDir={skillIconDirectory} skillList={gameDevSkillList} />

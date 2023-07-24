@@ -12,31 +12,31 @@ export default function Skills({ }: Props) {
   const skillIconDirectory = "skillicons/"
 
   const frontEndSkillList = [
-    ["html5-original.svg", "HTML"],
-    ["css3-original.svg", "CSS"],
-    ["tailwindcss-plain.svg", "TailwindCSS"],
-    ["javascript-original.svg", "JavaScript"],
-    ["typescript-original.svg", "TypeScript"],
-    ["react-original.svg", "React"],
-    ["redux-original.svg", "Redux"],
-    ["flutter-original.svg", "Flutter"]
+    ["html5.svg", "HTML"],
+    ["css3.svg", "CSS"],
+    ["tailwindcss.svg", "TailwindCSS"],
+    ["javascript.svg", "JavaScript"],
+    ["typescript.svg", "TypeScript"],
+    ["react.svg", "React"],
+    ["redux.svg", "Redux"],
+    ["flutter.svg", "Flutter"]
   ]
   const backEndSkillList = [
-    ["nodejs-original.svg", "NodeJS"],
-    ["express-js.svg", "ExpressJS"],
-    ["mongodb-original.svg", "MongoDB"],
-    ["dotnet-framework.svg", ".Net Core"],
+    ["nodejs.svg", "NodeJS"],
+    ["expressjs.svg", "ExpressJS"],
+    ["mongodb.svg", "MongoDB"],
+    ["dotnetcore.svg", ".Net Core"],
     ["microsoft-sql-server.svg", "MS Sql Server"],
-    ["nextjs-original.svg"]
+    ["nextjs.svg"]
   ]
   const gameDevSkillList = [
-    ["Unity_2021_White.svg", "Unity"],
-    ["blender-original.svg", "Blender"]
+    ["unity_white.svg", "Unity"],
+    ["blender.svg", "Blender"]
   ]
   const languageSkillList = [
-    ["cpp3-svgrepo-com.svg", "C++"],
-    ["csharp-original.svg", "C#"],
-    ["python-original.svg", "Python"]
+    ["cpp.svg", "C++"],
+    ["csharp.svg", "C#"],
+    ["python.svg", "Python"]
   ]
 
   return (

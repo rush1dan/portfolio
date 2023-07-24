@@ -28,7 +28,7 @@ export default function Skills({ }: Props) {
     ["nodejs.svg", "NodeJS", "nodejs.svg", "NodeJS", ""],
     ["expressjs.svg", "ExpressJS", "expressjs.svg", "ExpressJS", ""],
     ["mongodb.svg", "MongoDB", "mongodb.svg", "MongoDB", ""],
-    ["dotnetcore.svg", ".Net Core", "dotnetcore.svg", ".Net Core", ".Net Core"],
+    ["dotnetcore.svg", ".NET Core", "dotnetcore.svg", ".NET Core", ".NET Core"],
     ["microsoft-sql-server.svg", "MS Sql Server", "microsoft-sql-server.svg", "MS Sql Server", ""],
     ["nextjs.svg", "NextJS", "nextjs.svg", "NextJS", ""]
   ]

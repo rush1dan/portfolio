@@ -10,33 +10,36 @@ type Props = {}
 export default function Skills({ }: Props) {
 
   const skillIconDirectory = "skillicons/"
+  const skillHoverIconDirectory = "skillicons/withTitle/"
+
+  // [iconSrc, iconAltText, hoverIconSrc, hoverIconAltText, hoverTitle]
 
   const frontEndSkillList = [
-    ["html5.svg", "HTML"],
-    ["css3.svg", "CSS"],
-    ["tailwindcss.svg", "TailwindCSS"],
-    ["javascript.svg", "JavaScript"],
-    ["typescript.svg", "TypeScript"],
-    ["react.svg", "React"],
-    ["redux.svg", "Redux"],
-    ["flutter.svg", "Flutter"]
+    ["html5.svg", "HTML", "html5.svg", "HTML", ""],
+    ["css3.svg", "CSS", "css3.svg", "CSS", ""],
+    ["tailwindcss.svg", "TailwindCSS", "tailwindcss.svg", "TailwindCSS", ""],
+    ["javascript.svg", "JavaScript", "javascript.svg", "JavaScript", "JavaScript"],
+    ["typescript.svg", "TypeScript", "typescript.svg", "TypeScript", "TypeScript"],
+    ["react.svg", "React", "react.svg", "React", ""],
+    ["redux.svg", "Redux", "redux.svg", "Redux", "Redux"],
+    ["flutter.svg", "Flutter", "flutter.svg", "Flutter", "Flutter"]
   ]
   const backEndSkillList = [
-    ["nodejs.svg", "NodeJS"],
-    ["expressjs.svg", "ExpressJS"],
-    ["mongodb.svg", "MongoDB"],
-    ["dotnetcore.svg", ".Net Core"],
-    ["microsoft-sql-server.svg", "MS Sql Server"],
-    ["nextjs.svg"]
+    ["nodejs.svg", "NodeJS", "nodejs.svg", "NodeJS", ""],
+    ["expressjs.svg", "ExpressJS", "expressjs.svg", "ExpressJS", ""],
+    ["mongodb.svg", "MongoDB", "mongodb.svg", "MongoDB", ""],
+    ["dotnetcore.svg", ".Net Core", "dotnetcore.svg", ".Net Core", ".Net Core"],
+    ["microsoft-sql-server.svg", "MS Sql Server", "microsoft-sql-server.svg", "MS Sql Server", ""],
+    ["nextjs.svg", "NextJS", "nextjs.svg", "NextJS", ""]
   ]
   const gameDevSkillList = [
-    ["unity_white.svg", "Unity"],
-    ["blender.svg", "Blender"]
+    ["unity_white.svg", "Unity", "unity_black.svg", "Unity", ""],
+    ["blender.svg", "Blender", "blender.svg", "Blender", ""]
   ]
   const languageSkillList = [
-    ["cpp.svg", "C++"],
-    ["csharp.svg", "C#"],
-    ["python.svg", "Python"]
+    ["cpp.svg", "C++", "cpp.svg", "C++", "C++"],
+    ["csharp.svg", "C#", "csharp.svg", "C#", "C#"],
+    ["python.svg", "Python", "python.svg", "Python", ""]
   ]
 
   return (
@@ -54,10 +57,10 @@ export default function Skills({ }: Props) {
         
         {/* Skill flex container */}
         <div className='flex flex-col space-y-24'>
-          <SkillCategory category='Front End' skillIconDir={skillIconDirectory} skillList={frontEndSkillList} />
-          <SkillCategory category='Back End' skillIconDir={skillIconDirectory} skillList={backEndSkillList} />
-          <SkillCategory category='Game Dev' skillIconDir={skillIconDirectory} skillList={gameDevSkillList} />
-          <SkillCategory category='Languages' skillIconDir={skillIconDirectory} skillList={languageSkillList} />
+          <SkillCategory category='Front End' skillIconDir={skillIconDirectory} skillHoverIconDir={skillHoverIconDirectory} skillList={frontEndSkillList} />
+          <SkillCategory category='Back End' skillIconDir={skillIconDirectory} skillHoverIconDir={skillHoverIconDirectory} skillList={backEndSkillList} />
+          <SkillCategory category='Game Dev' skillIconDir={skillIconDirectory} skillHoverIconDir={skillHoverIconDirectory} skillList={gameDevSkillList} />
+          <SkillCategory category='Languages' skillIconDir={skillIconDirectory} skillHoverIconDir={skillHoverIconDirectory} skillList={languageSkillList} />
         </div>
       </div>
     </div>

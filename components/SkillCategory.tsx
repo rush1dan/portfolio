@@ -13,7 +13,7 @@ export default function SkillCategory({ category, skillIconDir, skillHoverIconDi
     return (
         <div>
             <div className='flex flex-row space-x-4 items-center'>
-                <p>{category + ":"}</p>
+                <p className='uppercase text-2xl w-40'>{category + ":"}</p>
                 <div className='flex flex-row space-x-6'>
                     {
                         skillList?.map((skillInfos, index) =>

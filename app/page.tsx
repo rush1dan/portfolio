@@ -1,6 +1,7 @@
 import About from '@/pages/About'
 import Header from '@/pages/Header'
 import Hero from '@/pages/Hero'
+import Projects from '@/pages/Projects'
 import Skills from '@/pages/Skills'
 
 export default function Home() {
@@ -30,6 +31,9 @@ export default function Home() {
       </section>
 
       {/* Projects */}
+      <section id="projects">
+        <Projects />
+      </section>
 
       {/* Contact Me */}
 

@@ -4,6 +4,7 @@ import { Player, } from '@lottiefiles/react-lottie-player'
 import React from 'react'
 import Skill from '@/components/Skill'
 import SkillCategory from '@/components/SkillCategory'
+import HeadingLine from '@/components/HeadingLine'
 
 type Props = {}
 
@@ -44,19 +45,12 @@ export default function Skills({ }: Props) {
 
   return (
     <div className='h-screen snap-center bg-gradient-radial from-[rgb(54,54,54)] from-5% to-[rgb(36,36,36)] to-70%'>
-      <div className="relative">
-        <div className="absolute mt-24 w-full h-14">
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className='absolute origin-left -translate-x-4 -scale-x-100 h-[1px] bg-slate-300 w-[30vw] inline-block top-1/2 -translate-y-1/2'> 
-
-            </div>
-            <p className="text-3xl text-gray-600 font-semibold inline">SKILLS</p>
-            <div className='absolute origin-left translate-x-4 h-[1px] bg-slate-300 w-[30vw] inline-block top-1/2 -translate-y-1/2'> 
-
-            </div>
-          </div>
-        </div>
-      </div>
+      <HeadingLine 
+        heading='SKILLS'
+        marginPadding='mt-32'
+        lineGap={4}
+        lineWidth='w-[30vw]'
+      />
       {/* Main Flex Container */}
       <div className='h-full flex flex-row items-center justify-center space-x-40'>
         

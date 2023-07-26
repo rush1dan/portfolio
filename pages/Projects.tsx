@@ -15,7 +15,7 @@ export default function Projects({ }: Props) {
                         marginPadding=''
                         lineWidth='w-[10vw]'
                     />
-                    <div className="h-12"></div>
+                    <div className="h-8"></div>
                     <div className="w-full flex flex-row items-center justify-center">
                         <ProjectCard />
                     </div>

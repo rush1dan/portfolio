@@ -1,5 +1,6 @@
 import React from 'react'
 import HeadingLine from '@/components/HeadingLine'
+import ProjectCard from '@/components/ProjectCard'
 
 type Props = {}
 
@@ -12,15 +13,17 @@ export default function Projects({ }: Props) {
                     <HeadingLine
                         heading='PROJECTS'
                         marginPadding=''
-                        lineGap={4}
                         lineWidth='w-[10vw]'
                     />
+                    <div className="h-12"></div>
+                    <div className="w-full flex flex-row items-center justify-center">
+                        <ProjectCard />
+                    </div>
                 </div>
                 <div className="h-1/2 w-full">
                     <HeadingLine
                         heading='GAMES'
                         marginPadding=''
-                        lineGap={4}
                         lineWidth='w-[10vw]'
                     />
                 </div>

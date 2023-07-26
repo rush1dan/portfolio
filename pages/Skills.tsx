@@ -48,7 +48,6 @@ export default function Skills({ }: Props) {
       <HeadingLine 
         heading='SKILLS'
         marginPadding='mt-32'
-        lineGap={4}
         lineWidth='w-[30vw]'
       />
       {/* Main Flex Container */}

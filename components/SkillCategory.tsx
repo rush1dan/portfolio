@@ -23,6 +23,8 @@ export default function SkillCategory({ category, skillList, iconBg=false }: Ski
                                         iconSrc={techStack[skill].icon}
                                         hoverIconSrc={techStack[skill].iconWithTitle}
                                         altText={techStack[skill].altText}
+                                        width={3.5}
+                                        height={3.5}
                                         background={iconBg}
                                     />
                                 </div>

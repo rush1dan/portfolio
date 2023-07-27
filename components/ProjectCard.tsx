@@ -14,10 +14,16 @@ export default function ProjectCard({ }: ProjectCardProps) {
                     <div className="absolute w-[50%] h-[2px] bg-slate-200 left-1/2 -translate-x-1/2"></div>
                     <div className="absolute w-full h-full p-4">
                         <p className="text-lg font-semibold">EzEncryptor</p>
-                        <div className="w-full h-12 mt-2">
+                        <div className="w-full h-12 mt-2 bg-red-300">
                             <p className='text-xs'>
                                 Windows GUI program to easily encrypt/decrypt files with password
                             </p>
+                        </div>
+                        <div className='mt-6 w-full flex flex-row items-center justify-start'>
+                            <p className='text-xs'>
+                                Tech:
+                            </p>
+                            
                         </div>
                     </div>
                 </div>

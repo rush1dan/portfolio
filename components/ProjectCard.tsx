@@ -26,7 +26,7 @@ export default function ProjectCard({ image, title, description, techStackUsed, 
                         <div className="w-full h-12 mt-2 bg-red-300">
                             <p className='text-xs'>{description}</p>
                         </div>
-                        <div className='mt-6 w-full flex flex-row items-center justify-start space-x-4'>
+                        <div className='mt-4 w-full flex flex-row items-center justify-start space-x-2'>
                             <p className='text-xs'>
                                 Tech:
                             </p>

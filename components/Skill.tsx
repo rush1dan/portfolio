@@ -17,12 +17,14 @@ export default function Skill({ iconSrc, altText, hoverIconSrc, width, height, b
                 <img src={iconSrc} alt={altText ? altText : ''} className='absolute' />
                 <div className="invisible bg-slate-200 p-4 rounded-lg mb-2 absolute 
                 z-10 shadow-lg shadow-stone-800 group-hover:visible"
-                style={{ width: `${2*width}rem`, height: `${2*height}rem`, padding: `${1}rem`, transform: `translate(${width+1}rem, -${height*0.5+0.25}rem)` }}>
+                    style={{
+                        width: `${2 * width}rem`, height: `${2 * height}rem`, padding: `${width/3.5}rem`, transform: `translate(${width + 1}rem, -${height * 0.5 + 0.25}rem)`
+                    }}>
                     <div className='h-full flex flex-col items-center justify-center'>
                         <img src={hoverIconSrc ? hoverIconSrc : iconSrc} alt={altText} />
                         {
                             !hoverIconSrc &&
-                            <p className='text-gray-900 font-bold'>
+                            <p className={'text-gray-900 font-bold ' + (width < 3.5 ? 'text-sm' : 'text-md')} >
                                 {altText}
                             </p>
                         }

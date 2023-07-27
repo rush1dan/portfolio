@@ -2,7 +2,6 @@
 
 import { Player, } from '@lottiefiles/react-lottie-player'
 import React from 'react'
-import Skill from '@/components/Skill'
 import SkillCategory from '@/components/SkillCategory'
 import HeadingLine from '@/components/HeadingLine'
 

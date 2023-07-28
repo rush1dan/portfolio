@@ -16,7 +16,7 @@ export default function ProjectCard({ image, title, description, techStackUsed, 
     return (
         <a href={demoURL ? demoURL : gitHubURL} target='_blank'>
             {/* Main Card */}
-            <div className="bg-[rgb(46,46,46)] w-[16rem] h-[22rem] rounded-lg bg-clip-broder shadow-lg shadow-[rgb(36,36,36,0.5] border-2 border-stone-600
+            <div className="bg-[rgb(46,46,46)] w-[16rem] h-[22rem] rounded-lg shadow-lg shadow-[rgb(36,36,36,0.5] border-2 border-stone-600
                 cursor-pointer hover:border-stone-300 hover:scale-[1.025] hover:shadow-2xl transition-transform duration-100">
                 {/* Image Container */}
                 <div className="h-[35%] p-4">

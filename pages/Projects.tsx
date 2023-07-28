@@ -1,6 +1,7 @@
 import React from 'react'
 import HeadingLine from '@/components/HeadingLine'
 import ProjectCard from '@/components/ProjectCard'
+import GameCard from '@/components/GameCard'
 
 type Props = {}
 
@@ -33,6 +34,15 @@ export default function Projects({ }: Props) {
                         marginPadding=''
                         lineWidth='w-[10vw]'
                     />
+                    <div className="h-6"></div>
+                    <div className="w-full flex flex-row items-center justify-center">
+                        <GameCard 
+                            title='Prank Master 3D'
+                            logoSrc='https://github.com/rush1dan/file-encryptor/blob/master/Resources/FileEncryptorIcon512.png?raw=true'
+                            playStoreLink='https://play.google.com/store/apps/details?id=com.alphapotato.prankster&hl=en&gl=US'
+                            appStoreLink='https://apps.apple.com/us/app/prank-master-3d/id1528127833'
+                        />
+                    </div>
                 </div>
             </div>
         </div>

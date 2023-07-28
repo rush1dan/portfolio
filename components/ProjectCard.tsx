@@ -55,8 +55,8 @@ export default function ProjectCard({ image, title, description, techStackUsed, 
                         </div>
                         {/* Project Links */}
                         <div className="mt-6 w-full flex flex-row items-center justify-center space-x-8">
-                            <ProjectLinkButton iconSrc='icons/github-white.svg' title='Code'/>
-                            {demoURL && <ProjectLinkButton iconSrc='icons/link-white.svg' title='Demo' />}
+                            <ProjectLinkButton url={gitHubURL} iconSrc='icons/github-white.svg' title='Code'/>
+                            {demoURL && <ProjectLinkButton url={demoURL} iconSrc='icons/link-white.svg' title='Demo' />}
                         </div>
                     </div>
                 </div>
@@ -66,21 +66,24 @@ export default function ProjectCard({ image, title, description, techStackUsed, 
 }
 
 type ProjectLinkButtonProps = {
+    url: string,
     iconSrc: string,
     title: string
 }
 
-function ProjectLinkButton({ iconSrc, title }: ProjectLinkButtonProps) {
+function ProjectLinkButton({ url, iconSrc, title }: ProjectLinkButtonProps) {
     return (
-        <div className='bg-stone-600 w-20 h-7 rounded-[0.175rem] border-stone-500 border-b-2 shadow-md shadow-[rgb(60,60,60,0.5)]'>
-            <div className="h-full flex flex-row items-center justify-center space-x-2">
-                <div className="w-[1.25rem] h-[1.25rem]">
-                    <img src={iconSrc} alt={title} />
+        <a href={url} target="_blank">
+            <div className='bg-stone-600 w-20 h-7 rounded-[0.175rem] border-stone-500 border-b-2 shadow-md shadow-[rgb(60,60,60,0.5)]'>
+                <div className="h-full flex flex-row items-center justify-center space-x-2">
+                    <div className="w-[1.25rem] h-[1.25rem]">
+                        <img src={iconSrc} alt={title} />
+                    </div>
+                    <p>
+                        {title}
+                    </p>
                 </div>
-                <p>
-                    {title}
-                </p>
             </div>
-        </div>
+        </a>
     )
 }

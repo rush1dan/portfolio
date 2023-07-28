@@ -23,6 +23,7 @@ export default function Projects({ }: Props) {
                             description='Windows GUI program to easily encrypt/decrypt files with password.'
                             techStackUsed={["python", "cpp"]}
                             gitHubURL='https://github.com/rush1dan/file-encryptor'
+                            demoURL='https://github.com/rush1dan/file-encryptor/releases/download/EzEncryptor-v1.0/ezencryptor_installer_v1.0.exe'
                         />
                     </div>
                 </div>

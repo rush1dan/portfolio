@@ -24,10 +24,41 @@ export default function GameCard({ title, logoSrc, demoSrc, playStoreLink, appSt
                 <a href={playStoreLink ? playStoreLink : ''} target='_blank'>
                     <div className="w-[9rem] h-[16rem] bg-[rgb(46,46,46)] rounded-lg overflow-hidden
                         shadow-lg shadow-[rgb(36,36,36,0.5] border-2 border-stone-600
-                        cursor-pointer hover:border-stone-300 hover:scale-[1.025] hover:shadow-2xl transition-transform duration-100">
+                        cursor-pointer hover:border-stone-300 hover:scale-[1.025] hover:shadow-2xl transition-transform duration-100 relative">
+                        <img src={demoSrc} alt={`${title} demo`} className='object-contain' />
+                        {
+                            appStoreLink &&
+                            <GameLink link={appStoreLink} iconSrc='icons/app-store.svg' altText='App Store' position={Position.Left} />
+                        }
+                        {
+                            playStoreLink &&
+                            <GameLink link={playStoreLink} iconSrc='icons/google-play.svg' altText='Google Play' position={Position.Right} />
+                        }
                     </div>
                 </a>
             </div>
         </div>
+    )
+}
+
+enum Position {
+    Left,
+    Right
+}
+
+type GameLinkProps = {
+    link: string,
+    iconSrc: string,
+    altText: string,
+    position: Position
+}
+
+export function GameLink({ link, iconSrc, altText, position }: GameLinkProps) {
+    return (
+        <a href={link} target='_blank'>
+            <div className="absolute w-6 h-6 bottom-2 hover:scale-125" style={position === Position.Left ? {left: '0.5rem'} : {right: '0.5rem'}}>
+                <img src={iconSrc} alt={altText} />
+            </div>
+        </a>
     )
 }

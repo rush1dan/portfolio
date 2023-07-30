@@ -38,7 +38,7 @@ export default function Projects({ }: Props) {
                     <div className="w-full flex flex-row items-center justify-center">
                         <GameCard 
                             title='Prank Master 3D'
-                            logoSrc='https://github.com/rush1dan/file-encryptor/blob/master/Resources/FileEncryptorIcon512.png?raw=true'
+                            logoSrc='icons/gameicons/prankmaster.png'
                             demoSrc='https://www.youtube.com/embed/T5vew4xCz2Y'
                             playStoreLink='https://play.google.com/store/apps/details?id=com.alphapotato.prankster&hl=en&gl=US'
                             appStoreLink='https://apps.apple.com/us/app/prank-master-3d/id1528127833'

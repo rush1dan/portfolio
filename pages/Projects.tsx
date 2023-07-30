@@ -39,6 +39,7 @@ export default function Projects({ }: Props) {
                         <GameCard 
                             title='Prank Master 3D'
                             logoSrc='https://github.com/rush1dan/file-encryptor/blob/master/Resources/FileEncryptorIcon512.png?raw=true'
+                            demoSrc='https://www.youtube.com/watch?v=T5vew4xCz2Y'
                             playStoreLink='https://play.google.com/store/apps/details?id=com.alphapotato.prankster&hl=en&gl=US'
                             appStoreLink='https://apps.apple.com/us/app/prank-master-3d/id1528127833'
                         />

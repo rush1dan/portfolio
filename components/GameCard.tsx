@@ -25,7 +25,11 @@ export default function GameCard({ title, logoSrc, demoSrc, playStoreLink, appSt
                     <div className="w-[9rem] h-[16rem] bg-[rgb(46,46,46)] rounded-lg overflow-hidden
                         shadow-lg shadow-[rgb(36,36,36,0.5] border-2 border-stone-600
                         cursor-pointer hover:border-stone-300 hover:scale-[1.025] hover:shadow-2xl transition-transform duration-100 relative">
-                        <img src={demoSrc} alt={`${title} demo`} className='object-contain' />
+                        {/* <img src={demoSrc} alt={`${title} demo`} className='object-contain' /> */}
+                        {   demoSrc &&
+                            <iframe id={title} src={`${demoSrc}?controls=0&loop=1&mute=1&autoplay=1`}
+                                style={{ width: 'inherit', height: 'inherit', border: 'none' }}></iframe>
+                        }
                         {
                             appStoreLink &&
                             <GameLink link={appStoreLink} iconSrc='icons/app-store.svg' altText='App Store' position={Position.Left} />

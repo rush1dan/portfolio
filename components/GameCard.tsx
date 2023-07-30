@@ -27,7 +27,7 @@ export default function GameCard({ title, logoSrc, demoSrc, playStoreLink, appSt
                         cursor-pointer hover:border-stone-300 hover:scale-[1.025] hover:shadow-2xl transition-transform duration-100 relative">
                         {/* <img src={demoSrc} alt={`${title} demo`} className='object-contain' /> */}
                         {   demoSrc &&
-                            <iframe id={title} src={`${demoSrc}?controls=0&loop=1&mute=1&autoplay=1`}
+                            <iframe id={title} src={`${demoSrc}?controls=0&loop=1&mute=1&autoplay=0`}
                                 style={{ width: 'inherit', height: 'inherit', border: 'none' }}></iframe>
                         }
                         {

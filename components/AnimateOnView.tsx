@@ -16,7 +16,7 @@ type AnimateOnViewProps = {
 
 export default function AnimateOnView({ Component, otherProps }: AnimateOnViewProps) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
+    const isInView = useInView(ref, { once: true, amount: 0.75 });
 
     const animationControls = useAnimation();
 

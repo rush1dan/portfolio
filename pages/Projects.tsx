@@ -1,17 +1,28 @@
+'use client'
+
 import React from 'react'
 import HeadingLine from '@/components/HeadingLine'
 import ProjectCard from '@/components/ProjectCard'
 import GameCard from '@/components/GameCard'
+import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
 
 type Props = {}
 
 export default function Projects({ }: Props) {
+    return (
+        <AnimateOnView Component={ProjectPageContent} />
+    )
+}
+
+function ProjectPageContent({ animationControls }: AnimateableComponentProps)
+{
     return (
         <div className='h-screen snap-center'>
             <div className="h-[13%]"></div>
             <div className="flex flex-col items-center justify-start spacing-y-12 h-[87%]">
                 <div className="h-1/2 w-full">
                     <HeadingLine
+                        animationControls={animationControls}
                         heading='PROJECTS'
                         marginPadding=''
                         lineWidth='w-[10vw]'
@@ -30,6 +41,7 @@ export default function Projects({ }: Props) {
                 </div>
                 <div className="h-1/2 w-full">
                     <HeadingLine
+                        animationControls={animationControls}
                         heading='GAMES'
                         marginPadding=''
                         lineWidth='w-[10vw]'

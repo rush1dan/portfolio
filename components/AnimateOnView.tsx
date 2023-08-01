@@ -5,14 +5,16 @@ import { AnimationControls, useAnimation, useInView } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 
 export type AnimateableComponentProps = {
-    animationControls?: AnimationControls
+    animationControls?: AnimationControls,
+    otherProps?: any
 }
 
 type AnimateOnViewProps = {
-    Component: React.FC<AnimateableComponentProps>
+    Component: React.FC<AnimateableComponentProps>,
+    otherProps?: any
 }
 
-export default function AnimateOnView({ Component }: AnimateOnViewProps) {
+export default function AnimateOnView({ Component, otherProps }: AnimateOnViewProps) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
 
@@ -26,7 +28,7 @@ export default function AnimateOnView({ Component }: AnimateOnViewProps) {
 
     return (
         <div ref={ref}>
-            <Component animationControls={animationControls} />
+            <Component animationControls={animationControls} otherProps={otherProps} />
         </div>
     )
 }

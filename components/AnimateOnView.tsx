@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { AnimationControls, motion, useAnimation, useInView } from 'framer-motion'
+import { AnimationControls, useAnimation, useInView } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 
 export type AnimateableComponentProps = {

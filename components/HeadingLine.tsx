@@ -1,12 +1,13 @@
 import React from 'react'
+import { AnimateableComponentProps } from './AnimateOnView'
 
-type Props = {
+type HeadingLineProps = AnimateableComponentProps & {
     heading: string,
     marginPadding: string,
     lineWidth: string | number
 }
 
-export default function HeadingLine({ heading, marginPadding, lineWidth }: Props) {
+export default function HeadingLine({ animationControls, heading, marginPadding, lineWidth }: HeadingLineProps) {
     return (
         <div className="relative">
             <div className={`absolute w-full ${marginPadding}`}>

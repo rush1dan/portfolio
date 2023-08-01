@@ -1,4 +1,5 @@
 import About from '@/pages/About'
+import Contact from '@/pages/Contact'
 import Header from '@/pages/Header'
 import Hero from '@/pages/Hero'
 import Projects from '@/pages/Projects'
@@ -36,6 +37,9 @@ export default function Home() {
       </section>
 
       {/* Contact Me */}
+      <section id="contact">
+        <Contact />
+      </section>
 
     </div>
   )

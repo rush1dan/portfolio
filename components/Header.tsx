@@ -10,7 +10,7 @@ import Link from 'next/link'
 type Props = {}
 
 export default function Header({ }: Props) {
-    const [socialHovered, setSocialHovered] = useState(0);
+    const [socialHovered, setSocialHovered] = useState(-1);
     const socialIconColor = 'rgb(208,210,216)'
     const socialIconHoverColor = 'rgb(255,239,156)'
 

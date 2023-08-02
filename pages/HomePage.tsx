@@ -22,7 +22,7 @@ export default function HomePage({ }: Props) {
 
                     {/* Introduction */}
                     <h1>
-                        <span className='text-2xl md:text-3xl lg:text-4xl'>Hi, I'm <span className='font-semibold text-3xl text-[rgb(255,239,156)] md:text-4xl lg:text-5xl'>Rushidan</span>, </span>
+                        <span className='text-2xl md:text-3xl lg:text-4xl'>Hi, I'm <span className='font-semibold text-3xl text-accentColor md:text-4xl lg:text-5xl'>Rushidan</span>, </span>
                     </h1>
 
                     {/* What I Do */}
@@ -36,7 +36,7 @@ export default function HomePage({ }: Props) {
                     <div className='h-6'></div>
 
                     {/* Contact */}
-                    <button className='bg-transparent hover:bg-[rgb(255,239,156,0.75)] px-3 py-3 font-semibold rounded-lg border-4 border-[rgb(255,239,156)] text-[rgb(255,239,156)] text-lg'>
+                    <button className='bg-transparent hover:bg-[rgb(255,239,156,0.75)] px-3 py-3 font-semibold rounded-lg border-4 border-accentColor text-accentColor text-lg'>
                         Contact Me
                     </button>
                 </div>

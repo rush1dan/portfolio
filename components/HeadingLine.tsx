@@ -30,7 +30,7 @@ export default function HeadingLine({ animationControls, heading, marginPadding,
                         animate={animationControls}
                         transition={{ duration: 0.5, ease: 'easeInOut' }} >
                     </motion.div>
-                    <motion.h2 className="text-3xl text-gray-600 font-extrabold inline"
+                    <motion.h2 className="text-3xl text-headingColor font-extrabold inline"
                         variants={{
                             hidden: {
                                 opacity: 0.5,

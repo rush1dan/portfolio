@@ -70,7 +70,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                 {/* Education/Experience Description Section */}
 
                 {/* Middle Line */}
-                <motion.div className='bg-gray-600 w-1 h-[48rem] origin-top flex flex-col justify-around'
+                <motion.div className='bg-headingColor w-1 h-[48rem] origin-top flex flex-col justify-around'
                     variants={{
                         hidden: {
                             scaleY: 0,
@@ -84,7 +84,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                     transition={{ duration: 0.5, delay: 0.5 }}>
 
                     {/* Experience Top */}
-                    <motion.div className='relative bg-gray-600 w-12 h-1 origin-left'
+                    <motion.div className='relative bg-headingColor w-12 h-1 origin-left'
                         variants={{
                             hidden: {
                                 scaleX: 0,
@@ -119,7 +119,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                     </motion.div>
 
                     {/* Education Middle */}
-                    <motion.div className='relative bg-gray-600 w-12 h-1 -scale-x-100 -translate-x-12 origin-left'
+                    <motion.div className='relative bg-headingColor w-12 h-1 -scale-x-100 -translate-x-12 origin-left'
                         variants={{
                             hidden: {
                                 scaleX: 0,
@@ -156,7 +156,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                     </motion.div>
 
                     {/* Experience Bottom */}
-                    <motion.div className='relative bg-gray-600 w-12 h-1 origin-left'
+                    <motion.div className='relative bg-headingColor w-12 h-1 origin-left'
                         variants={{
                             hidden: {
                                 scaleX: 0,

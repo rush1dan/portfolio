@@ -31,7 +31,7 @@ body {
 
 @layer components {
   .nav-button {
-    @apply lg:text-lg hover:text-[rgb(255,239,156)] relative uppercase font-semibold
+    @apply lg:text-lg text-navColor hover:text-accentColor relative uppercase font-semibold
   }
 }
 
@@ -223,7 +223,6 @@ body {
 .experience-line {
   content: '';
   position: absolute;
-  background: rgb(100,100,120);
   width: 5px;
   left: 0;
   top: 1.875rem;
@@ -233,7 +232,6 @@ body {
 .experience-line::after {
   content: '';
   position: absolute;
-  background: rgb(100,100,120);
   width: 5px;
   left: 20px;
   top: 1.875rem;
@@ -243,7 +241,6 @@ body {
 .experience-line::after::after {
   content: '';
   position: absolute;
-  background: rgb(100,100,120);
   width: 5px;
   left: 40px;
   top: 1.875rem;

@@ -7,7 +7,7 @@ import SkillsPage from '@/pages/SkillsPage'
 
 export default function Home() {
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen 
+    <div className="bg-bgColor text-white h-screen 
     snap-y snap-mandatory scroll-smooth overflow-y-scroll overflow-x-hidden">
       <head>
         <title>Rushidan's Portfolio</title>

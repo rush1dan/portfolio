@@ -16,8 +16,8 @@ export default function ProjectCard({ image, title, description, techStackUsed, 
     return (
         <a href={demoURL ? demoURL : gitHubURL} target='_blank'>
             {/* Main Card */}
-            <div className="bg-[rgb(46,46,46)] w-[16rem] h-[22rem] rounded-lg shadow-lg shadow-[rgb(36,36,36,0.5] border-2 border-stone-600
-                cursor-pointer hover:border-stone-300 hover:scale-[1.025] hover:shadow-2xl transition-transform duration-100">
+            <div className="bg-cardBGColor w-[16rem] h-[22rem] rounded-lg shadow-lg shadow-[rgb(36,36,36,0.5] border-2 border-cardBorderColor
+                cursor-pointer hover:border-cardHighlightColor hover:scale-[1.025] hover:shadow-2xl transition-transform duration-100">
                 {/* Image Container */}
                 <div className="h-[35%] p-4">
                     <div className={`h-full w-full rounded-lg ${styles.projectImage}`} style={{backgroundImage: `url('${image}')`}}></div>
@@ -75,8 +75,8 @@ type ProjectLinkButtonProps = {
 function ProjectLinkButton({ url, iconSrc, title }: ProjectLinkButtonProps) {
     return (
         <a href={url} target="_blank">
-            <div className='bg-stone-600 w-20 h-7 rounded-[0.175rem] border-stone-500 border-b-2 shadow-md shadow-[rgb(60,60,60,0.5)]
-            hover:border hover:border-b-[3px] hover:border-stone-300'>
+            <div className='bg-cardBorderColor w-20 h-7 rounded-[0.175rem] border-b-2 border-stone-500 shadow-md shadow-[rgb(60,60,60,0.5)]
+            hover:border hover:border-b-[3px] hover:border-cardHighlightColor'>
                 <div className="h-full flex flex-row items-center justify-center space-x-2">
                     <div className="w-[1.25rem] h-[1.25rem]">
                         <img src={iconSrc} alt={title} />

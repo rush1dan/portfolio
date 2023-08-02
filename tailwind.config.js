@@ -22,10 +22,12 @@ module.exports = {
         bgColor: 'rgb(36,36,36)',
         accentColor: 'rgb(255,239,156)',
         headingColor: 'rgb(107,114,128)',
-        navColor: 'rgb(250,250,250)',
+        navColor: 'rgb(208,210,216)',
         cardBGColor: 'rgb(46,46,46)',
-        cardBorderColor: 'rgb(87,83,78)',
-        cardHighlightColor: 'rgb(214,211,209)'
+        cardBorderColor: 'rgb(128,128,128)',
+        cardButtonColor: 'rgb(87,83,78)',
+        cardHighlightColor: 'rgb(214,211,209)',
+        socialIconColor: 'rgb(208,210,216)',
       }
     },
   },

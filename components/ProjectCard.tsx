@@ -75,7 +75,7 @@ type ProjectLinkButtonProps = {
 function ProjectLinkButton({ url, iconSrc, title }: ProjectLinkButtonProps) {
     return (
         <a href={url} target="_blank">
-            <div className='bg-cardBorderColor w-20 h-7 rounded-[0.175rem] border-b-2 border-stone-500 shadow-md shadow-[rgb(60,60,60,0.5)]
+            <div className='bg-cardButtonColor w-20 h-7 rounded-[0.175rem] border-b-2 border-cardBorderColor shadow-md shadow-[rgb(60,60,60,0.5)]
             hover:border hover:border-b-[3px] hover:border-cardHighlightColor'>
                 <div className="h-full flex flex-row items-center justify-center space-x-2">
                     <div className="w-[1.25rem] h-[1.25rem]">

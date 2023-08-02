@@ -30,7 +30,7 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps)
                     <div className="h-8"></div>
                     <div className="w-full flex flex-row items-center justify-center">
                         <ProjectCard
-                            image='https://github.com/rush1dan/file-encryptor/blob/master/Resources/FileEncryptorIcon512.png?raw=true'
+                            image='icons/projecticons/EzEncryptorIcon.png'
                             title='EzEncryptor'
                             description='Windows GUI program to easily encrypt/decrypt files with password.'
                             techStackUsed={["python", "cpp"]}

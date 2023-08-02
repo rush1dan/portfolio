@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
+import HeadingLine from '@/components/HeadingLine'
 
 type Props = {}
 
@@ -22,25 +23,15 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                 <section className='flex flex-col items-center justify-center'>
 
                     {/* Heading */}
-                    <motion.h1 className='text-3xl font-bold text-gray-600'
-                        variants={{
-                            hidden: {
-                                y: -200,
-                                opacity: 0,
-                            },
-                            visible: {
-                                y: 0,
-                                opacity: 1,
-                            }
-                        }}
-                        initial="hidden"
-                        animate={animationControls}
-                        transition={{ duration: 0.75 }}>
-                        About
-                    </motion.h1>
+                    <HeadingLine
+                        animationControls={animationControls}
+                        heading='ABOUT'
+                        marginPadding=''
+                        lineWidth='w-[30vw]'
+                    />
 
                     {/* Description */}
-                    <motion.p className='text-sm pt-4 px-12'
+                    <motion.p className='text-sm pt-8 px-12'
                         variants={{
                             hidden: {
                                 opacity: 0,
@@ -60,40 +51,20 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                 <div className='w-full flex flex-col items-center justify-around md:flex-row'>
 
                     {/* Education Heading */}
-                    <motion.div
-                        variants={{
-                            hidden: {
-                                x: -500,
-                                opacity: 0,
-                            },
-                            visible: {
-                                x: 0,
-                                opacity: 1,
-                            }
-                        }}
-                        initial="hidden"
-                        animate={animationControls}
-                        transition={{ duration: 0.75 }}>
-                        <h1 className='text-3xl font-bold text-gray-600'>Education</h1>
-                    </motion.div>
+                    <HeadingLine
+                        animationControls={animationControls}
+                        heading='EDUCATION'
+                        marginPadding=''
+                        lineWidth='w-[5vw]'
+                    />
 
                     {/* Experience Heading */}
-                    <motion.div
-                        variants={{
-                            hidden: {
-                                x: 500,
-                                opacity: 0,
-                            },
-                            visible: {
-                                x: 0,
-                                opacity: 1,
-                            }
-                        }}
-                        initial="hidden"
-                        animate={animationControls}
-                        transition={{ duration: 0.75 }}>
-                        <h1 className='text-3xl font-bold text-gray-600'>Experience</h1>
-                    </motion.div>
+                    <HeadingLine
+                        animationControls={animationControls}
+                        heading='EXPERIENCE'
+                        marginPadding=''
+                        lineWidth='w-[5vw]'
+                    />
                 </div>
 
                 {/* Education/Experience Description Section */}

@@ -1,9 +1,9 @@
-import About from '@/pages/About'
-import Contact from '@/pages/Contact'
-import Header from '@/pages/Header'
-import Hero from '@/pages/Hero'
-import Projects from '@/pages/Projects'
-import Skills from '@/pages/Skills'
+import AboutPage from '@/pages/AboutPage'
+import ContactPage from '@/pages/ContactPage'
+import Header from '@/components/Header'
+import HomePage from '@/pages/HomePage'
+import ProjectsPage from '@/pages/ProjectsPage'
+import SkillsPage from '@/pages/SkillsPage'
 
 export default function Home() {
   return (
@@ -14,31 +14,31 @@ export default function Home() {
       </head>
 
       {/* Header */}
-      <Header />
+        <Header />
 
       {/* Hero */}
-      <section id="hero">
-        <Hero />
+      <section id="home">
+        <HomePage />
       </section>
 
       {/* About */}
       <section id="about">
-        <About />
+        <AboutPage />
       </section>
 
       {/* Skills */}
       <section id="skills">
-        <Skills />
+        <SkillsPage />
       </section>
 
       {/* Projects */}
       <section id="projects">
-        <Projects />
+        <ProjectsPage />
       </section>
 
       {/* Contact Me */}
       <section id="contact">
-        <Contact />
+        <ContactPage />
       </section>
 
     </div>

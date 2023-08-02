@@ -1,5 +1,5 @@
 import React from 'react'
-import Skill from './Skill'
+import Tech from './Tech'
 import { techStack } from '@/myutils/techStack'
 
 type SkillCategoryProps = {
@@ -19,7 +19,7 @@ export default function SkillCategory({ category, skillList, iconBg=false }: Ski
                         {
                             return (
                                 <div key={index}>
-                                    <Skill
+                                    <Tech
                                         iconSrc={techStack[skill].icon}
                                         hoverIconSrc={techStack[skill].iconWithTitle}
                                         altText={techStack[skill].altText}

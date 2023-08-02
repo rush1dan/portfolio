@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './projectcardstyle.module.css'
-import Skill from './Skill'
+import Tech from './Tech'
 import { techStack } from '@/myutils/techStack'
 
 type ProjectCardProps = {
@@ -41,7 +41,7 @@ export default function ProjectCard({ image, title, description, techStackUsed, 
                                 techStackUsed.map((tech, index) => {
                                     return (
                                         <div key={index}>
-                                            <Skill
+                                            <Tech
                                                 iconSrc={techStack[tech].icon}
                                                 hoverIconSrc={techStack[tech].iconWithTitle}
                                                 altText={techStack[tech].altText}

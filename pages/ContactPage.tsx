@@ -6,7 +6,7 @@ import React from 'react'
 
 type ContactPageProps = {}
 
-export default function Contact({ }: ContactPageProps) {
+export default function ContactPage({ }: ContactPageProps) {
     return (
         <AnimateOnView Component={ContactPageContent} />
     )

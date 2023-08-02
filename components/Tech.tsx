@@ -1,6 +1,6 @@
 import React from 'react'
 
-export type SkillProps = {
+export type TechProps = {
     iconSrc: string,
     hoverIconSrc: string,
     altText: string,
@@ -9,7 +9,7 @@ export type SkillProps = {
     background?: boolean
 }
 
-export default function Skill({ iconSrc, altText, hoverIconSrc, width, height, background = false }: SkillProps) {
+export default function Tech({ iconSrc, altText, hoverIconSrc, width, height, background = false }: TechProps) {
     return (
         <div>
             <div className={(!background ? 'bg-transparent ' : 'bg-slate-800 overflow-clip ') + 'rounded-2xl relative group cursor-pointer'}

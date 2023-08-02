@@ -8,7 +8,7 @@ import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOn
 
 type Props = {}
 
-export default function Projects({ }: Props) {
+export default function ProjectsPage({ }: Props) {
     return (
         <AnimateOnView Component={ProjectPageContent} />
     )

@@ -6,7 +6,7 @@ import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOn
 
 type Props = {}
 
-export default function About({ }: Props) {
+export default function AboutPage({ }: Props) {
     return (
         <AnimateOnView Component={AboutPageContent} />
     )

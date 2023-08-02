@@ -8,7 +8,7 @@ import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOn
 
 type Props = {}
 
-export default function Skills({ }: Props) {
+export default function SkillsPage({ }: Props) {
     // [iconSrc, iconAltText, hoverIconSrc, hoverIconAltText, hoverTitle]
 
     const frontEndSkillList = ["html", "css", "tailwindcss", "javascript", "typescript", "react", "redux", "flutter"]

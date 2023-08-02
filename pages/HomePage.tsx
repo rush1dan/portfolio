@@ -5,7 +5,7 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
 type Props = {}
 
-export default function Hero({ }: Props) {
+export default function HomePage({ }: Props) {
     const [text, count] = useTypewriter({
         words: ["A Game Developer.", "A Software Engineer.", "An avid learner."],
         loop: true,

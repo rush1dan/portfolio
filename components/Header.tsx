@@ -46,7 +46,7 @@ export default function Header({ }: Props) {
                 transition={{
                     duration: 1.5,
                 }}
-                className='hidden md:flex flex-row items-center justify-center md:space-x-8 lg:space-x-16'>
+                className='hidden md:flex flex-row items-center justify-center md:space-x-8 lg:space-x-14'>
                 <Link href="#about" className='nav-button'>About</Link>
                 <Link href="#skills" className='nav-button'>Skills</Link>
                 <Link href="#projects" className='nav-button'>Projects</Link>

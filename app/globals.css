@@ -31,7 +31,7 @@ body {
 
 @layer components {
   .nav-button {
-    @apply md:text-lg lg:text-xl hover:text-[rgb(255,239,156)] relative
+    @apply lg:text-lg hover:text-[rgb(255,239,156)] relative uppercase font-semibold
   }
 }
 

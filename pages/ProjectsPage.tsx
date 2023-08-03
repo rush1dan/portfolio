@@ -3,6 +3,7 @@
 import React from 'react'
 import HeadingLine from '@/components/HeadingLine'
 import ProjectCard from '@/components/ProjectCard'
+import { gameStack } from '@/myutils/gameStack'
 import GameCard from '@/components/GameCard'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
 
@@ -47,14 +48,22 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps)
                         lineWidth='w-[10vw]'
                     />
                     <div className="h-6"></div>
-                    <div className="w-full flex flex-row items-center justify-center">
-                        <GameCard 
-                            title='Prank Master 3D'
-                            logoSrc='icons/gameicons/prankmaster.png'
-                            demoSrc='https://www.youtube.com/embed/T5vew4xCz2Y'
-                            playStoreLink='https://play.google.com/store/apps/details?id=com.alphapotato.prankster&hl=en&gl=US'
-                            appStoreLink='https://apps.apple.com/us/app/prank-master-3d/id1528127833'
-                        />
+                    <div className="w-full flex flex-row items-center justify-center space-x-4">
+                        {
+                            gameStack.map((game, index) => {
+                                return (
+                                    <div key={index}>
+                                        <GameCard
+                                            title={game.title}
+                                            logoSrc={game.iconSrc}
+                                            demoSrc={game.demoSrc}
+                                            playStoreLink={game.playStoreLink}
+                                            appStoreLink={game.appStoreLink}
+                                        />
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>

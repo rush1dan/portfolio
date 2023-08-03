@@ -6,6 +6,7 @@ import ProjectCard from '@/components/ProjectCard'
 import { gameStack } from '@/myutils/gameStack'
 import GameCard from '@/components/GameCard'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
+import { projectStack } from '@/myutils/projectStack'
 
 type Props = {}
 
@@ -15,8 +16,7 @@ export default function ProjectsPage({ }: Props) {
     )
 }
 
-function ProjectPageContent({ animationControls }: AnimateableComponentProps)
-{
+function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
     return (
         <div className='h-screen snap-center'>
             <div className="h-[13%]"></div>
@@ -29,15 +29,23 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps)
                         lineWidth='w-[10vw]'
                     />
                     <div className="h-8"></div>
-                    <div className="w-full flex flex-row items-center justify-center">
-                        <ProjectCard
-                            image='icons/projecticons/EzEncryptorIcon.png'
-                            title='EzEncryptor'
-                            description='Windows GUI program to easily encrypt/decrypt files with password.'
-                            techStackUsed={["python", "cpp"]}
-                            gitHubURL='https://github.com/rush1dan/file-encryptor'
-                            demoURL='https://github.com/rush1dan/file-encryptor/releases/download/EzEncryptor-v1.0/ezencryptor_installer_v1.0.exe'
-                        />
+                    <div className="w-full flex flex-row items-center justify-center space-x-4">
+                        {
+                            projectStack.map((project, index) => {
+                                return (
+                                    <div key={index}>
+                                        <ProjectCard
+                                            image={project.image}
+                                            title={project.title}
+                                            description={project.description}
+                                            techStackUsed={project.techStackUsed}
+                                            gitHubURL={project.gitHubURL}
+                                            demoURL={project.demoURL}
+                                        />
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
                 <div className="h-1/2 w-full">

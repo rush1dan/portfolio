@@ -8,7 +8,7 @@ import GameCard from '@/components/GameCard'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
 import { projectStack } from '@/myutils/projectStack'
 import { ScrollingCarousel } from '@trendyol-js/react-carousel'
-import '../styles/carousel.css'
+import '../styles/carouselstyle.css'
 
 type Props = {}
 
@@ -22,7 +22,7 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
     const scrollingCarouselParentDiv = useRef<HTMLDivElement>(null);
     let innermostCarouselDiv: HTMLElement | undefined;
     useEffect(() => {
-        innermostCarouselDiv = scrollingCarouselParentDiv?.current?.firstChild?.childNodes[0] as HTMLDivElement;
+        innermostCarouselDiv = scrollingCarouselParentDiv?.current?.firstChild?.lastChild as HTMLDivElement;
         innermostCarouselDiv?.classList.add('innermostcarousel');
     }, [scrollingCarouselParentDiv]);
 
@@ -65,8 +65,12 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                         lineWidth='w-[10vw]'
                     />
                     <div className="h-6"></div>
-                    <div ref={scrollingCarouselParentDiv}  className='carouselContainer'>
-                        <ScrollingCarousel>
+                    <div ref={scrollingCarouselParentDiv}>
+                        <ScrollingCarousel
+                            className='relative'
+                            leftIcon={<div className='w-8 h-8 bg-green-500 absolute left-0 top-1/2 -translate-x-1/2 z-10'></div>}
+                            rightIcon={<div className='w-8 h-8 bg-blue-500 absolute right-0 top-1/2 translate-x-1/2 z-10'></div>}
+                        >
                             {
                                 gameStack.map((game, index) => {
                                     return (

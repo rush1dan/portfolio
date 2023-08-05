@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+    .innermostcarousel {
+        @apply w-[66rem] overflow-hidden
+    }
+}

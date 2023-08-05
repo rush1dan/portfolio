@@ -108,12 +108,6 @@ export const gameStack: Game[] = [
         playStoreLink: "https://play.google.com/store/apps/details?id=com.alphapotato.cutanddrag",
     },
     {
-        title: "Fine Diner",
-        iconSrc: `${iconDir}/prankmaster.png`,
-        demoSrc: "https://www.youtube.com/embed/ZElmIPjXxB8",
-        playStoreLink: "https://play.google.com/store/apps/details?id=com.alphapotato.finediner",
-    },
-    {
         title: "Combat Master 3D",
         iconSrc: `${iconDir}/prankmaster.png`,
         demoSrc: "https://www.youtube.com/embed/PEgGvoIT5HI",
@@ -154,6 +148,12 @@ export const gameStack: Game[] = [
         iconSrc: `${iconDir}/prankmaster.png`,
         demoSrc: "https://www.youtube.com/embed/qhKbjzJMlEg",
         playStoreLink: "https://play.google.com/store/apps/details?id=com.alphapotato.groundflow",
+    },
+    {
+        title: "Fine Diner",
+        iconSrc: `${iconDir}/prankmaster.png`,
+        demoSrc: "https://www.youtube.com/embed/ZElmIPjXxB8",
+        playStoreLink: "https://play.google.com/store/apps/details?id=com.alphapotato.finediner",
     },
     {
         title: "Human Ball",

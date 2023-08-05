@@ -10,7 +10,7 @@ type GameCardProps = {
 
 export default function GameCard({ title, logoSrc, demoSrc, playStoreLink, appStoreLink }: GameCardProps) {
     return (
-        <div>
+        <div className='p-8'>
             <div className="flex flex-col items-center justify-start">
                 <div className="flex flex-row items-center justify-center space-x-2 p-2">
                     <div className="w-6 h-6 bg-cardBGColor rounded-lg overflow-hidden">

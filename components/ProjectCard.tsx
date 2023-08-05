@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './projectcardstyle.module.css'
+import styles from '../styles/projectcardstyle.module.css'
 import Tech from './Tech'
 import { techStack } from '@/myutils/techStack'
 

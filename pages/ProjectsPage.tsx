@@ -7,6 +7,7 @@ import { gameStack } from '@/myutils/gameStack'
 import GameCard from '@/components/GameCard'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
 import { projectStack } from '@/myutils/projectStack'
+import Carousel from '@/components/Carousel'
 
 type Props = {}
 
@@ -57,21 +58,23 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                     />
                     <div className="h-6"></div>
                     <div className="w-full flex flex-row items-center justify-center space-x-4">
-                        {
-                            gameStack.map((game, index) => {
-                                return (
-                                    <div key={index}>
-                                        <GameCard
-                                            title={game.title}
-                                            logoSrc={game.iconSrc}
-                                            demoSrc={game.demoSrc}
-                                            playStoreLink={game.playStoreLink}
-                                            appStoreLink={game.appStoreLink}
-                                        />
-                                    </div>
-                                )
-                            })
-                        }
+                        <Carousel>
+                            {
+                                gameStack.map((game, index) => {
+                                    return (
+                                        <div key={index}>
+                                            <GameCard
+                                                title={game.title}
+                                                logoSrc={game.iconSrc}
+                                                demoSrc={game.demoSrc}
+                                                playStoreLink={game.playStoreLink}
+                                                appStoreLink={game.appStoreLink}
+                                            />
+                                        </div>
+                                    )
+                                })
+                            }
+                        </Carousel>
                     </div>
                 </div>
             </div>

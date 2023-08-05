@@ -1,16 +1,17 @@
 .carouselContainer {
     display: flex;
+    min-height:inherit;
     padding: 0 35px;
-    min-height: 100vh;
     align-items: center;
     justify-content: center;
-    background: #343F4F;
+    background: #ffffff;
 }
 
 .wrapper {
     display: flex;
     max-width: 1200px;
     position: relative;
+    background: #270c4b;
 }
 
 .wrapper i {
@@ -52,6 +53,9 @@
     overflow: hidden;
     white-space: nowrap;
     scroll-behavior: smooth;
+    background: #44c72a;
+    display: flex;
+    flex-direction: row;
 }
 
 .carousel.dragging {
@@ -59,30 +63,29 @@
     scroll-behavior: auto;
 }
 
-.carousel.dragging.carouselItem {
+.carousel.dragging .carouselItem {
     pointer-events: none;
 }
 
-.carousel.carouselItem {
-    height: 340px;
+.carousel .carouselItem {
     object-fit: cover;
     user-select: none;
-    margin-left: 14px;
-    width: calc(100% / 3);
+    width: 200px;
+    background: #e00303;
 }
 
-.carousel.carouselItem:first-child {
+.carousel .carouselItem:first-child {
     margin-left: 0px;
 }
 
 @media screen and (max-width: 900px) {
-    .carousel.carouselItem {
+    .carousel .carouselItem {
         width: calc(100% / 2);
     }
 }
 
 @media screen and (max-width: 550px) {
-    .carousel.carouselItem {
+    .carousel .carouselItem {
         width: 100%;
     }
 }

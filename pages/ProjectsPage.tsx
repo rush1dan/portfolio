@@ -57,7 +57,7 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                         lineWidth='w-[10vw]'
                     />
                     <div className="h-6"></div>
-                    <div className="w-full flex flex-row items-center justify-center space-x-4">
+                    <div>
                         <Carousel>
                             {
                                 gameStack.map((game, index) => {

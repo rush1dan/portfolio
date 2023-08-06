@@ -38,7 +38,7 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                         lineWidth='w-[10vw]'
                     />
                     <div className="h-8"></div>
-                    <div className="w-full flex flex-row items-center justify-center space-x-4">
+                    <div className="w-full flex flex-row items-center justify-center">
                         {
                             projectStack.map((project, index) => {
                                 return (

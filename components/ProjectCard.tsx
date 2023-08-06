@@ -14,7 +14,7 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ image, title, description, techStackUsed, gitHubURL, demoURL }: ProjectCardProps) {
     return (
-        <div className='px-8'>
+        <div className='px-6 py-2'>
             <a href={demoURL ? demoURL : gitHubURL} target='_blank'>
                 {/* Main Card */}
                 <div className="bg-cardBGColor w-[16rem] h-[22rem] rounded-lg shadow-lg shadow-[rgb(36,36,36,0.5] border-2 border-cardBorderColor

@@ -19,12 +19,34 @@ export default function ProjectsPage({ }: Props) {
 }
 
 function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
-    const scrollingCarouselParentDiv = useRef<HTMLDivElement>(null);
-    let innermostCarouselDiv: HTMLElement | undefined;
+
+    // Scrolling Carousel Prep:
+
+    //Find the scrolling carousel component structure here: 
+    //https://github.com/Trendyol/react-carousel/blob/master/src/components/scrolling-carousel/index.tsx
+
+    const projectCarouselParentDiv = useRef<HTMLDivElement>(null);
+    const gameCarouselParentDiv = useRef<HTMLDivElement>(null);
+
+    let projectCarouselInnerDiv: HTMLElement | undefined;
+    let gameCarouselInnerDiv: HTMLElement | undefined;
+
+    const projectCarouselInnerDivClass = 'projectCarouselInnerDiv';
+    const gameCarouselInnerDivClass = 'gameCarouselInnerDiv';
+
     useEffect(() => {
-        innermostCarouselDiv = scrollingCarouselParentDiv?.current?.firstChild?.lastChild as HTMLDivElement;
-        innermostCarouselDiv?.classList.add('innermostcarousel');
-    }, [scrollingCarouselParentDiv]);
+
+        projectCarouselInnerDiv = projectCarouselParentDiv?.current?.firstChild?.lastChild as HTMLDivElement;
+        if (!projectCarouselInnerDiv?.classList.contains(projectCarouselInnerDivClass)) {
+            projectCarouselInnerDiv?.classList.add(projectCarouselInnerDivClass);
+        }
+        
+        gameCarouselInnerDiv = gameCarouselParentDiv?.current?.firstChild?.lastChild as HTMLDivElement;
+        if (!gameCarouselInnerDiv?.classList.contains(gameCarouselInnerDivClass)) {
+            gameCarouselInnerDiv?.classList.add(gameCarouselInnerDivClass);
+        }
+
+    }, [projectCarouselParentDiv, gameCarouselParentDiv]);
 
     return (
         <div className='h-screen snap-center'>
@@ -37,24 +59,30 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                         marginPadding=''
                         lineWidth='w-[10vw]'
                     />
-                    <div className="h-8"></div>
-                    <div className="w-full flex flex-row items-center justify-center">
-                        {
-                            projectStack.map((project, index) => {
-                                return (
-                                    <div key={index}>
-                                        <ProjectCard
-                                            image={project.image}
-                                            title={project.title}
-                                            description={project.description}
-                                            techStackUsed={project.techStackUsed}
-                                            gitHubURL={project.gitHubURL}
-                                            demoURL={project.demoURL}
-                                        />
-                                    </div>
-                                )
-                            })
-                        }
+                    <div className="h-6"></div>
+                    <div ref={projectCarouselParentDiv}>
+                        <ScrollingCarousel
+                            className='relative'
+                            leftIcon={<div className='w-8 h-8 bg-green-500 absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10'></div>}
+                            rightIcon={<div className='w-8 h-8 bg-blue-500 absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10'></div>}
+                        >
+                            {
+                                projectStack.map((project, index) => {
+                                    return (
+                                        <div key={index}>
+                                            <ProjectCard
+                                                image={project.image}
+                                                title={project.title}
+                                                description={project.description}
+                                                techStackUsed={project.techStackUsed}
+                                                gitHubURL={project.gitHubURL}
+                                                demoURL={project.demoURL}
+                                            />
+                                        </div>
+                                    )
+                                })
+                            }
+                        </ScrollingCarousel>
                     </div>
                 </div>
                 <div className="h-1/2 w-full flex flex-col items-center">
@@ -65,7 +93,7 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                         lineWidth='w-[10vw]'
                     />
                     <div className="h-6"></div>
-                    <div ref={scrollingCarouselParentDiv}>
+                    <div ref={gameCarouselParentDiv}>
                         <ScrollingCarousel
                             className='relative'
                             leftIcon={<div className='w-8 h-8 bg-green-500 absolute left-0 top-1/2 -translate-x-1/2 z-10'></div>}

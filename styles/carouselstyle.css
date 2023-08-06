@@ -1,7 +1,11 @@
 @tailwind components;
 
 @layer components {
-    .innermostcarousel {
+    .projectCarouselInnerDiv {
+        @apply w-[57rem] overflow-hidden
+    }
+
+    .gameCarouselInnerDiv {
         @apply w-[66rem] overflow-hidden
     }
 }

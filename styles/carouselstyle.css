@@ -2,10 +2,10 @@
 
 @layer components {
     .projectCarouselInnerDiv {
-        @apply w-[57rem] overflow-hidden
+        @apply w-[57rem] overflow-hidden cursor-grab
     }
 
     .gameCarouselInnerDiv {
-        @apply w-[66rem] overflow-hidden
+        @apply w-[66rem] overflow-hidden cursor-grab
     }
 }

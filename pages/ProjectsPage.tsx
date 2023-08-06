@@ -9,6 +9,7 @@ import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOn
 import { projectStack } from '@/myutils/projectStack'
 import { ScrollingCarousel } from '@trendyol-js/react-carousel'
 import '../styles/carouselstyle.css'
+import CarouselArrow, {Direction} from '@/components/CarouselArrow'
 
 type Props = {}
 
@@ -63,8 +64,8 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                     <div ref={projectCarouselParentDiv}>
                         <ScrollingCarousel
                             className='relative'
-                            leftIcon={<div className='w-8 h-8 bg-green-500 absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10'></div>}
-                            rightIcon={<div className='w-8 h-8 bg-blue-500 absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10'></div>}
+                            leftIcon={<CarouselArrow className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2' direction={Direction.Left} />}
+                            rightIcon={<CarouselArrow className='absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2' direction={Direction.Right} />}
                         >
                             {
                                 projectStack.map((project, index) => {
@@ -96,8 +97,8 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                     <div ref={gameCarouselParentDiv}>
                         <ScrollingCarousel
                             className='relative'
-                            leftIcon={<div className='w-8 h-8 bg-green-500 absolute left-0 top-1/2 -translate-x-1/2 z-10'></div>}
-                            rightIcon={<div className='w-8 h-8 bg-blue-500 absolute right-0 top-1/2 translate-x-1/2 z-10'></div>}
+                            leftIcon={<CarouselArrow className='absolute left-0 top-1/2 -translate-x-1/2' direction={Direction.Left} />}
+                            rightIcon={<CarouselArrow className='absolute right-0 top-1/2 translate-x-1/2' direction={Direction.Right} />}
                         >
                             {
                                 gameStack.map((game, index) => {

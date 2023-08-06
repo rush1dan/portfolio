@@ -44,10 +44,10 @@ function SkillsPageContent({ animationControls, otherProps }: AnimateableCompone
 
                 {/* Skill flex container */}
                 <div className='flex flex-col space-y-24'>
-                    <SkillCategory category='Front End' skillList={otherProps.frontEndSkillList} />
-                    <SkillCategory category='Back End' skillList={otherProps.backEndSkillList} />
-                    <SkillCategory category='Game Dev' skillList={otherProps.gameDevSkillList} />
-                    <SkillCategory category='Languages' skillList={otherProps.languageSkillList} />
+                    <SkillCategory category='Front End' skillList={otherProps.frontEndSkillList} animationControls={animationControls} />
+                    <SkillCategory category='Back End' skillList={otherProps.backEndSkillList} animationControls={animationControls} />
+                    <SkillCategory category='Game Dev' skillList={otherProps.gameDevSkillList} animationControls={animationControls} />
+                    <SkillCategory category='Languages' skillList={otherProps.languageSkillList} animationControls={animationControls} />
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
 type Props = {}
@@ -11,6 +11,9 @@ export default function HomePage({ }: Props) {
         loop: true,
         delaySpeed: 2000
     })
+
+    const [dpLoaded, setDpLoaded] = useState(false)
+
     return (
         <div className='h-screen'>
             {/* Hero flex container */}
@@ -45,10 +48,10 @@ export default function HomePage({ }: Props) {
 
                 {/* Profile picture */}
                 <div className='dp-div'>
-                    <div className='glow1'>
+                    <div className={`glow1 ${dpLoaded ? '' : 'hidden'}`}>
                         <div className="glow2">
                             <div>
-                                <img src="dp.jpg" alt="profile picture" className='dp' />
+                                <img src="dp.jpg" alt="profile picture" className='dp' onLoad={() => setDpLoaded(true)} />
                             </div>
                         </div>
                     </div>

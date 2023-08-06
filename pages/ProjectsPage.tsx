@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useRef, useEffect} from 'react'
+import React, { useRef, useEffect } from 'react'
 import HeadingLine from '@/components/HeadingLine'
 import ProjectCard from '@/components/ProjectCard'
 import { gameStack } from '@/myutils/gameStack'
@@ -9,7 +9,8 @@ import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOn
 import { projectStack } from '@/myutils/projectStack'
 import { ScrollingCarousel } from '@trendyol-js/react-carousel'
 import '../styles/carouselstyle.css'
-import CarouselArrow, {Direction} from '@/components/CarouselArrow'
+import CarouselArrow, { Direction } from '@/components/CarouselArrow'
+import { motion } from 'framer-motion'
 
 type Props = {}
 
@@ -41,7 +42,7 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
         if (!projectCarouselInnerDiv?.classList.contains(projectCarouselInnerDivClass)) {
             projectCarouselInnerDiv?.classList.add(projectCarouselInnerDivClass);
         }
-        
+
         gameCarouselInnerDiv = gameCarouselParentDiv?.current?.firstChild?.lastChild as HTMLDivElement;
         if (!gameCarouselInnerDiv?.classList.contains(gameCarouselInnerDivClass)) {
             gameCarouselInnerDiv?.classList.add(gameCarouselInnerDivClass);
@@ -70,7 +71,20 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                             {
                                 projectStack.map((project, index) => {
                                     return (
-                                        <div key={index}>
+                                        <motion.div key={index}
+                                            variants={{
+                                                hidden: {
+                                                    opacity: 0,
+                                                    x: 200
+                                                },
+                                                visible: {
+                                                    opacity: 1,
+                                                    x: 0
+                                                }
+                                            }}
+                                            initial="hidden"
+                                            animate={animationControls}
+                                            transition={{ delay: 0.25 * index, duration: 0.5, ease: 'backOut' }} >
                                             <ProjectCard
                                                 image={project.image}
                                                 title={project.title}
@@ -79,7 +93,7 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                                                 gitHubURL={project.gitHubURL}
                                                 demoURL={project.demoURL}
                                             />
-                                        </div>
+                                        </motion.div>
                                     )
                                 })
                             }
@@ -103,7 +117,20 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                             {
                                 gameStack.map((game, index) => {
                                     return (
-                                        <div key={index}>
+                                        <motion.div key={index}
+                                            variants={{
+                                                hidden: {
+                                                    opacity: 0,
+                                                    x: 200,
+                                                },
+                                                visible: {
+                                                    opacity: 1,
+                                                    x: 0,
+                                                }
+                                            }}
+                                            initial="hidden"
+                                            animate={animationControls}
+                                            transition={{ delay: 0.125 * index, duration: 0.5, ease: 'backOut' }} >
                                             <GameCard
                                                 title={game.title}
                                                 logoSrc={game.iconSrc}
@@ -111,7 +138,7 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                                                 playStoreLink={game.playStoreLink}
                                                 appStoreLink={game.appStoreLink}
                                             />
-                                        </div>
+                                        </motion.div>
                                     )
                                 })
                             }

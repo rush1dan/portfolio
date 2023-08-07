@@ -26,7 +26,7 @@ export default function SkillsPage({ }: Props) {
 function SkillsPageContent({ animationControls, otherProps }: AnimateableComponentProps)
 {
     const mediaQueries: MediaQueryDefault = useMediaQueries(defaultMediaQueries);
-    const lottieSize: string = mediaQueries.lg ? '300px' : (mediaQueries.md ? '250px' : '200px')
+    const lottieSize: string = mediaQueries.xl ? '300px' : (mediaQueries.lg ? '250px' : (mediaQueries.md ? '250px' : '200px'));
 
     return (
         <div className='h-screen snap-center bg-gradient-radial from-[rgb(54,54,54)] from-5% to-[rgb(36,36,36)] to-70%'>
@@ -37,7 +37,7 @@ function SkillsPageContent({ animationControls, otherProps }: AnimateableCompone
                 lineWidth='w-[30vw]'
             />
             {/* Main Flex Container */}
-            <div className='pt-20 h-full flex flex-col lg:flex-row items-center justify-center lg:space-x-40 lg:space-y-0 space-y-8'>
+            <div className='pt-20 h-full flex flex-col xl:flex-row items-center justify-center 2xl:space-x-40 xl:space-x-12 xl:space-y-0 space-y-8'>
 
                 {/* Lottie animation */}
                 <Player
@@ -48,7 +48,7 @@ function SkillsPageContent({ animationControls, otherProps }: AnimateableCompone
                 ></Player>
 
                 {/* Skill flex container */}
-                <div className='flex flex-col lg:space-y-24 space-y-10'>
+                <div className='flex flex-col xl:space-y-24 space-y-10'>
                     <SkillCategory category='Front End' skillList={otherProps.frontEndSkillList} mediaQuery={mediaQueries} animationControls={animationControls} />
                     <SkillCategory category='Back End' skillList={otherProps.backEndSkillList} mediaQuery={mediaQueries} animationControls={animationControls} />
                     <SkillCategory category='Game Dev' skillList={otherProps.gameDevSkillList} mediaQuery={mediaQueries} animationControls={animationControls} />

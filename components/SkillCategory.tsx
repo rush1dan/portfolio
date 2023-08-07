@@ -13,7 +13,7 @@ type SkillCategoryProps = AnimateableComponentProps & {
 }
 
 export default function SkillCategory({ category, skillList, mediaQuery, iconBg = false, animationControls }: SkillCategoryProps) {
-    const iconSize: number = mediaQuery.lg ? 3.5 : (mediaQuery.md ? 3 : 2.5);
+    const iconSize: number = mediaQuery.lg ? 3.5 : (mediaQuery.md ? 3 : 2.25);
     const categoryHeaderSizeClass: string = mediaQuery.lg ? 'text-2xl' : (mediaQuery.md ? 'text-xl' : 'text-base');
 
     return (

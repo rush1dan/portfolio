@@ -24,11 +24,11 @@ function ContactPageContent({ animationControls }: AnimateableComponentProps) {
                     lineWidth='w-[20vw]'
                 />
                 {/* Contact Form */}
-                <div className="absolute top-0 w-full h-[calc(100%-11rem)]">
+                <div className="absolute top-0 w-full h-[calc(100%-10rem)]">
                     <ContactFormSection />
                 </div>
                 {/* Footer */}
-                <div className="absolute bottom-0 w-full h-44">
+                <div className="absolute bottom-0 w-full h-[10rem]">
                     <Footer />
                 </div>
             </div>
@@ -66,6 +66,21 @@ type FooterProps = {}
 
 function Footer({ }: FooterProps) {
     return (
-        <div className='h-full w-full bg-[rgb(46,47,49)]'></div>
+        <div className='h-full w-full bg-[rgb(46,47,49)] relative'>
+            <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-start space-y-4'>
+                <div className='flex flex-row items-center justify-center space-x-2'>
+                    <div className='w-6 h-6'>
+                        <img src="icons/profile.svg" alt="Profile Icon" />
+                    </div>
+                    <p className='font-medium text-navColor text-center'>Rushidan Islam</p>
+                </div>
+                <div className='flex flex-row items-center justify-center space-x-2'>
+                    <div className='w-6 h-6'>
+                        <img src="icons/location.svg" alt="Profile Icon" />
+                    </div>
+                    <p className='font-medium text-navColor text-center'>Dhaka, Bangladesh</p>
+                </div>
+            </div>
+        </div>
     )
 }

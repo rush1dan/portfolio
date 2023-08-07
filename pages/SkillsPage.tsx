@@ -26,6 +26,7 @@ export default function SkillsPage({ }: Props) {
 function SkillsPageContent({ animationControls, otherProps }: AnimateableComponentProps)
 {
     const mediaQueries: MediaQueryDefault = useMediaQueries(defaultMediaQueries);
+    const lottieSize: string = mediaQueries.lg ? '300px' : (mediaQueries.md ? '250px' : '200px')
 
     return (
         <div className='h-screen snap-center bg-gradient-radial from-[rgb(54,54,54)] from-5% to-[rgb(36,36,36)] to-70%'>
@@ -36,14 +37,14 @@ function SkillsPageContent({ animationControls, otherProps }: AnimateableCompone
                 lineWidth='w-[30vw]'
             />
             {/* Main Flex Container */}
-            <div className='h-full flex flex-row items-center justify-center space-x-40'>
+            <div className='pt-20 h-full flex flex-col md:flex-row items-center justify-center space-x-40 space-y-14'>
 
                 {/* Lottie animation */}
                 <Player
                     autoplay
                     loop
                     src="developer_lottie.json"
-                    style={{ height: "300px", width: "300px" }}
+                    style={{ height: `${lottieSize}`, width: `${lottieSize}` }}
                 ></Player>
 
                 {/* Skill flex container */}

@@ -13,13 +13,13 @@ type SkillCategoryProps = AnimateableComponentProps & {
 }
 
 export default function SkillCategory({ category, skillList, mediaQuery, iconBg = false, animationControls }: SkillCategoryProps) {
-    const iconSize: number = mediaQuery.lg ? 3.5 : (mediaQuery.md ? 2.5 : 1.75)
-    console.log(iconSize)
+    const iconSize: number = mediaQuery.lg ? 3.5 : (mediaQuery.md ? 3 : 2.5);
+    const categoryHeaderSizeClass: string = mediaQuery.lg ? 'text-2xl' : (mediaQuery.md ? 'text-xl' : 'text-base');
 
     return (
         <div>
             <div className='flex flex-row space-x-4 items-center'>
-                <p className='uppercase text-2xl w-40'>{category + ":"}</p>
+                <p className={`uppercase font-medium ${categoryHeaderSizeClass} w-[6.5rem] lg:w-40 md:w-32`}>{category + ":"}</p>
                 <div className='flex flex-row space-x-6'>
                     {
                         skillList?.map((skill, index) => {

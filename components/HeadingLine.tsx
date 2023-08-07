@@ -12,7 +12,7 @@ type HeadingLineProps = AnimateableComponentProps & {
 
 export default function HeadingLine({ animationControls, heading, marginPadding, lineWidth }: HeadingLineProps) {
     return (
-        <div className="relative">
+        <div className="relative z-10">
             <div className={`absolute w-full ${marginPadding}`}>
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                     <motion.div className={`absolute origin-left -translate-x-4 -scale-x-100 h-[1px] bg-slate-300 ${lineWidth} 

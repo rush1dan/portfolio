@@ -37,7 +37,7 @@ function SkillsPageContent({ animationControls, otherProps }: AnimateableCompone
                 lineWidth='w-[30vw]'
             />
             {/* Main Flex Container */}
-            <div className='pt-20 h-full flex flex-col md:flex-row items-center justify-center space-x-40 space-y-14'>
+            <div className='pt-20 h-full flex flex-col lg:flex-row items-center justify-center lg:space-x-40 lg:space-y-0 space-y-8'>
 
                 {/* Lottie animation */}
                 <Player
@@ -48,7 +48,7 @@ function SkillsPageContent({ animationControls, otherProps }: AnimateableCompone
                 ></Player>
 
                 {/* Skill flex container */}
-                <div className='flex flex-col space-y-24'>
+                <div className='flex flex-col lg:space-y-24 space-y-10'>
                     <SkillCategory category='Front End' skillList={otherProps.frontEndSkillList} mediaQuery={mediaQueries} animationControls={animationControls} />
                     <SkillCategory category='Back End' skillList={otherProps.backEndSkillList} mediaQuery={mediaQueries} animationControls={animationControls} />
                     <SkillCategory category='Game Dev' skillList={otherProps.gameDevSkillList} mediaQuery={mediaQueries} animationControls={animationControls} />

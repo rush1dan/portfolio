@@ -262,7 +262,7 @@ function InfoCard({ info, icons, rightAligned }: InfoCardProps) {
                 info.map((data, index) => {
                     return (
                         <div key={index} className={`flex ${rightAligned ? 'flex-row-reverse' : 'flex-row'} items-center gap-x-2`}>
-                            <img src={icons[index]} alt="" className='w-6 h-6' />
+                            <img src={icons[index]} alt="" className='lg:w-6 lg:h-6 w-5 h-5' />
                             <p className='lg:text-lg text-base font-medium'>{data}</p>
                         </div>
                     )

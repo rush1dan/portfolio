@@ -4,16 +4,19 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
 import HeadingLine from '@/components/HeadingLine'
+import { defaultMediaQueries, MediaQueryDefault } from '@/myutils/defaultMediaQueries'
+import useMediaQueries from 'media-queries-in-react'
 
-type Props = {}
+type AboutPageProps = {}
 
-export default function AboutPage({ }: Props) {
+export default function AboutPage({ }: AboutPageProps) {
     return (
         <AnimateOnView Component={AboutPageContent} />
     )
 }
 
 function AboutPageContent({ animationControls }: AnimateableComponentProps) {
+    const mediaQueries: MediaQueryDefault = useMediaQueries(defaultMediaQueries);
 
     const kolpoverseCard = <InfoCard
         info={['Game Programmer', 'Kolpoverse Studios', 'November, 2022 - March, 2023']}
@@ -28,7 +31,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
     const buetCard = <InfoCard
         info={['BSc in Mechanical Engineering,', 'Bangladesh University of Engineering and Technology', 'CGPA 3.45 out of 4.00', 'February, 2016 - February, 2021']}
         icons={['icons/gear.svg', 'icons/buet.png', 'icons/notebook.svg', 'icons/calendar.svg']}
-        rightAligned={true} />
+        rightAligned={mediaQueries.xl} />
 
     return (
         <div className='h-screen snap-center'>
@@ -68,7 +71,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                 </section>
 
                 {/* Experience/Education Headings Section*/}
-                <div className='pt-4 w-full flex items-center justify-center space-x-[40rem] flex-row'>
+                <div className='pt-4 w-full flex items-center justify-center xl:space-x-[40rem] flex-row'>
 
                     {/* Education Heading */}
                     <HeadingLine
@@ -104,7 +107,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                     transition={{ duration: 0.5, delay: 0.5 }}>
 
                     {/* Experience Top */}
-                    <motion.div className='relative bg-headingColor w-24 h-1 origin-left'
+                    <motion.div className='relative bg-headingColor xl:w-24 h-1 origin-left'
                         variants={{
                             hidden: {
                                 scaleX: 0,
@@ -118,7 +121,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                         transition={{ duration: 0.25, delay: 1 }}>
 
                         {/* Description */}
-                        <motion.div className='absolute left-32 h-12 -top-14 w-96'
+                        <motion.div className='absolute xl:left-32 h-12 -top-14 w-96'
                             variants={{
                                 hidden: {
                                     x: 300,
@@ -137,7 +140,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                     </motion.div>
 
                     {/* Education Middle */}
-                    <motion.div className='relative bg-headingColor w-24 h-1 -scale-x-100 -translate-x-12 origin-left'
+                    <motion.div className='relative bg-headingColor xl:w-24 h-1 -scale-x-100 -translate-x-12 origin-left'
                         variants={{
                             hidden: {
                                 scaleX: 0,
@@ -151,7 +154,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                         transition={{ duration: 0.25, delay: 1 }}>
 
                         {/* Description */}
-                        <motion.div className='absolute left-32 h-12 -top-[4.5rem] w-[34rem] -scale-x-100 text-right'
+                        <motion.div className='absolute xl:left-32 h-12 -top-[4.5rem] w-[34rem] -scale-x-100 text-right'
                             variants={{
                                 hidden: {
                                     x: 300,
@@ -171,7 +174,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                     </motion.div>
 
                     {/* Experience Bottom */}
-                    <motion.div className='relative bg-headingColor w-24 h-1 origin-left'
+                    <motion.div className='relative bg-headingColor xl:w-24 h-1 origin-left'
                         variants={{
                             hidden: {
                                 scaleX: 0,
@@ -185,7 +188,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                         transition={{ duration: 0.25, delay: 1 }}>
 
                         {/* Description */}
-                        <motion.div className='absolute left-32 h-12 -top-14 w-96'
+                        <motion.div className='absolute xl:left-32 h-12 -top-14 w-96'
                             variants={{
                                 hidden: {
                                     x: 300,

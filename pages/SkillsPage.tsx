@@ -5,13 +5,12 @@ import React from 'react'
 import SkillCategory from '@/components/SkillCategory'
 import HeadingLine from '@/components/HeadingLine'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
-import { MediaQuery } from '@/myutils/defaultMediaQueries'
+import { defaultMediaQueries, MediaQueryDefault } from '@/myutils/defaultMediaQueries'
+import useMediaQueries from 'media-queries-in-react'
 
-type SkillsPageProps = MediaQuery & {
+type SkillsPageProps = {}
 
-}
-
-export default function SkillsPage({ mediaQuery }: SkillsPageProps) {
+export default function SkillsPage({}: SkillsPageProps) {
     // [iconSrc, iconAltText, hoverIconSrc, hoverIconAltText, hoverTitle]
 
     const frontEndSkillList = ["html", "css", "tailwindcss", "javascript", "typescript", "react", "redux", "flutter"]
@@ -20,13 +19,14 @@ export default function SkillsPage({ mediaQuery }: SkillsPageProps) {
     const languageSkillList = ["cpp", "csharp", "python"]
 
     return (
-        <AnimateOnView Component={SkillsPageContent} mediaQuery={mediaQuery} otherProps={{ frontEndSkillList, backEndSkillList, gameDevSkillList, languageSkillList }} />
+        <AnimateOnView Component={SkillsPageContent} otherProps={{ frontEndSkillList, backEndSkillList, gameDevSkillList, languageSkillList }} />
     )
 }
 
-function SkillsPageContent({ animationControls, mediaQuery, otherProps }: AnimateableComponentProps)
+function SkillsPageContent({ animationControls, otherProps }: AnimateableComponentProps)
 {
-    const lottieSize: string = mediaQuery?.xl ? '300px' : (mediaQuery?.lg ? '250px' : (mediaQuery?.md ? '250px' : '200px'));
+    const mediaQueries: MediaQueryDefault = useMediaQueries(defaultMediaQueries);
+    const lottieSize: string = mediaQueries.xl ? '300px' : (mediaQueries.lg ? '250px' : (mediaQueries.md ? '250px' : '200px'));
 
     return (
         <div className='h-screen snap-center bg-gradient-radial from-[rgb(54,54,54)] from-5% to-[rgb(36,36,36)] to-70%'>
@@ -49,10 +49,10 @@ function SkillsPageContent({ animationControls, mediaQuery, otherProps }: Animat
 
                 {/* Skill flex container */}
                 <div className='flex flex-col xl:space-y-24 space-y-10'>
-                    <SkillCategory category='Front End' skillList={otherProps.frontEndSkillList} mediaQuery={mediaQuery} animationControls={animationControls} />
-                    <SkillCategory category='Back End' skillList={otherProps.backEndSkillList} mediaQuery={mediaQuery} animationControls={animationControls} />
-                    <SkillCategory category='Game Dev' skillList={otherProps.gameDevSkillList} mediaQuery={mediaQuery} animationControls={animationControls} />
-                    <SkillCategory category='Languages' skillList={otherProps.languageSkillList} mediaQuery={mediaQuery} animationControls={animationControls} />
+                    <SkillCategory category='Front End' skillList={otherProps.frontEndSkillList} mediaQuery={mediaQueries} animationControls={animationControls} />
+                    <SkillCategory category='Back End' skillList={otherProps.backEndSkillList} mediaQuery={mediaQueries} animationControls={animationControls} />
+                    <SkillCategory category='Game Dev' skillList={otherProps.gameDevSkillList} mediaQuery={mediaQueries} animationControls={animationControls} />
+                    <SkillCategory category='Languages' skillList={otherProps.languageSkillList} mediaQuery={mediaQueries} animationControls={animationControls} />
                 </div>
             </div>
         </div>

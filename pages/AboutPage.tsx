@@ -52,7 +52,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                     />
 
                     {/* Description */}
-                    <motion.p className='xl:pt-14 pt-8 px-4 max-w-6xl font-medium text-sm md:text-base text-justify'
+                    <motion.p className='xl:pt-14 pt-8 px-4 max-w-6xl font-medium text-sm md:text-base xl:text-lg text-justify'
                         variants={{
                             hidden: {
                                 opacity: 0,

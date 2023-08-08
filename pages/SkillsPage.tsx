@@ -26,14 +26,14 @@ export default function SkillsPage({}: SkillsPageProps) {
 function SkillsPageContent({ animationControls, otherProps }: AnimateableComponentProps)
 {
     const mediaQueries: MediaQueryDefault = useMediaQueries(defaultMediaQueries);
-    const lottieSize: string = mediaQueries.xl ? '300px' : (mediaQueries.lg ? '250px' : (mediaQueries.md ? '250px' : '200px'));
+    const lottieSize: string = mediaQueries.xl ? '300px' : (mediaQueries.lg ? '250px' : (mediaQueries.md ? '250px' : (mediaQueries.thin ? '200px' : '150px')));
 
     return (
         <div className='h-screen snap-center bg-gradient-radial from-[rgb(54,54,54)] from-5% to-[rgb(36,36,36)] to-70%'>
             <HeadingLine
                 animationControls={animationControls}
                 heading='SKILLS'
-                marginPadding='mt-32'
+                marginPadding='mt-28'
                 lineWidth='w-[30vw]'
             />
             {/* Main Flex Container */}

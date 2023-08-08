@@ -1,10 +1,12 @@
-export type MediaQueryDefault = {
-    sm: boolean,
-    md: boolean,
-    lg: boolean,
-    xl: boolean,
-    xxl: boolean,
-    desktop: boolean
+export type MediaQuery = {
+    mediaQuery?: {
+        sm: boolean,
+        md: boolean,
+        lg: boolean,
+        xl: boolean,
+        xxl: boolean,
+        desktop: boolean
+    }
 }
 
 export const defaultMediaQueries = {

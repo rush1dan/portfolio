@@ -25,12 +25,6 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
         icons={['icons/laptop.svg', 'icons/AlphaPotato.png', 'icons/calendar.svg']}
         rightAligned={false} />
 
-    // const buetCard = <div className='p-4 bg-zinc-700 rounded-lg border-2 border-zinc-400 shadow-stone-900 shadow-lg'>
-    //     <p className='text-base font-medium'>BSc in Mechanical Engineering,</p>
-    //     <p className='text-base font-medium'>Bangladesh University of Engineering and Technology</p>
-    //     <p className='text-base font-medium'>CGPA 3.45 out of 4.00</p>
-    //     <p className='text-base font-medium'>Attended: 2016-2021</p>
-    // </div>
     const buetCard = <InfoCard
         info={['BSc in Mechanical Engineering,', 'Bangladesh University of Engineering and Technology', 'CGPA 3.45 out of 4.00', 'February, 2016 - February, 2021']}
         icons={['icons/gear.svg', 'icons/buet.png', 'icons/notebook.svg', 'icons/calendar.svg']}

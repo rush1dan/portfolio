@@ -7,9 +7,11 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 
-type Props = {}
+type HeaderProps = {
 
-export default function Header({ }: Props) {
+}
+
+export default function Header({  }: HeaderProps) {
     const [socialHovered, setSocialHovered] = useState(-1);
     const socialIconColor = 'rgb(208,210,216)'
     const socialIconHoverColor = 'rgb(255,239,156)'

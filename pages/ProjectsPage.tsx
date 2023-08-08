@@ -21,34 +21,6 @@ export default function ProjectsPage({ }: Props) {
 
 function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
 
-    // Scrolling Carousel Prep:
-
-    //Find the scrolling carousel component structure here: 
-    //https://github.com/Trendyol/react-carousel/blob/master/src/components/scrolling-carousel/index.tsx
-
-    const projectCarouselParentDiv = useRef<HTMLDivElement>(null);
-    const gameCarouselParentDiv = useRef<HTMLDivElement>(null);
-
-    let projectCarouselInnerDiv: HTMLElement | undefined;
-    let gameCarouselInnerDiv: HTMLElement | undefined;
-
-    const projectCarouselInnerDivClass = 'projectCarouselInnerDiv';
-    const gameCarouselInnerDivClass = 'gameCarouselInnerDiv';
-
-    useEffect(() => {
-
-        projectCarouselInnerDiv = projectCarouselParentDiv?.current?.firstChild?.lastChild as HTMLDivElement;
-        if (!projectCarouselInnerDiv?.classList.contains(projectCarouselInnerDivClass)) {
-            projectCarouselInnerDiv?.classList.add(projectCarouselInnerDivClass);
-        }
-
-        gameCarouselInnerDiv = gameCarouselParentDiv?.current?.firstChild?.lastChild as HTMLDivElement;
-        if (!gameCarouselInnerDiv?.classList.contains(gameCarouselInnerDivClass)) {
-            gameCarouselInnerDiv?.classList.add(gameCarouselInnerDivClass);
-        }
-
-    }, [projectCarouselParentDiv, gameCarouselParentDiv]);
-
     return (
         <div className='h-screen snap-center'>
             <div className="h-[12%]"></div>
@@ -61,43 +33,41 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                         lineWidth='w-[10vw]'
                     />
                     <div className="h-6"></div>
-                    <div ref={projectCarouselParentDiv}>
-                        {/* <ScrollingCarousel
-                            className='relative'
-                            leftIcon={<CarouselArrow className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2' direction={Direction.Left} />}
-                            rightIcon={<CarouselArrow className='absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2' direction={Direction.Right} />}
-                        >
-                            {
-                                projectStack.map((project, index) => {
-                                    return (
-                                        <motion.div key={index}
-                                            variants={{
-                                                hidden: {
-                                                    opacity: 0,
-                                                    x: 200
-                                                },
-                                                visible: {
-                                                    opacity: 1,
-                                                    x: 0
-                                                }
-                                            }}
-                                            initial="hidden"
-                                            animate={animationControls}
-                                            transition={{ delay: 0.25 * index, duration: 0.5, ease: 'backOut' }} >
-                                            <ProjectCard
-                                                image={project.image}
-                                                title={project.title}
-                                                description={project.description}
-                                                techStackUsed={project.techStackUsed}
-                                                gitHubURL={project.gitHubURL}
-                                                demoURL={project.demoURL}
-                                            />
-                                        </motion.div>
-                                    )
-                                })
-                            }
-                        </ScrollingCarousel> */}
-                    </div>
+                    {/* <ScrollingCarousel
+                        className='relative'
+                        leftIcon={<CarouselArrow className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2' direction={Direction.Left} />}
+                        rightIcon={<CarouselArrow className='absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2' direction={Direction.Right} />}
+                    >
+                        {
+                            projectStack.map((project, index) => {
+                                return (
+                                    <motion.div key={index}
+                                        variants={{
+                                            hidden: {
+                                                opacity: 0,
+                                                x: 200
+                                            },
+                                            visible: {
+                                                opacity: 1,
+                                                x: 0
+                                            }
+                                        }}
+                                        initial="hidden"
+                                        animate={animationControls}
+                                        transition={{ delay: 0.25 * index, duration: 0.5, ease: 'backOut' }} >
+                                        <ProjectCard
+                                            image={project.image}
+                                            title={project.title}
+                                            description={project.description}
+                                            techStackUsed={project.techStackUsed}
+                                            gitHubURL={project.gitHubURL}
+                                            demoURL={project.demoURL}
+                                        />
+                                    </motion.div>
+                                )
+                            })
+                        }
+                    </ScrollingCarousel> */}
                 </div>
                 <div className="h-1/2 w-full flex flex-col items-center">
                     <HeadingLine
@@ -107,7 +77,6 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                         lineWidth='w-[10vw]'
                     />
                     <div className="h-6"></div>
-                    <div ref={gameCarouselParentDiv}>
                         {/* <ScrollingCarousel
                             className='relative'
                             leftIcon={<CarouselArrow className='absolute left-0 top-1/2 -translate-x-1/2' direction={Direction.Left} />}
@@ -142,7 +111,6 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                                 })
                             }
                         </ScrollingCarousel> */}
-                    </div>
                 </div>
             </div>
         </div>

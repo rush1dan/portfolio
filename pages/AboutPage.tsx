@@ -14,6 +14,28 @@ export default function AboutPage({ }: Props) {
 }
 
 function AboutPageContent({ animationControls }: AnimateableComponentProps) {
+
+    const kolpoverseCard = <InfoCard
+        info={['Game Programmer', 'Kolpoverse Studios', 'November, 2022 - March, 2023']}
+        icons={['icons/laptop.svg', 'icons/Kolpoverse.png', 'icons/calendar.svg']}
+        rightAligned={false} />
+
+    const alphapotatoCard = <InfoCard
+        info={['Game Programmer', 'Alpha Potato', 'March, 2020 - November, 2022']}
+        icons={['icons/laptop.svg', 'icons/AlphaPotato.png', 'icons/calendar.svg']}
+        rightAligned={false} />
+
+    // const buetCard = <div className='p-4 bg-zinc-700 rounded-lg border-2 border-zinc-400 shadow-stone-900 shadow-lg'>
+    //     <p className='text-base font-medium'>BSc in Mechanical Engineering,</p>
+    //     <p className='text-base font-medium'>Bangladesh University of Engineering and Technology</p>
+    //     <p className='text-base font-medium'>CGPA 3.45 out of 4.00</p>
+    //     <p className='text-base font-medium'>Attended: 2016-2021</p>
+    // </div>
+    const buetCard = <InfoCard
+        info={['BSc in Mechanical Engineering,', 'Bangladesh University of Engineering and Technology', 'CGPA 3.45 out of 4.00', 'February, 2016 - February, 2021']}
+        icons={['icons/gear.svg', 'icons/buet.png', 'icons/notebook.svg', 'icons/calendar.svg']}
+        rightAligned={true} />
+
     return (
         <div className='h-screen snap-center'>
             <div className="h-24"></div>
@@ -116,11 +138,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                             initial="hidden"
                             animate={animationControls}
                             transition={{ duration: 0.5, delay: 1.25 }}>
-                            <div className='p-4 bg-zinc-700 rounded-lg border-2 border-zinc-400 shadow-stone-900 shadow-lg'>
-                                <p className='text-lg font-medium'>Game Programmer</p>
-                                <p className='text-lg font-medium'>Kolpoverse Studio</p>
-                                <p className='text-lg font-medium'>November, 2022 - March, 2023</p>
-                            </div>
+                            {kolpoverseCard}
                         </motion.div>
                     </motion.div>
 
@@ -139,7 +157,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                         transition={{ duration: 0.25, delay: 1 }}>
 
                         {/* Description */}
-                        <motion.div className='absolute left-32 h-12 -top-[4.5rem] w-[32rem] -scale-x-100 text-right'
+                        <motion.div className='absolute left-32 h-12 -top-[4.5rem] w-[34rem] -scale-x-100 text-right'
                             variants={{
                                 hidden: {
                                     x: 300,
@@ -154,12 +172,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                             initial="hidden"
                             animate={animationControls}
                             transition={{ duration: 0.5, delay: 1.25 }}>
-                            <div className='p-4 bg-zinc-700 rounded-lg border-2 border-zinc-400 shadow-stone-900 shadow-lg'>
-                                <p className='text-base font-medium'>BSc in Mechanical Engineering,</p>
-                                <p className='text-base font-medium'>Bangladesh University of Engineering and Technology</p>
-                                <p className='text-base font-medium'>CGPA 3.45 out of 4.00</p>
-                                <p className='text-base font-medium'>Attended: 2016-2021</p>
-                            </div>
+                            {buetCard}
                         </motion.div>
                     </motion.div>
 
@@ -192,15 +205,34 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                             initial="hidden"
                             animate={animationControls}
                             transition={{ duration: 0.5, delay: 1.25 }}>
-                            <div className='p-4 bg-zinc-700 rounded-lg border-2 border-zinc-400 shadow-stone-900 shadow-lg'>
-                                <p className='text-lg font-medium'>Game Programmer</p>
-                                <p className='text-lg font-medium'>Alpha Potato</p>
-                                <p className='text-lg font-medium'>March, 2020 - November, 2022</p>
-                            </div>
+                            {alphapotatoCard}
                         </motion.div>
                     </motion.div>
                 </motion.div>
             </div>
+        </div>
+    )
+}
+
+type InfoCardProps = {
+    info: string[],
+    icons: string[],
+    rightAligned?: boolean
+}
+
+function InfoCard({ info, icons, rightAligned }: InfoCardProps) {
+    return (
+        <div className='p-4 bg-zinc-700 rounded-lg border-2 border-zinc-400 shadow-stone-900 shadow-lg'>
+            {
+                info.map((data, index) => {
+                    return (
+                        <div key={index} className={`flex ${rightAligned ? 'flex-row-reverse' : 'flex-row'} items-center gap-x-2`}>
+                            <img src={icons[index]} alt="" className='w-6 h-6' />
+                            <p className='text-lg font-medium'>{data}</p>
+                        </div>
+                    )
+                })
+            }
         </div>
     )
 }

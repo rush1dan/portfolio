@@ -1,5 +1,3 @@
-'use client'
-
 import AboutPage from '@/pages/AboutPage'
 import ContactPage from '@/pages/ContactPage'
 import Header from '@/components/Header'

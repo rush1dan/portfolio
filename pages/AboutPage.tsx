@@ -48,7 +48,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                         heading='ABOUT'
                         marginPadding='mt-4'
                         lineWidth='w-[10vw]'
-                        textSizeClass={mediaQueries.xl ? undefined : 'text-2xl' }
+                        textSizeClass={mediaQueries.xl ? undefined : 'text-2xl'}
                     />
 
                     {/* Description */}
@@ -72,7 +72,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                 </section>
 
                 {/* Only For XL Screens */}
-                
+
                 {
                     mediaQueries.xl &&
                     <>
@@ -221,12 +221,38 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                                 lineWidth='w-[5vw]'
                                 textSizeClass='text-2xl'
                             />
-                            <div className='md:w-[32rem] w-[19rem]'>
+                            <motion.div className='md:w-[32rem] w-[19rem]'
+                                variants={{
+                                    hidden: {
+                                        x: 300,
+                                        opacity: 0
+                                    },
+                                    visible: {
+                                        x: 0,
+                                        opacity: 1
+                                    }
+                                }}
+                                initial="hidden"
+                                animate={animationControls}
+                                transition={{ duration: 0.5, delay: 0, ease: 'easeOut' }}>
                                 {kolpoverseCard}
-                            </div>
-                            <div className='md:w-[32rem] w-[19rem]'>
+                            </motion.div>
+                            <motion.div className='md:w-[32rem] w-[19rem]'
+                                variants={{
+                                    hidden: {
+                                        x: 300,
+                                        opacity: 0
+                                    },
+                                    visible: {
+                                        x: 0,
+                                        opacity: 1
+                                    }
+                                }}
+                                initial="hidden"
+                                animate={animationControls}
+                                transition={{ duration: 0.5, delay: 0.15, ease: 'easeOut' }}>
                                 {alphapotatoCard}
-                            </div>
+                            </motion.div>
                         </div>
                         {/* Education */}
                         <div className='pt-2 w-full flex flex-col items-center justify-center gap-y-8'>
@@ -238,9 +264,22 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                                 lineWidth='w-[5vw]'
                                 textSizeClass='text-2xl'
                             />
-                            <div className='md:w-[32rem] w-[19rem]'>
+                            <motion.div className='md:w-[32rem] w-[19rem]'
+                                variants={{
+                                    hidden: {
+                                        x: 300,
+                                        opacity: 0
+                                    },
+                                    visible: {
+                                        x: 0,
+                                        opacity: 1
+                                    }
+                                }}
+                                initial="hidden"
+                                animate={animationControls}
+                                transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut'}}>
                                 {buetCard}
-                            </div>
+                            </motion.div>
                         </div>
                     </>
                 }

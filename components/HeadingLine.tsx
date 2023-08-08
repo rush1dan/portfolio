@@ -7,10 +7,11 @@ import { motion } from 'framer-motion'
 type HeadingLineProps = AnimateableComponentProps & {
     heading: string,
     marginPadding: string,
-    lineWidth: string | number
+    lineWidth: string | number,
+    textSizeClass?: string
 }
 
-export default function HeadingLine({ animationControls, heading, marginPadding, lineWidth }: HeadingLineProps) {
+export default function HeadingLine({ animationControls, heading, marginPadding, lineWidth, textSizeClass }: HeadingLineProps) {
     return (
         <div className="relative z-10">
             <div className={`absolute w-full ${marginPadding}`}>
@@ -30,7 +31,7 @@ export default function HeadingLine({ animationControls, heading, marginPadding,
                         animate={animationControls}
                         transition={{ duration: 0.5, ease: 'easeInOut' }} >
                     </motion.div>
-                    <motion.h2 className="text-3xl text-headingColor font-extrabold inline"
+                    <motion.h2 className={`${textSizeClass ?? 'text-3xl'} text-headingColor font-extrabold inline`}
                         variants={{
                             hidden: {
                                 opacity: 0.5,

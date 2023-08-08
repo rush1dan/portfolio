@@ -7,7 +7,6 @@ import { gameStack } from '@/myutils/gameStack'
 import GameCard from '@/components/GameCard'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
 import { projectStack } from '@/myutils/projectStack'
-import { ScrollingCarousel } from '@trendyol-js/react-carousel'
 import '../styles/carouselstyle.css'
 import CarouselArrow, { Direction } from '@/components/CarouselArrow'
 import { motion } from 'framer-motion'
@@ -63,7 +62,7 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                     />
                     <div className="h-6"></div>
                     <div ref={projectCarouselParentDiv}>
-                        <ScrollingCarousel
+                        {/* <ScrollingCarousel
                             className='relative'
                             leftIcon={<CarouselArrow className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2' direction={Direction.Left} />}
                             rightIcon={<CarouselArrow className='absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2' direction={Direction.Right} />}
@@ -97,7 +96,7 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                                     )
                                 })
                             }
-                        </ScrollingCarousel>
+                        </ScrollingCarousel> */}
                     </div>
                 </div>
                 <div className="h-1/2 w-full flex flex-col items-center">
@@ -109,7 +108,7 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                     />
                     <div className="h-6"></div>
                     <div ref={gameCarouselParentDiv}>
-                        <ScrollingCarousel
+                        {/* <ScrollingCarousel
                             className='relative'
                             leftIcon={<CarouselArrow className='absolute left-0 top-1/2 -translate-x-1/2' direction={Direction.Left} />}
                             rightIcon={<CarouselArrow className='absolute right-0 top-1/2 translate-x-1/2' direction={Direction.Right} />}
@@ -142,7 +141,7 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                                     )
                                 })
                             }
-                        </ScrollingCarousel>
+                        </ScrollingCarousel> */}
                     </div>
                 </div>
             </div>

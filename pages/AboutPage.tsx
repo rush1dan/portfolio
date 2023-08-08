@@ -49,12 +49,12 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                     <HeadingLine
                         animationControls={animationControls}
                         heading='ABOUT'
-                        marginPadding=''
+                        marginPadding='mt-4'
                         lineWidth='w-[10vw]'
                     />
 
                     {/* Description */}
-                    <motion.p className='pt-8 px-4 max-w-5xl font-medium text-sm md:text-base text-justify'
+                    <motion.p className='pt-14 px-4 max-w-6xl font-medium text-sm md:text-base text-justify'
                         variants={{
                             hidden: {
                                 opacity: 0,
@@ -74,7 +74,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                 </section>
 
                 {/* Experience/Education Headings Section*/}
-                <div className='pt-8 w-full flex items-center justify-center space-x-[40rem] flex-row'>
+                <div className='pt-4 w-full flex items-center justify-center space-x-[40rem] flex-row'>
 
                     {/* Education Heading */}
                     <HeadingLine

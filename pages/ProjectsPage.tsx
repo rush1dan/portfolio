@@ -52,8 +52,8 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
 
     return (
         <div className='h-screen snap-center'>
-            <div className="h-[13%]"></div>
-            <div className="flex flex-col items-center justify-start spacing-y-12 h-[87%]">
+            <div className="h-[12%]"></div>
+            <div className="flex flex-col items-center justify-start gap-y-8 h-[88%]">
                 <div className="h-1/2 w-full flex flex-col items-center">
                     <HeadingLine
                         animationControls={animationControls}

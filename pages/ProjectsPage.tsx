@@ -29,6 +29,17 @@ export default function ProjectsPage({ }: Props) {
 function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
     const mediaQueries: MediaQueryDefault = useMediaQueries(defaultMediaQueries);
 
+    const projects = projectStack.length;
+    const games = gameStack.length;
+
+    const projectCardsToShow = mediaQueries.xl ? 3 : 1;
+    const gameCardsToShow = mediaQueries.xl ? 6 : 1;
+
+    const [projectStart, setProjectStart] = useState(true);
+    const [projectEnd, setProjectEnd] = useState(false);
+    const [gameStart, setGameStart] = useState(true);
+    const [gameEnd, setGameEnd] = useState(false);
+
     const [swiperRefProject, setSwiperRefProject] = useState<SwiperClass>();
 
     const handlePreviousProject = useCallback(() => {
@@ -69,9 +80,11 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                         lineWidth='w-[10vw]'
                     />
                     <div className='relative mt-8'>
-                        <div className='absolute swiper-button-prev -translate-x-8 -translate-y-4' onClick={handlePreviousProject}>
+                        <div className={`absolute swiper-button-prev -translate-x-8 -translate-y-4 ${projectStart ? 'opacity-30 pointer-events-none' : ''}`}
+                            onClick={handlePreviousProject}>
                         </div>
-                        <div className='absolute swiper-button-next translate-x-8 -translate-y-4' onClick={handleNextProject}>
+                        <div className={`absolute swiper-button-next translate-x-8 -translate-y-4 ${projectEnd ? 'opacity-30 pointer-events-none' : ''}`}
+                            onClick={handleNextProject}>
                         </div>
                         <Swiper onSwiper={setSwiperRefProject} className='xl:w-[57rem] w-[19rem] h-[26rem]'
                             modules={[Navigation, Pagination]}
@@ -81,7 +94,23 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                             pagination={paginationOptionsProject}
                             grabCursor
                             uniqueNavElements
-                            watchOverflow>
+                            watchOverflow
+                            onActiveIndexChange={(s) => {
+                                if (s.activeIndex == 0)
+                                {
+                                    setProjectStart(true);
+                                }
+                                else if (s.activeIndex == (projects - projectCardsToShow))
+                                {
+                                    setProjectEnd(true);
+                                }
+                                else
+                                {
+                                    setProjectStart(false);
+                                    setProjectEnd(false);
+                                }
+                            }}
+                        >
                             <div className="swiper-pagination"></div>
                             {
                                 projectStack.map((project, index) => {
@@ -125,9 +154,11 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                         lineWidth='w-[10vw]'
                     />
                     <div className='relative mt-6'>
-                        <div className='absolute swiper-button-prev -translate-x-8' onClick={handlePreviousGame}>
+                        <div className={`absolute swiper-button-prev -translate-x-8 ${gameStart ? 'opacity-30 pointer-events-none' : ''}`}
+                            onClick={handlePreviousGame}>
                         </div>
-                        <div className='absolute swiper-button-next translate-x-8' onClick={handleNextGame}>
+                        <div className={`absolute swiper-button-next translate-x-8 ${gameEnd ? 'opacity-30 pointer-events-none' : ''}`}
+                            onClick={handleNextGame}>
                         </div>
                         <Swiper onSwiper={setSwiperRefGame} className='xl:w-[66rem] w-[11rem] h-[22rem]'
                             modules={[Navigation, Pagination]}
@@ -138,6 +169,21 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                             grabCursor
                             uniqueNavElements
                             watchOverflow
+                            onActiveIndexChange={(s) => {
+                                if (s.activeIndex == 0)
+                                {
+                                    setGameStart(true);  
+                                }
+                                else if (s.activeIndex == (games - gameCardsToShow))
+                                {
+                                    setGameEnd(true);
+                                }
+                                else
+                                {
+                                    setGameStart(false);
+                                    setGameEnd(false);
+                                }
+                            }}
                         >
                             <div className="swiper-pagination"></div>
                             {

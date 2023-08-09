@@ -250,3 +250,8 @@ body {
 .skill-icon {
   clip-path: circle(50%);
 }
+
+:root {
+  --swiper-navigation-color: rgb(214,211,209);
+  --swiper-pagination-color: rgb(214,211,209);
+}

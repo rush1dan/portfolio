@@ -99,10 +99,12 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                                 if (s.activeIndex == 0)
                                 {
                                     setProjectStart(true);
+                                    setProjectEnd(false);
                                 }
                                 else if (s.activeIndex == (projects - projectCardsToShow))
                                 {
                                     setProjectEnd(true);
+                                    setProjectStart(false);
                                 }
                                 else
                                 {
@@ -172,11 +174,13 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                             onActiveIndexChange={(s) => {
                                 if (s.activeIndex == 0)
                                 {
-                                    setGameStart(true);  
+                                    setGameStart(true);
+                                    setGameEnd(false);
                                 }
                                 else if (s.activeIndex == (games - gameCardsToShow))
                                 {
                                     setGameEnd(true);
+                                    setGameStart(false);
                                 }
                                 else
                                 {

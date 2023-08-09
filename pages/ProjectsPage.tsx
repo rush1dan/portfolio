@@ -7,7 +7,8 @@ import { gameStack } from '@/myutils/gameStack'
 import GameCard from '@/components/GameCard'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
 import { projectStack } from '@/myutils/projectStack'
-import CarouselArrow, { Direction } from '@/components/CarouselArrow'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
 import { motion } from 'framer-motion'
 
 type Props = {}
@@ -72,36 +73,41 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                         lineWidth='w-[10vw]'
                     />
                     <div className="h-6"></div>
-                        <div className='flex flex-row gap-x-6'>
+                    <Swiper className='w-[66rem]'
+                        spaceBetween={5}
+                        slidesPerView={6}
+                        >
                             {
                                 gameStack.map((game, index) => {
                                     return (
-                                        <motion.div key={index}
-                                            variants={{
-                                                hidden: {
-                                                    opacity: 0,
-                                                    x: 200,
-                                                },
-                                                visible: {
-                                                    opacity: 1,
-                                                    x: 0,
-                                                }
-                                            }}
-                                            initial="hidden"
-                                            animate={animationControls}
-                                            transition={{ delay: 0.125 * index, duration: 0.5, ease: 'backOut' }} >
-                                            <GameCard
-                                                title={game.title}
-                                                logoSrc={game.iconSrc}
-                                                demoSrc={game.demoSrc}
-                                                playStoreLink={game.playStoreLink}
-                                                appStoreLink={game.appStoreLink}
-                                            />
-                                        </motion.div>
+                                        <SwiperSlide key={index}>
+                                            <motion.div
+                                                variants={{
+                                                    hidden: {
+                                                        opacity: 0,
+                                                        x: 200,
+                                                    },
+                                                    visible: {
+                                                        opacity: 1,
+                                                        x: 0,
+                                                    }
+                                                }}
+                                                initial="hidden"
+                                                animate={animationControls}
+                                                transition={{ delay: 0.125 * index, duration: 0.5, ease: 'backOut' }} >
+                                                <GameCard
+                                                    title={game.title}
+                                                    logoSrc={game.iconSrc}
+                                                    demoSrc={game.demoSrc}
+                                                    playStoreLink={game.playStoreLink}
+                                                    appStoreLink={game.appStoreLink}
+                                                />
+                                            </motion.div>
+                                        </SwiperSlide>
                                     )
                                 })
                             }
-                        </div>
+                        </Swiper>
                 </div>
             </div>
         </div>

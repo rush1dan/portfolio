@@ -32,8 +32,8 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
     const projects = projectStack.length;
     const games = gameStack.length;
 
-    const projectCardsToShow = mediaQueries.xl ? 3 : 1;
-    const gameCardsToShow = mediaQueries.xl ? 6 : 1;
+    const projectCardsToShow = mediaQueries.lg ? 3 : 1;
+    const gameCardsToShow = mediaQueries.xl ? 6 : (mediaQueries.lg ? 5 : (mediaQueries.md ? 3 : 1));
 
     const [projectStart, setProjectStart] = useState(true);
     const [projectEnd, setProjectEnd] = useState(false);
@@ -86,10 +86,10 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                         <div className={`absolute swiper-button-next translate-x-8 -translate-y-4 ${projectEnd ? 'opacity-30 pointer-events-none' : ''}`}
                             onClick={handleNextProject}>
                         </div>
-                        <Swiper onSwiper={setSwiperRefProject} className='xl:w-[57rem] w-[19rem] h-[26rem]'
+                        <Swiper onSwiper={setSwiperRefProject} className='lg:w-[57rem] w-[19rem] h-[26rem]'
                             modules={[Navigation, Pagination]}
                             spaceBetween={0}
-                            slidesPerView={mediaQueries.xl ? 3 : 1}
+                            slidesPerView={projectCardsToShow}
                             slidesPerGroup={1}
                             pagination={paginationOptionsProject}
                             grabCursor
@@ -162,11 +162,11 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                         <div className={`absolute swiper-button-next translate-x-8 ${gameEnd ? 'opacity-30 pointer-events-none' : ''}`}
                             onClick={handleNextGame}>
                         </div>
-                        <Swiper onSwiper={setSwiperRefGame} className='xl:w-[66rem] w-[11rem] h-[22rem]'
+                        <Swiper onSwiper={setSwiperRefGame} className='xl:w-[66rem] lg:w-[56rem] md:w-[33rem] w-[11rem] h-[22rem]'
                             modules={[Navigation, Pagination]}
                             spaceBetween={0}
-                            slidesPerView={mediaQueries.xl? 6 : 1}
-                            slidesPerGroup={mediaQueries.xl ? 6 : 1}
+                            slidesPerView={gameCardsToShow}
+                            slidesPerGroup={gameCardsToShow}
                             pagination={paginationOptionsGame}
                             grabCursor
                             uniqueNavElements

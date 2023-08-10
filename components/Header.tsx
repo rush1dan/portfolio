@@ -1,18 +1,34 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useState } from 'react'
 import { SocialIcon } from 'react-social-icons'
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import Link from 'next/link'
+import '/styles/headerstyle.css'
 
 
 type HeaderProps = {}
 
-export default function Header({}: HeaderProps) {
+export default function Header({ }: HeaderProps) {
     const [socialHovered, setSocialHovered] = useState(-1);
     const socialIconColor = 'rgb(208,210,216)'
     const socialIconHoverColor = 'rgb(255,239,156)'
+
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const menuCardRef = useRef(null);
+
+    const animationControls = useAnimation();
+
+    useEffect(() => {
+        if (menuOpen) {
+            animationControls.start("visible");
+        }
+        else {
+            animationControls.start("hidden");
+        }
+    }, [menuOpen]);
 
     return (
         <header className='sticky top-0 p-5 flex flex-row items-center justify-between max-w-7xl mx-auto z-20'>
@@ -65,6 +81,39 @@ export default function Header({}: HeaderProps) {
                 <Link href="#projects" className='nav-button'>Projects</Link>
                 <Link href="#contact" className='nav-button'>Contact</Link>
             </motion.div>
-        </header>
+
+            {/* Hamburger Icon */}
+            <button className={`block hamburger md:hidden focus:outline-none ${menuOpen ? 'open' : ''}`}
+                onClick={(e) => setMenuOpen(!menuOpen)}>
+                <span className="hamburger-top"></span>
+                <span className="hamburger-middle"></span>
+                <span className="hamburger-bottom"></span>
+            </button>
+
+            {/* Mobile Menu */}
+            <div className="md:hidden">
+                <motion.div ref={menuCardRef}
+                    className={`absolute flex flex-col items-center justify-center py-8 mt-10 space-y-8 font-bold bg-cardBGColor mx-auto w-[75%] 
+                self-center left-6 right-6 shadow-stone-900 shadow-lg rounded-md ${menuOpen ? '' : 'pointer-events-none'}`}
+                    variants={{
+                        hidden: {
+                            opacity: 0,
+                            translateY: -500
+                        },
+                        visible: {
+                            opacity: 1,
+                            translateY: 0
+                        },
+                    }}
+                    initial="hidden"
+                    animate={animationControls}
+                    transition={{ duration: 0.5, ease: 'circOut' }}>
+                    <Link href="#about" className="menu-link" onClick={(e) => setMenuOpen(false)}>About</Link>
+                    <Link href="#skills" className="menu-link" onClick={(e) => setMenuOpen(false)}>Skills</Link>
+                    <Link href="#projects" className="menu-link" onClick={(e) => setMenuOpen(false)}>Projects</Link>
+                    <Link href="#contact" className="menu-link" onClick={(e) => setMenuOpen(false)}>Contact</Link>
+                </motion.div>
+            </div>
+        </header >
     )
 }

@@ -7,7 +7,7 @@ type Props = {}
 
 export default function HomePage({ }: Props) {
     const [text, count] = useTypewriter({
-        words: ["A Game Developer.", "A Software Engineer.", "An avid learner."],
+        words: ["A Software Engineer.", "A Game Developer.", "An avid learner."],
         loop: true,
         delaySpeed: 2000
     })

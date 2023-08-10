@@ -16,13 +16,13 @@ export default function HomePage({ }: Props) {
     const [dpLoaded, setDpLoaded] = useState(false)
 
     return (
-        <div className='h-screen'>
+        <div className='h-screen snap-center relative'>
             {/* Hero flex container */}
-            <div className='snap-center flex flex-col-reverse items-center justify-center space-y-10 mt-32
-            md:flex-row md:space-x-2 md:mt-40 lg:space-x-12'>
+            <div className='flex flex-col-reverse items-center justify-center space-y-10 
+            md:flex-row md:space-x-2 lg:space-x-12 absolute w-full md:top-[45%] top-[50%] -translate-y-1/2'>
 
                 {/* Self Description */}
-                <div className='flex flex-col items-center justify-center space-y-2 md:w-[24rem] lg:w-[32rem]'>
+                <div className='flex flex-col items-center justify-center space-y-2 md:w-[24rem] lg:w-[32rem] md:mt-4'>
 
                     {/* Introduction */}
                     <h1>

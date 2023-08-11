@@ -80,10 +80,12 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                         lineWidth='w-[10vw]'
                     />
                     <div className='relative mt-8'>
-                        <div className={`absolute swiper-button-prev -translate-x-8 -translate-y-4 ${projectStart ? 'opacity-30 pointer-events-none' : ''}`}
+                        <div className={`absolute ${projectCardsToShow >= projectStack.length ? 'hidden' : 'swiper-button-prev'} -translate-x-8 -translate-y-4
+                        ${projectStart ? 'opacity-30 pointer-events-none' : ''}`}
                             onClick={handlePreviousProject}>
                         </div>
-                        <div className={`absolute swiper-button-next translate-x-8 -translate-y-4 ${projectEnd ? 'opacity-30 pointer-events-none' : ''}`}
+                        <div className={`absolute ${projectCardsToShow >= projectStack.length ? 'hidden' : 'swiper-button-next'} translate-x-8 -translate-y-4 
+                        ${projectEnd ? 'opacity-30 pointer-events-none' : ''}`}
                             onClick={handleNextProject}>
                         </div>
                         <Swiper onSwiper={setSwiperRefProject} className='lg:w-[57rem] w-[19rem] h-[26rem]'

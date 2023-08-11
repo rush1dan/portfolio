@@ -2,7 +2,7 @@
 
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
 import HeadingLine from '@/components/HeadingLine'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import axios from 'axios'
 import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
 import lottieJson from '../public/loading_success_fail_lottie.json'
@@ -43,13 +43,36 @@ type ContactFormProps = {}
 
 function ContactFormSection({ }: ContactFormProps) {
 
-    const [emailData, setEmailData] = useState('')
-    const [subjectData, setSubjectData] = useState('')
-    const [messageData, setMessageData] = useState('')
+    type SegmentType = {
+        [key: string]: [number, number]
+    }
+
+    const lottieSegements: SegmentType = {
+        "loading": [420, 539],
+        "success": [239, 396],
+        "fail": [660, 826]
+    };
+    const [lottieState, setLottieState] = useState<string>("loading");
+    const [playState, setPlayState] = useState(false);
+    const [loopState, setLoopState] = useState(true);
+
+    const [submissionState, setSubmissionState] = useState(false);
+    const [emailData, setEmailData] = useState('');
+    const [subjectData, setSubjectData] = useState('');
+    const [messageData, setMessageData] = useState('');
+
+    const formRef = useRef<HTMLFormElement>(null);
 
     function SendPostRequest(event: React.FormEvent) {
         event.preventDefault();
+        setSubmissionState(true);
         console.log("Form Submit Requested");
+
+        setPlayState(true);
+        setLoopState(true);
+        setLottieState("loading");
+
+        // Axios post:
         axios.defaults.headers.post['Content-Type'] = 'application/json';
         axios.post('https://formsubmit.co/ajax/db65f7d1b09d1dfeaf8edd5e1257832d', {
             // name: "FormSubmit",
@@ -57,31 +80,40 @@ function ContactFormSection({ }: ContactFormProps) {
             subject: subjectData,
             message: messageData
         })
-            .then(response => console.log(response))
-            .catch(error => console.log(error));
+            .then(response => {
+                console.log(response);
+                setLoopState(false);
+                setLottieState("success");
+                formRef.current?.reset();
+            })
+            .catch(error => {
+                console.log(error);
+                setLoopState(false);
+                setLottieState("fail");
+            });
     }
 
     return (
         <section className='absolute w-full top-1/2 -translate-y-1/2'>
-            <div className="max-w-2xl mx-auto px-12 hidden">
-                <form action="#" className="space-y-8" method='post' onSubmit={(e) => SendPostRequest(e)}>
+            <div className={`max-w-2xl mx-auto px-12 ${submissionState ? 'hidden' : ''}`}>
+                <form action="#" className="space-y-8" method='post' ref={formRef} onSubmit={(e) => SendPostRequest(e)}>
                     <div>
                         <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-300">Your email</label>
                         <input type="email" id="email" name="email" className="text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 
-                        placeholder-gray-400 text-white shadow-sm-light" placeholder="" required
-                        onChange={(event) => setEmailData(event.target.value)}/>
+                        placeholder-gray-400 text-white shadow-sm-light" placeholder="" required 
+                            onChange={(event) => setEmailData(event.target.value)} />
                     </div>
                     <div>
                         <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-300">Subject</label>
                         <input type="text" id="subject" name="subject" className="block p-3 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 
                         placeholder-gray-400 text-white shadow-sm-light" placeholder="" required
-                        onChange={(event) => setSubjectData(event.target.value)}/>
+                            onChange={(event) => setSubjectData(event.target.value)} />
                     </div>
                     <div>
                         <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-400">Your message</label>
                         <textarea id="message" name="message" rows={6} className="block p-2.5 w-full text-sm rounded-lg shadow-sm border bg-gray-700 
                         border-gray-600 placeholder-gray-400 text-white" placeholder=""
-                        onChange={(event) => setMessageData(event.target.value)}></textarea>
+                            onChange={(event) => setMessageData(event.target.value)}></textarea>
                     </div>
                     <input type="hidden" name="_captcha" value="false" />
                     <button type="submit" className="py-3 px-5 text-sm font-medium text-center bg-slate-600 text-white rounded-lg 
@@ -90,12 +122,13 @@ function ContactFormSection({ }: ContactFormProps) {
             </div>
 
             {/* Feedback */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-96 h-96">
+            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-24 h-24 ${submissionState ? '' : 'hidden'}`}>
                 <Lottie
-                    play
-                    loop
+                    play={playState}
+                    loop={loopState}
                     animationData={lottieJson}
-                    segments={[0, 120]}
+                    segments={lottieSegements[lottieState]}
+                    onComplete={(e) => setTimeout(() => setSubmissionState(false), 1000)}
                 />
             </div>
         </section>

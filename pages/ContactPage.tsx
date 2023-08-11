@@ -4,6 +4,8 @@ import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOn
 import HeadingLine from '@/components/HeadingLine'
 import React, { useState } from 'react'
 import axios from 'axios'
+import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
+import lottieJson from '../public/loading_success_fail_lottie.json'
 
 type ContactPageProps = {}
 
@@ -61,7 +63,7 @@ function ContactFormSection({ }: ContactFormProps) {
 
     return (
         <section className='absolute w-full top-1/2 -translate-y-1/2'>
-            <div className="max-w-2xl mx-auto px-12">
+            <div className="max-w-2xl mx-auto px-12 hidden">
                 <form action="#" className="space-y-8" method='post' onSubmit={(e) => SendPostRequest(e)}>
                     <div>
                         <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-300">Your email</label>
@@ -85,6 +87,16 @@ function ContactFormSection({ }: ContactFormProps) {
                     <button type="submit" className="py-3 px-5 text-sm font-medium text-center bg-slate-600 text-white rounded-lg 
                      hover:bg-slate-500">Send message</button>
                 </form>
+            </div>
+
+            {/* Feedback */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-96 h-96">
+                <Lottie
+                    play
+                    loop
+                    animationData={lottieJson}
+                    segments={[0, 120]}
+                />
             </div>
         </section>
     )

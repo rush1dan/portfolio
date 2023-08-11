@@ -1,12 +1,13 @@
 'use client'
 
-import { Player, } from '@lottiefiles/react-lottie-player'
 import React from 'react'
 import SkillCategory from '@/components/SkillCategory'
 import HeadingLine from '@/components/HeadingLine'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
 import { defaultMediaQueries, MediaQueryDefault } from '@/myutils/defaultMediaQueries'
 import useMediaQueries from 'media-queries-in-react'
+import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
+import developer_lottie_json from '../public/developer_lottie.json'
 
 type SkillsPageProps = {}
 
@@ -40,12 +41,12 @@ function SkillsPageContent({ animationControls, otherProps }: AnimateableCompone
             <div className='pt-20 h-full flex flex-col xl:flex-row items-center justify-center 2xl:space-x-40 xl:space-x-12 xl:space-y-0 space-y-8'>
 
                 {/* Lottie animation */}
-                <Player
-                    autoplay
+                <Lottie
+                    play
                     loop
-                    src="developer_lottie.json"
+                    animationData={developer_lottie_json}
                     style={{ height: `${lottieSize}`, width: `${lottieSize}` }}
-                ></Player>
+                ></Lottie>
 
                 {/* Skill flex container */}
                 <div className='flex flex-col xl:space-y-24 space-y-10'>

@@ -66,7 +66,6 @@ function ContactFormSection({ }: ContactFormProps) {
     function SendPostRequest(event: React.FormEvent) {
         event.preventDefault();
         setSubmissionState(true);
-        console.log("Form Submit Requested");
 
         setPlayState(true);
         setLoopState(true);
@@ -81,13 +80,11 @@ function ContactFormSection({ }: ContactFormProps) {
             message: messageData
         })
             .then(response => {
-                console.log(response);
                 setLoopState(false);
                 setLottieState("success");
                 formRef.current?.reset();
             })
             .catch(error => {
-                console.log(error);
                 setLoopState(false);
                 setLottieState("fail");
             });
@@ -128,7 +125,10 @@ function ContactFormSection({ }: ContactFormProps) {
                     loop={loopState}
                     animationData={lottieJson}
                     segments={lottieSegements[lottieState]}
-                    onComplete={(e) => setTimeout(() => setSubmissionState(false), 1000)}
+                    onComplete={(e) => setTimeout(() => {
+                        setPlayState(false);
+                        setSubmissionState(false);
+                    }, 1000)}
                 />
             </div>
         </section>

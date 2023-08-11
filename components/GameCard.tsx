@@ -57,7 +57,7 @@ type GameLinkProps = {
 export function GameLink({ link, iconSrc, altText, position }: GameLinkProps) {
     return (
         <a href={link} target='_blank'>
-            <div className="absolute w-7 h-7 bottom-2 hover:scale-150" style={position === Position.Left ? {left: '0.5rem'} : {right: '0.5rem'}}>
+            <div className="absolute md:w-8 w-10 md:h-8 h-10 bottom-2 hover:scale-150" style={position === Position.Left ? {left: '0.5rem'} : {right: '0.5rem'}}>
                 <img src={iconSrc} alt={altText} />
             </div>
         </a>

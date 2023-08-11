@@ -128,7 +128,7 @@ function ContactFormSection({ }: ContactFormProps) {
                     onComplete={(e) => setTimeout(() => {
                         setPlayState(false);
                         setSubmissionState(false);
-                    }, 1000)}
+                    }, 2000)}
                 />
             </div>
         </section>

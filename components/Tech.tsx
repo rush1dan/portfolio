@@ -21,8 +21,10 @@ export default function Tech({ iconSrc, altText, hoverIconSrc, width, height, ba
                     style={{
                         width: `${2 * width}rem`, height: `${2 * height}rem`, padding: `${width/3.5}rem`, transform: `translate(${width + 1}rem, -${height * 0.5 + 0.25}rem)`
                     }}>
-                    <div className='h-full flex flex-col items-center justify-center'>
-                        <img src={hoverIconSrc ? hoverIconSrc : iconSrc} alt={altText} />
+                    <div className='h-full flex flex-col items-center justify-center relative'>
+                        <div className='relative flex-none w-full h-full'>
+                            <Image src={hoverIconSrc ? hoverIconSrc : iconSrc} alt={altText} fill objectFit='contain' />
+                        </div>
                         {
                             !hoverIconSrc &&
                             <p className={'text-gray-900 font-bold ' + (width < 3.5 ? 'text-sm' : 'text-md')} >

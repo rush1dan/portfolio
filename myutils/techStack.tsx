@@ -1,5 +1,5 @@
-const iconDir = "/skillicons"
-const iconWithTitleDir = "/skillicons/withTitle"
+const iconDir = "/techicons"
+const iconWithTitleDir = "/techicons/withtitle"
 
 interface TechStack {
   [key: string]: {

@@ -27,11 +27,11 @@ export const projectStack: Project[] = [
         demoURL: "https://github.com/rush1dan/subtitle-synchronizer/releases/download/v1.0.0/SubtitleSynchronizer.exe"
     },
     { 
-        image: `${iconDir}/EzEncryptorIcon.png`,
-        title: "EzEncryptor",
-        description: "Windows GUI program to easily encrypt/decrypt files with password",
-        techStackUsed: ["python", "cpp"],
-        gitHubURL: "https://github.com/rush1dan/file-encryptor",
-        demoURL: "https://github.com/rush1dan/file-encryptor/releases/download/EzEncryptor-v1.0/ezencryptor_installer_v1.0.exe"
+        image: `${iconDir}/PortfolioZoomed.png`,
+        title: "Portfolio Website",
+        description: "My developer portfolio website",
+        techStackUsed: ["html", "css", "typescript", "react", "nextjs"],
+        gitHubURL: "https://github.com/rush1dan/portfolio",
+        demoURL: "https://rushidanislam.com"
     },
 ]

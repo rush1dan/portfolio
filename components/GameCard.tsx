@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 type GameCardProps = {
@@ -13,8 +14,8 @@ export default function GameCard({ title, logoSrc, demoSrc, playStoreLink, appSt
         <div className='px-4 py-1'>
             <div className="flex flex-col items-center justify-start">
                 <div className="flex flex-row items-center justify-center space-x-2 p-2">
-                    <div className="w-6 h-6 bg-cardBGColor rounded-lg overflow-hidden">
-                        <img src={logoSrc} alt={title} />
+                    <div className="w-6 h-6 bg-cardBGColor rounded-lg overflow-hidden relative">
+                        <Image src={logoSrc} alt={title} fill />
                     </div>
                     <p className="text-[0.65rem] font-semibold w-[6rem]">
                         {title}
@@ -58,7 +59,7 @@ export function GameLink({ link, iconSrc, altText, position }: GameLinkProps) {
     return (
         <a href={link} target='_blank'>
             <div className="absolute md:w-8 w-10 md:h-8 h-10 bottom-2 hover:scale-150" style={position === Position.Left ? {left: '0.5rem'} : {right: '0.5rem'}}>
-                <img src={iconSrc} alt={altText} />
+                <Image src={iconSrc} alt={altText} fill />
             </div>
         </a>
     )

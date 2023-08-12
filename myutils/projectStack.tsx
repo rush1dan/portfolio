@@ -1,4 +1,4 @@
-const iconDir = "icons/projecticons"
+const iconDir = "/icons/projecticons"
 
 interface Project {
     image: string,

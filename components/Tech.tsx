@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 export type TechProps = {
@@ -14,7 +15,7 @@ export default function Tech({ iconSrc, altText, hoverIconSrc, width, height, ba
         <div>
             <div className={(!background ? 'bg-transparent ' : 'bg-slate-800 overflow-clip ') + 'rounded-2xl relative group cursor-pointer'}
                 style={{ width: `${width}rem`, height: `${height}rem`}}>
-                <img src={iconSrc} alt={altText ? altText : ''} className='absolute' />
+                <Image src={iconSrc} alt={altText ? altText : ''} fill className='absolute' />
                 <div className="invisible bg-slate-200 p-4 rounded-lg mb-2 absolute 
                 z-10 shadow-lg shadow-stone-800 group-hover:visible"
                     style={{

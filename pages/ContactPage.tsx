@@ -6,6 +6,7 @@ import React, { useRef, useState } from 'react'
 import axios from 'axios'
 import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
 import lottieJson from '../public/loading_success_fail_lottie.json'
+import Image from 'next/image'
 
 type ContactPageProps = {}
 
@@ -142,14 +143,14 @@ function Footer({ }: FooterProps) {
         <div className='h-full w-full bg-[rgb(46,47,49)] relative'>
             <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-start space-y-4'>
                 <div className='flex flex-row items-center justify-center space-x-2'>
-                    <div className='w-6 h-6'>
-                        <img src="icons/profile.svg" alt="Profile Icon" />
+                    <div className='w-6 h-6 relative'>
+                        <Image src="icons/profile.svg" alt="Profile Icon" fill />
                     </div>
                     <p className='font-medium text-navColor text-center'>Rushidan Islam</p>
                 </div>
                 <div className='flex flex-row items-center justify-center space-x-2'>
-                    <div className='w-6 h-6'>
-                        <img src="icons/location.svg" alt="Profile Icon" />
+                    <div className='w-6 h-6 relative'>
+                        <Image src="icons/location.svg" alt="Profile Icon" fill />
                     </div>
                     <p className='font-medium text-navColor text-center'>Dhaka, Bangladesh</p>
                 </div>

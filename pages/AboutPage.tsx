@@ -6,6 +6,7 @@ import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOn
 import HeadingLine from '@/components/HeadingLine'
 import { defaultMediaQueries, MediaQueryDefault } from '@/myutils/defaultMediaQueries'
 import useMediaQueries from 'media-queries-in-react'
+import Image from 'next/image'
 
 type AboutPageProps = {}
 
@@ -20,17 +21,17 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
 
     const kolpoverseCard = <InfoCard
         info={['Game Programmer', 'Kolpoverse Studios', 'November, 2022 - March, 2023']}
-        icons={['icons/laptop.svg', 'icons/Kolpoverse.png', 'icons/calendar.svg']}
+        icons={['/icons/laptop.svg', '/icons/Kolpoverse.png', '/icons/calendar.svg']}
         rightAligned={false} />
 
     const alphapotatoCard = <InfoCard
         info={['Game Programmer', 'Alpha Potato', 'March, 2020 - November, 2022']}
-        icons={['icons/laptop.svg', 'icons/AlphaPotato.png', 'icons/calendar.svg']}
+        icons={['/icons/laptop.svg', '/icons/AlphaPotato.png', '/icons/calendar.svg']}
         rightAligned={false} />
 
     const buetCard = <InfoCard
         info={['BSc in Mechanical Engineering,', 'Bangladesh University of Engineering and Technology', 'CGPA 3.45 out of 4.00', 'February, 2016 - February, 2021']}
-        icons={['icons/gear.svg', 'icons/buet.png', 'icons/notebook.svg', 'icons/calendar.svg']}
+        icons={['/icons/gear.svg', '/icons/buet.png', '/icons/notebook.svg', '/icons/calendar.svg']}
         rightAligned={mediaQueries.xl} />
 
     return (
@@ -301,7 +302,7 @@ function InfoCard({ info, icons, rightAligned }: InfoCardProps) {
                 info.map((data, index) => {
                     return (
                         <div key={index} className={`flex ${rightAligned ? 'flex-row-reverse' : 'flex-row'} items-center gap-x-2`}>
-                            <img src={icons[index]} alt="" className='lg:w-6 lg:h-6 w-5 h-5' />
+                            <div className='relative lg:w-6 lg:h-6 w-5 h-5 flex-none'><Image src={icons[index]} alt="" fill /></div>
                             <p className='lg:text-lg text-base font-medium'>{data}</p>
                         </div>
                     )

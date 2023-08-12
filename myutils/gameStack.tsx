@@ -1,4 +1,4 @@
-const iconDir = "icons/gameicons"
+const iconDir = "/icons/gameicons"
 
 interface Game {
     title: string,

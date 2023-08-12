@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../styles/projectcardstyle.module.css'
 import Tech from './Tech'
 import { techStack } from '@/myutils/techStack'
+import Image from 'next/image'
 
 type ProjectCardProps = {
     image: string,
@@ -21,7 +22,9 @@ export default function ProjectCard({ image, title, description, techStackUsed, 
                     cursor-pointer hover:border-cardHighlightColor hover:scale-[1.025] hover:shadow-2xl transition-transform duration-100">
                     {/* Image Container */}
                     <div className="h-[35%] p-4">
-                        <div className={`h-full w-full rounded-lg ${styles.projectImage}`} style={{backgroundImage: `url('${image}')`}}></div>
+                        <div className={`h-full w-full rounded-lg relative ${styles.projectImage}`}>
+                            <Image src={image} alt="" fill objectFit='contain' />
+                        </div>
                     </div>
                     {/* Info Container */}
                     <div className="h-[65%] relative">
@@ -80,8 +83,8 @@ function ProjectLinkButton({ url, iconSrc, title }: ProjectLinkButtonProps) {
             <div className='bg-cardButtonColor w-20 h-7 rounded-[0.175rem] border-b-2 border-cardBorderColor shadow-md shadow-[rgb(60,60,60,0.5)]
             hover:border hover:border-b-[3px] hover:border-cardHighlightColor'>
                 <div className="h-full flex flex-row items-center justify-center space-x-2">
-                    <div className="w-[1.25rem] h-[1.25rem]">
-                        <img src={iconSrc} alt={title} />
+                    <div className="w-[1.25rem] h-[1.25rem] relative">
+                        <Image src={iconSrc} alt={title} fill />
                     </div>
                     <p>
                         {title}

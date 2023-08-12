@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
@@ -52,10 +53,10 @@ export default function HomePage({ }: Props) {
 
                 {/* Profile picture */}
                 <div className='dp-div'>
-                    <div className={`glow1 ${dpLoaded ? '' : 'hidden'}`}>
+                    <div className={`glow1 ${dpLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>
                         <div className="glow2">
                             <div>
-                                <img src="dp.jpg" alt="profile picture" className='dp' onLoad={() => setDpLoaded(true)} />
+                                <Image src="/dp.jpg" alt="profile picture" fill onLoad={() => setDpLoaded(true)} className='dp'/>
                             </div>
                         </div>
                     </div>

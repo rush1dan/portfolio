@@ -37,7 +37,7 @@ export default function ProjectCard({ image, title, description, techStackUsed, 
                                 <p className='text-xs'>{description}</p>
                             </div>
                             {/* Tech Stack */}
-                            <div className='mt-6 w-full flex flex-row items-center justify-start space-x-2'>
+                            <div className='mt-6 w-full flex items-center justify-start space-x-2'>
                                 <p className='text-sm font-semibold'>
                                     Tech:
                                 </p>
@@ -49,8 +49,8 @@ export default function ProjectCard({ image, title, description, techStackUsed, 
                                                     iconSrc={techStack[tech].icon}
                                                     hoverIconSrc={techStack[tech].iconWithTitle}
                                                     altText={techStack[tech].altText}
-                                                    width={1.75}
-                                                    height={1.75}
+                                                    width={techStackUsed.length <= 5 ? 1.75 : 1.4}
+                                                    height={techStackUsed.length <= 5 ? 1.75 : 1.4}
                                                     background={false}
                                                 />
                                             </div>

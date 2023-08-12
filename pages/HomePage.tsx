@@ -27,7 +27,7 @@ export default function HomePage({ }: Props) {
 
                     {/* Introduction */}
                     <h1>
-                        <span className='text-2xl md:text-3xl lg:text-4xl'>Hi, I'm <span className='font-semibold text-3xl text-accentColor md:text-4xl lg:text-5xl'>Rushidan</span>, </span>
+                        <span className='text-2xl md:text-3xl lg:text-4xl'>Hi, I&apos;m <span className='font-semibold text-3xl text-accentColor md:text-4xl lg:text-5xl'>Rushidan</span>, </span>
                     </h1>
 
                     {/* What I Do */}

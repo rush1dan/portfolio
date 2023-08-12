@@ -65,8 +65,8 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                         initial="hidden"
                         animate={animationControls}
                         transition={{ duration: 0.75, delay: mediaQueries.xl ? 0.75 : 0.25 }}>
-                        I'm Rushidan Islam, a former game developer who is recently venturing into the world of fullstack software development.
-                        I'm always enthusiastic about learning new technologies and overcoming the challenges that come as a result.
+                        I&apos;m Rushidan Islam, a former game developer who is recently venturing into the world of fullstack software development.
+                        I&apos;m always enthusiastic about learning new technologies and overcoming the challenges that come as a result.
                         Having skill and experience in a wide range of software development areas such as game development, desktop applications and web development,
                         allows me to analyze problems from multiple directions and come up with unique and effective solutions.
                     </motion.p>

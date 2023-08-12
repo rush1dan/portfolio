@@ -11,7 +11,7 @@ export default function Home() {
     snap-y snap-mandatory scroll-smooth overflow-y-scroll overflow-x-hidden">
 
       <head>
-        <title>Rushidan's Portfolio</title>
+        <title>Rushidan&apos;s Portfolio</title>
       </head>
 
       {/* Scroll To Top Button */}

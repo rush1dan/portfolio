@@ -3,6 +3,8 @@
 import React from 'react'
 import { AnimationControls, useAnimation, useInView } from 'framer-motion'
 import { useEffect, useRef } from 'react'
+import useMediaQueries from 'media-queries-in-react'
+import { defaultMediaQueries } from '@/myutils/defaultMediaQueries'
 
 export type AnimateableComponentProps = {
     animationControls?: AnimationControls,
@@ -15,6 +17,8 @@ type AnimateOnViewProps = {
 }
 
 export default function AnimateOnView({ Component, otherProps }: AnimateOnViewProps) {
+    const mediaQueries = useMediaQueries(defaultMediaQueries);
+
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.75 });
 
@@ -24,7 +28,7 @@ export default function AnimateOnView({ Component, otherProps }: AnimateOnViewPr
         if (isInView) {
             animationControls.start("visible");
         }
-    }, [isInView]);
+    }, [isInView, mediaQueries]);
 
     return (
         <div ref={ref}>

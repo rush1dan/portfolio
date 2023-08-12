@@ -15,9 +15,9 @@ export default function Home() {
       </head>
 
       {/* Scroll To Top Button */}
-      <div className={`sticky top-[90vh] landscape:left-[93vw] left-[84vw] w-16 h-16 z-20 ${true ? 'hidden' : 'hidden'}`}>
+      {/* <div className={`sticky top-[90vh] landscape:left-[93vw] left-[84vw] w-16 h-16 z-20 ${true ? 'hidden' : 'hidden'}`}>
         <img src="icons/arrow-up.png" alt="Up Arrow" />
-      </div>
+      </div> */}
 
       {/* Header */}
       <Header />

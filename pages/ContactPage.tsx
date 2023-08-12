@@ -7,6 +7,7 @@ import axios from 'axios'
 import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
 import lottieJson from '../public/loading_success_fail_lottie.json'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type ContactPageProps = {}
 
@@ -155,6 +156,10 @@ function Footer({ }: FooterProps) {
                     <p className='font-medium text-navColor text-center'>Dhaka, Bangladesh</p>
                 </div>
             </div>
+            {/* Scroll To Top Button */}
+            <Link href="#home" className={`absolute bottom-1/2 md:right-12 right-5 translate-y-1/2 w-16 h-16 z-20`}>
+                <img src="icons/arrow-up.png" alt="Up Arrow" />
+            </Link>
         </div>
     )
 }

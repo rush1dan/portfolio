@@ -69,7 +69,7 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
     }
 
     return (
-        <div className='px-12 py-24'>
+        <div className='w-screen py-24'>
             <div className="flex flex-col items-center justify-start gap-y-8">
                 <div className="w-full flex flex-col items-center">
                     <HeadingLine

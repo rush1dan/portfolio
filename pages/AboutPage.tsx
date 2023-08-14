@@ -35,7 +35,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
         rightAligned={mediaQueries.xl} />
 
     return (
-        <div className='w-screen px-12 py-24'>
+        <div className='w-screen py-24'>
             {/* Main Flex Container */}
             <div className='h-full flex flex-col items-center justify-start space-y-8 max-w-7xl mx-auto'>
                 {/* About Section */}

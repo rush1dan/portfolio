@@ -85,7 +85,7 @@ function ContactFormSection({ }: ContactFormProps) {
     }
 
     return (
-        <section className='py-32 w-full relative'>
+        <section className='md:py-32 py-16 w-full relative'>
             <div className={`max-w-2xl mx-auto px-12 ${submissionState ? 'hidden' : ''}`}>
                 <form action="#" className="space-y-8" method='post' ref={formRef} onSubmit={(e) => SendPostRequest(e)}>
                     <div>

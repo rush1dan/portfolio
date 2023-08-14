@@ -45,8 +45,9 @@ function SkillsPageContent({ animationControls, otherProps }: AnimateableCompone
                     play
                     loop
                     animationData={developer_lottie_json}
+                    segments={[0, 90]}
                     style={{ height: `${lottieSize}`, width: `${lottieSize}` }}
-                ></Lottie>
+                />
 
                 {/* Skill flex container */}
                 <div className='flex flex-col xl:space-y-24 space-y-10'>

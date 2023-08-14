@@ -20,7 +20,7 @@ export default function AnimateOnView({ Component, otherProps }: AnimateOnViewPr
     const mediaQueries = useMediaQueries(defaultMediaQueries);
 
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: 0.85 });
+    const isInView = useInView(ref, { once: true, amount: 0.9 });
 
     const animationControls = useAnimation();
 

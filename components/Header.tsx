@@ -76,10 +76,10 @@ export default function Header({ }: HeaderProps) {
                     duration: 1.5,
                 }}
                 className='hidden md:flex flex-row items-center justify-center md:space-x-8 lg:space-x-14'>
-                <Link href="#about" className='nav-button'>About</Link>
-                <Link href="#skills" className='nav-button'>Skills</Link>
-                <Link href="#projects" className='nav-button'>Projects</Link>
-                <Link href="#contact" className='nav-button'>Contact</Link>
+                <Link href="/#about" className='nav-button'>About</Link>
+                <Link href="/#skills" className='nav-button'>Skills</Link>
+                <Link href="/#projects" className='nav-button'>Projects</Link>
+                <Link href="/#contact" className='nav-button'>Contact</Link>
             </motion.div>
 
             {/* Hamburger Icon */}

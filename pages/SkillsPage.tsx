@@ -6,7 +6,7 @@ import HeadingLine from '@/components/HeadingLine'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
 import { defaultMediaQueries, MediaQueryDefault } from '@/myutils/defaultMediaQueries'
 import useMediaQueries from 'media-queries-in-react'
-import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
+import Lottie from 'react-lottie-player'
 import developer_lottie_json from '../public/developer_lottie.json'
 
 type SkillsPageProps = {}

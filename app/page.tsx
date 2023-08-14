@@ -29,7 +29,9 @@ export default function Home() {
       </div> */}
 
       {/* Header */}
-      <Header />
+      <section className='sticky top-0 z-20' id="header">
+        <Header />
+      </section>
 
       {/* Hero */}
       <section id="home">

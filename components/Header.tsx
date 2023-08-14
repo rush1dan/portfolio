@@ -31,7 +31,7 @@ export default function Header({ }: HeaderProps) {
     }, [menuOpen]);
 
     return (
-        <header className='sticky top-0 p-5 flex flex-row items-center justify-between max-w-7xl mx-auto z-20'>
+        <header className='p-5 flex flex-row items-center justify-between max-w-7xl mx-auto'>
             <motion.div
                 initial={{
                     x: -500,

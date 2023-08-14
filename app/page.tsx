@@ -1,9 +1,14 @@
+'use client'
+
 import AboutPage from '@/pages/AboutPage'
 import ContactPage from '@/pages/ContactPage'
 import Header from '@/components/Header'
 import HomePage from '@/pages/HomePage'
-import ProjectsPage from '@/pages/ProjectsPage'
 import SkillsPage from '@/pages/SkillsPage'
+
+import dynamic from 'next/dynamic'
+import LoadingPage from '@/pages/LoadingPage'
+const ProjectsPageComponent = dynamic(() => import('@/pages/ProjectsPage'))
 
 export default function Home() {
   return (
@@ -39,7 +44,7 @@ export default function Home() {
 
       {/* Projects */}
       <section id="projects">
-        <ProjectsPage />
+        <LoadingPage Component={ProjectsPageComponent} />
       </section>
 
       {/* Contact Me */}

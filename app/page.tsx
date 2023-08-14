@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div className="bg-bgColor text-white h-screen 
-    snap-y snap-mandatory scroll-smooth overflow-y-scroll overflow-x-hidden">
+    xl:snap-y xl:snap-mandatory scroll-smooth overflow-y-scroll overflow-x-hidden">
 
       <head>
         <title>Rushidan&apos;s Portfolio</title>

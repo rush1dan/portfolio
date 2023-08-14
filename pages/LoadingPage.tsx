@@ -1,7 +1,6 @@
 import { useInView } from 'framer-motion';
 import React, { ComponentType, useEffect, useRef } from 'react'
-import Lottie from 'react-lottie-player';
-import lottieJson from '../public/loading_lottie.json'
+import Image from 'next/image';
 
 type LoadingProps = {
     loadNow?: boolean,
@@ -25,11 +24,9 @@ export default function LoadingPage({ loadNow = false, pageIndex, setPageToLoad,
                 (
                     !isInView && !loadNow ?
                         <p className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-semibold'>
-                            <Lottie
-                                play
-                                loop
-                                animationData={lottieJson}
-                            />
+                            <div className='xl:h-24 xl:w-24 md:h-20 md:w-20 h-16 w-16 relative'>
+                                <Image src="/icons/loading.gif" alt="profile picture" fill />
+                            </div>
                         </p>
                         : <Component />
                 )

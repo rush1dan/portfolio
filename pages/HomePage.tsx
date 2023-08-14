@@ -17,7 +17,7 @@ export default function HomePage({ }: Props) {
     const [dpLoaded, setDpLoaded] = useState(false)
 
     return (
-        <div className='h-screen snap-center relative'>
+        <div className='h-[calc(100vh-5.5rem)] snap-center relative'>
             {/* Hero flex container */}
             <div className='flex flex-col-reverse items-center justify-center space-y-10 
             md:flex-row md:space-x-2 lg:space-x-12 absolute w-full md:top-[45%] top-[50%] -translate-y-1/2'>

@@ -69,14 +69,12 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
     }
 
     return (
-        <div className='h-screen snap-center'>
-            <div className="h-[12%]"></div>
-            <div className="flex flex-col items-center justify-start gap-y-8 h-[88%]">
-                <div className="h-1/2 w-full flex flex-col items-center">
+        <div className='px-12 py-24'>
+            <div className="flex flex-col items-center justify-start gap-y-8">
+                <div className="w-full flex flex-col items-center">
                     <HeadingLine
                         animationControls={animationControls}
                         heading='PROJECTS'
-                        marginPadding=''
                         lineWidth='w-[10vw]'
                     />
                     <div className='relative mt-8'>
@@ -150,11 +148,10 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                         </Swiper>
                     </div>
                 </div>
-                <div className="h-1/2 w-full flex flex-col items-center">
+                <div className="w-full flex flex-col items-center">
                     <HeadingLine
                         animationControls={animationControls}
                         heading='GAMES'
-                        marginPadding=''
                         lineWidth='w-[10vw]'
                     />
                     <div className='relative mt-6'>

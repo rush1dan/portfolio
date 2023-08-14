@@ -12,14 +12,14 @@ type LoadingProps = {
 export default function LoadingPage({ loadNow = false, pageIndex, setPageToLoad, Component }: LoadingProps) {
 
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: 0.9 });
+    const isInView = useInView(ref, { once: true, amount: 0.1 });
 
     useEffect(() => {
         setPageToLoad(pageIndex + 1);
     }, [isInView])
 
     return (
-        <div className='h-screen w-screen snap-center relative' ref={ref}>
+        <div className='w-screen relative' ref={ref}>
             {
                 (
                     !isInView && !loadNow ?

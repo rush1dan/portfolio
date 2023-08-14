@@ -17,8 +17,7 @@ export default function Home() {
   const [pageToLoad, setPageToLoad] = useState(0);
 
   return (
-    <div className="bg-bgColor text-white h-screen 
-    xl:snap-y xl:snap-mandatory scroll-smooth overflow-y-scroll overflow-x-hidden">
+    <div className="bg-bgColor text-white h-screen scroll-smooth overflow-y-scroll overflow-x-hidden">
 
       <head>
         <title>Rushidan&apos;s Portfolio</title>

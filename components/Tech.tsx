@@ -23,7 +23,7 @@ export default function Tech({ iconSrc, altText, hoverIconSrc, width, height, ba
                     }}>
                     <div className='h-full flex flex-col items-center justify-center relative'>
                         <div className='relative flex-none w-full h-full'>
-                            <Image src={hoverIconSrc ? hoverIconSrc : iconSrc} alt={altText} fill objectFit='contain' />
+                            <Image src={hoverIconSrc ? hoverIconSrc : iconSrc} alt={altText} fill />
                         </div>
                         {
                             !hoverIconSrc &&

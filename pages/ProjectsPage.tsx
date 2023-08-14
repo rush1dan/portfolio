@@ -173,6 +173,8 @@ function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
                             grabCursor
                             uniqueNavElements
                             watchOverflow
+                            lazyPreloaderClass='swiper-lazy-preloader'
+                            lazyPreloadPrevNext={1}
                             onActiveIndexChange={(s) => {
                                 if (s.activeIndex == 0)
                                 {

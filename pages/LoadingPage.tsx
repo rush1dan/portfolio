@@ -8,7 +8,7 @@ type LoadingProps = {
 export default function LoadingPage({ Component }: LoadingProps) {
 
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: 0.75 });
+    const isInView = useInView(ref, { once: true, amount: 0.9 });
 
     return (
         <div className='h-screen w-screen snap-center relative' ref={ref}>

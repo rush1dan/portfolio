@@ -21,6 +21,7 @@
     "next": "13.4.9",
     "postcss": "8.4.25",
     "react": "^18.2.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-lottie-player": "^1.5.4",
     "react-simple-typewriter": "^5.0.1",

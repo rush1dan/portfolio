@@ -1,14 +1,23 @@
-import AboutPage from '@/pages/AboutPage'
-import ContactPage from '@/pages/ContactPage'
+'use client'
+
 import Header from '@/components/Header'
 import HomePage from '@/pages/HomePage'
-import ProjectsPage from '@/pages/ProjectsPage'
-import SkillsPage from '@/pages/SkillsPage'
+import dynamic from 'next/dynamic'
+import LoadingPage from '@/pages/LoadingPage'
+import { useState } from 'react'
+import { isMobile } from 'react-device-detect'
+
+const AboutPageComponent = dynamic(() => import('@/pages/AboutPage'))
+const SkillsPageComponent = dynamic(() => import('@/pages/SkillsPage'))
+const ProjectsPageComponent = dynamic(() => import('@/pages/ProjectsPage'))
+const ContactPageComponent = dynamic(() => import('@/pages/ContactPage'))
 
 export default function Home() {
+
+  const [pageToLoad, setPageToLoad] = useState(0);
+
   return (
-    <div className="bg-bgColor text-white h-screen 
-    snap-y snap-mandatory scroll-smooth overflow-y-scroll overflow-x-hidden">
+    <div className="bg-bgColor text-white h-screen scroll-smooth overflow-y-scroll overflow-x-hidden">
 
       <head>
         <title>Rushidan&apos;s Portfolio</title>
@@ -20,31 +29,33 @@ export default function Home() {
       </div> */}
 
       {/* Header */}
-      <Header />
+      <section className='sticky top-0 z-20' id="header">
+        <Header />
+      </section>
 
       {/* Hero */}
       <section id="home">
-        <HomePage />
+        <LoadingPage loadNow={true} pageIndex={0} setPageToLoad={setPageToLoad} Component={HomePage} />
       </section>
 
       {/* About */}
       <section id="about">
-        <AboutPage />
+        <LoadingPage loadNow={!isMobile ?? pageToLoad==1} pageIndex={1} setPageToLoad={setPageToLoad} Component={AboutPageComponent} />
       </section>
 
       {/* Skills */}
       <section id="skills">
-        <SkillsPage />
+        <LoadingPage loadNow={!isMobile ?? pageToLoad==2} pageIndex={2} setPageToLoad={setPageToLoad} Component={SkillsPageComponent} />
       </section>
 
       {/* Projects */}
       <section id="projects">
-        <ProjectsPage />
+        <LoadingPage loadNow={false} pageIndex={3} setPageToLoad={setPageToLoad} Component={ProjectsPageComponent} />
       </section>
 
       {/* Contact Me */}
       <section id="contact">
-        <ContactPage />
+        <LoadingPage  loadNow={!isMobile ?? pageToLoad==4} pageIndex={4} setPageToLoad={setPageToLoad} Component={ContactPageComponent} />
       </section>
 
     </div>

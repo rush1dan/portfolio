@@ -32,6 +32,6 @@ export const projectStack: Project[] = [
         description: "My developer portfolio website",
         techStackUsed: ["react", "tailwindcss", "typescript", "nextjs"],
         gitHubURL: "https://github.com/rush1dan/portfolio",
-        demoURL: "https://rushidanislam.com"
+        demoURL: "http://rushidanislam.com"
     },
 ]

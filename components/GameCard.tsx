@@ -26,7 +26,7 @@ export default function GameCard({ title, logoSrc, demoSrc, playStoreLink, appSt
                     shadow-lg shadow-[rgb(36,36,36,0.5] border-2 border-cardBorderColor
                     cursor-pointer hover:border-cardHighlightColor hover:scale-[1.025] hover:shadow-2xl transition-transform duration-100 relative">
                     {   demoSrc &&
-                        <iframe id={title} src={`${demoSrc}?controls=0&loop=1&mute=1&autoplay=0`}
+                        <iframe id={title} src={`${demoSrc}?controls=0&loop=1&mute=1&autoplay=0`} loading='lazy'
                             style={{ width: 'inherit', height: 'inherit', border: 'none' }}></iframe>
                     }
                     {

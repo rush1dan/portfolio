@@ -6,7 +6,7 @@ import HeadingLine from '@/components/HeadingLine'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
 import { defaultMediaQueries, MediaQueryDefault } from '@/myutils/defaultMediaQueries'
 import useMediaQueries from 'media-queries-in-react'
-import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
+import Lottie from 'react-lottie-player'
 import developer_lottie_json from '../public/developer_lottie.json'
 
 type SkillsPageProps = {}
@@ -30,11 +30,10 @@ function SkillsPageContent({ animationControls, otherProps }: AnimateableCompone
     const lottieSize: string = mediaQueries.xl ? '300px' : (mediaQueries.lg ? '250px' : (mediaQueries.md ? '250px' : (mediaQueries.thin ? '200px' : '150px')));
 
     return (
-        <div className='h-screen snap-center bg-gradient-radial from-[rgb(54,54,54)] from-5% to-[rgb(36,36,36)] to-70%'>
+        <div className='w-screen py-24 bg-gradient-radial from-[rgb(54,54,54)] from-5% to-[rgb(36,36,36)] to-70%'>
             <HeadingLine
                 animationControls={animationControls}
                 heading='SKILLS'
-                marginPadding='mt-28'
                 lineWidth='w-[30vw]'
             />
             {/* Main Flex Container */}
@@ -45,8 +44,9 @@ function SkillsPageContent({ animationControls, otherProps }: AnimateableCompone
                     play
                     loop
                     animationData={developer_lottie_json}
+                    segments={[0, 90]}
                     style={{ height: `${lottieSize}`, width: `${lottieSize}` }}
-                ></Lottie>
+                />
 
                 {/* Skill flex container */}
                 <div className='flex flex-col xl:space-y-24 space-y-10'>

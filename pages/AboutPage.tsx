@@ -35,25 +35,20 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
         rightAligned={mediaQueries.xl} />
 
     return (
-        <div className='h-screen snap-center'>
-            <div className="h-24"></div>
+        <div className='w-screen pt-12 pb-24'>
             {/* Main Flex Container */}
-            <div className='h-full flex flex-col items-center justify-start space-y-8'>
-
+            <div className='h-full flex flex-col items-center justify-start space-y-8 max-w-7xl mx-auto'>
                 {/* About Section */}
-                <section className='flex flex-col items-center justify-center'>
-
+                <section className='flex flex-col items-center justify-center gap-y-8'>
                     {/* Heading */}
                     <HeadingLine
                         animationControls={animationControls}
                         heading='ABOUT'
-                        marginPadding='mt-4'
                         lineWidth='w-[10vw]'
                         textSizeClass={mediaQueries.xl ? undefined : 'text-2xl'}
                     />
-
                     {/* Description */}
-                    <motion.p className='xl:pt-14 pt-8 px-4 max-w-6xl font-medium text-sm md:text-base xl:text-lg text-justify'
+                    <motion.p className='px-4 max-w-6xl font-medium text-sm md:text-base xl:text-lg text-justify'
                         variants={{
                             hidden: {
                                 opacity: 0,
@@ -78,19 +73,17 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                     mediaQueries.xl &&
                     <>
                         {/* Experience/Education Headings Section*/}
-                        <div className='pt-4 w-full flex items-center justify-center xl:space-x-[40rem] flex-row'>
+                        <div className='pt-4 w-full flex flex-row items-center justify-center gap-x-[8rem]'>
                             {/* Education Heading */}
                             <HeadingLine
                                 animationControls={animationControls}
                                 heading='EDUCATION'
-                                marginPadding=''
                                 lineWidth='w-[5vw]'
                             />
                             {/* Experience Heading */}
                             <HeadingLine
                                 animationControls={animationControls}
                                 heading='EXPERIENCE'
-                                marginPadding=''
                                 lineWidth='w-[5vw]'
                             />
                         </div>
@@ -218,7 +211,6 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                             <HeadingLine
                                 animationControls={animationControls}
                                 heading='EXPERIENCE'
-                                marginPadding=''
                                 lineWidth='w-[5vw]'
                                 textSizeClass='text-2xl'
                             />
@@ -261,7 +253,6 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                             <HeadingLine
                                 animationControls={animationControls}
                                 heading='EDUCATION'
-                                marginPadding=''
                                 lineWidth='w-[5vw]'
                                 textSizeClass='text-2xl'
                             />

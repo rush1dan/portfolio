@@ -19,24 +19,16 @@ export default function ContactPage({ }: ContactPageProps) {
 
 function ContactPageContent({ animationControls }: AnimateableComponentProps) {
     return (
-        <div className='h-screen snap-center'>
-            <div className='h-24'></div>
-            <div className="h-[calc(100%-6rem)] relative">
-                <HeadingLine
-                    animationControls={animationControls}
-                    heading='CONTACT'
-                    marginPadding='mt-4'
-                    lineWidth='w-[20vw]'
-                />
-                {/* Contact Form */}
-                <div className="absolute top-0 w-full h-[calc(100%-10rem)]">
-                    <ContactFormSection />
-                </div>
-                {/* Footer */}
-                <div className="absolute bottom-0 w-full h-[10rem]">
-                    <Footer />
-                </div>
-            </div>
+        <div className='w-screen pt-24'>
+            <HeadingLine
+                animationControls={animationControls}
+                heading='CONTACT'
+                lineWidth='w-[20vw]'
+            />
+            {/* Contact Form */}
+                <ContactFormSection />
+            {/* Footer */}
+                <Footer />
         </div>
     )
 }
@@ -93,7 +85,7 @@ function ContactFormSection({ }: ContactFormProps) {
     }
 
     return (
-        <section className='absolute w-full top-1/2 -translate-y-1/2'>
+        <section className='md:py-32 py-16 w-full relative'>
             <div className={`max-w-2xl mx-auto px-12 ${submissionState ? 'hidden' : ''}`}>
                 <form action="#" className="space-y-8" method='post' ref={formRef} onSubmit={(e) => SendPostRequest(e)}>
                     <div>
@@ -141,7 +133,7 @@ type FooterProps = {}
 
 function Footer({ }: FooterProps) {
     return (
-        <div className='h-full w-full bg-[rgb(46,47,49)] relative'>
+        <div className='h-[10rem] w-full bg-[rgb(46,47,49)] relative'>
             <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-start space-y-4'>
                 <div className='flex flex-row items-center justify-center space-x-2'>
                     <div className='w-6 h-6 relative'>
@@ -157,7 +149,7 @@ function Footer({ }: FooterProps) {
                 </div>
             </div>
             {/* Scroll To Top Button */}
-            <Link href="#home" className={`absolute bottom-1/2 md:right-12 right-5 translate-y-1/2 w-16 h-16 z-20`}>
+            <Link href="/#home" className={`absolute bottom-1/2 md:right-12 right-5 translate-y-1/2 w-16 h-16 z-20`}>
                 <Image src="/icons/arrow-up.png" alt="Up Arrow" fill />
             </Link>
         </div>

@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic'
 import LoadingPage from '@/pages/LoadingPage'
 import { useState } from 'react'
 import { isMobile } from 'react-device-detect'
+import Head from 'next/head'
 
 const AboutPageComponent = dynamic(() => import('@/pages/AboutPage'))
 const SkillsPageComponent = dynamic(() => import('@/pages/SkillsPage'))
@@ -19,9 +20,9 @@ export default function Home() {
   return (
     <div className="bg-bgColor text-white h-screen scroll-smooth overflow-y-scroll overflow-x-hidden">
 
-      <head>
+      <Head>
         <title>Rushidan&apos;s Portfolio</title>
-      </head>
+      </Head>
 
       {/* Scroll To Top Button */}
       {/* <div className={`sticky top-[90vh] landscape:left-[93vw] left-[84vw] w-16 h-16 z-20 ${true ? 'hidden' : 'hidden'}`}>

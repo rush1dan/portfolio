@@ -13,9 +13,18 @@ const SkillsPageComponent = dynamic(() => import('@/pages/SkillsPage'))
 const ProjectsPageComponent = dynamic(() => import('@/pages/ProjectsPage'))
 const ContactPageComponent = dynamic(() => import('@/pages/ContactPage'))
 
+export enum Pages {
+  None,
+  Home,
+  About,
+  Skills,
+  Projects,
+  Contact
+}
+
 export default function Home() {
 
-  const [pageToLoad, setPageToLoad] = useState(0);
+  const [pageToLoad, setPageToLoad] = useState(Pages.Home);
 
   return (
     <div className="bg-bgColor text-white h-screen scroll-smooth overflow-y-scroll overflow-x-hidden">
@@ -36,27 +45,27 @@ export default function Home() {
 
       {/* Hero */}
       <section id="home">
-        <LoadingPage loadNow={true} pageIndex={0} setPageToLoad={setPageToLoad} Component={HomePage} />
+        <LoadingPage loadNow={true} thisPage={Pages.Home} setPageToLoad={setPageToLoad} Component={HomePage} isMobile />
       </section>
 
       {/* About */}
       <section id="about">
-        <LoadingPage loadNow={!isMobile ?? pageToLoad==1} pageIndex={1} setPageToLoad={setPageToLoad} Component={AboutPageComponent} />
+        <LoadingPage loadNow={!isMobile ? pageToLoad===Pages.About : false} thisPage={Pages.About} setPageToLoad={setPageToLoad} Component={AboutPageComponent} isMobile />
       </section>
 
       {/* Skills */}
       <section id="skills">
-        <LoadingPage loadNow={!isMobile ?? pageToLoad==2} pageIndex={2} setPageToLoad={setPageToLoad} Component={SkillsPageComponent} />
+        <LoadingPage loadNow={!isMobile ? pageToLoad===Pages.Skills : false} thisPage={Pages.Skills} setPageToLoad={setPageToLoad} Component={SkillsPageComponent} isMobile />
       </section>
 
       {/* Projects */}
       <section id="projects">
-        <LoadingPage loadNow={false} pageIndex={3} setPageToLoad={setPageToLoad} Component={ProjectsPageComponent} />
+        <LoadingPage loadNow={false} thisPage={Pages.Projects} setPageToLoad={setPageToLoad} Component={ProjectsPageComponent} isMobile />
       </section>
 
       {/* Contact Me */}
       <section id="contact">
-        <LoadingPage  loadNow={!isMobile ?? pageToLoad==4} pageIndex={4} setPageToLoad={setPageToLoad} Component={ContactPageComponent} />
+        <LoadingPage  loadNow={!isMobile ? pageToLoad===Pages.Contact : false} thisPage={Pages.Contact} setPageToLoad={setPageToLoad} Component={ContactPageComponent} isMobile />
       </section>
 
     </div>

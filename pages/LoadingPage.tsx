@@ -1,5 +1,5 @@
 import { useInView } from 'framer-motion';
-import React, { ComponentType, useEffect, useRef } from 'react'
+import React, { ComponentType, useRef } from 'react'
 import Image from 'next/image';
 
 type LoadingProps = {

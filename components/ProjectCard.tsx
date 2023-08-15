@@ -52,6 +52,8 @@ export default function ProjectCard({ image, title, description, techStackUsed, 
                                                     width={techStackUsed.length <= 5 ? 1.75 : 1.4}
                                                     height={techStackUsed.length <= 5 ? 1.75 : 1.4}
                                                     background={false}
+                                                    lazyLoadIcon={true}
+                                                    lazyLoadHoverIcon={true}
                                                 />
                                             </div>
                                         )

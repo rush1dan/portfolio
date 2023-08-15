@@ -45,6 +45,8 @@ export default function SkillCategory({ category, skillList, mediaQuery, iconBg 
                                         width={iconSize}
                                         height={iconSize}
                                         background={iconBg}
+                                        lazyLoadIcon={false}
+                                        lazyLoadHoverIcon={true}
                                     />
                                 </motion.div>
                             )

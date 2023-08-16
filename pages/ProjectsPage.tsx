@@ -9,7 +9,6 @@ import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOn
 import { projectStack } from '@/myutils/projectStack'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
-import { NavigationOptions } from 'swiper/types/modules/navigation'
 import { PaginationOptions } from 'swiper/types/modules/pagination'
 import 'swiper/css'
 import 'swiper/css/navigation'

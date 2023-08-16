@@ -6,11 +6,12 @@ import dynamic from 'next/dynamic'
 import LoadingPage from '@/pages/LoadingPage'
 import { isMobile } from 'react-device-detect'
 import Head from 'next/head'
+import Loading from '@/components/Loading'
 
-const AboutPageComponent = dynamic(() => import('@/pages/AboutPage'))
-const SkillsPageComponent = dynamic(() => import('@/pages/SkillsPage'))
-const ProjectsPageComponent = dynamic(() => import('@/pages/ProjectsPage'))
-const ContactPageComponent = dynamic(() => import('@/pages/ContactPage'))
+const AboutPageComponent = dynamic(() => import('@/pages/AboutPage'), {loading: () => <Loading />})
+const SkillsPageComponent = dynamic(() => import('@/pages/SkillsPage'), {loading: () => <Loading />})
+const ProjectsPageComponent = dynamic(() => import('@/pages/ProjectsPage'), {loading: () => <Loading />})
+const ContactPageComponent = dynamic(() => import('@/pages/ContactPage'), {loading: () => <Loading />})
 
 export default function Home() {
   return (

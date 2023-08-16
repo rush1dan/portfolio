@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from 'react'
 import { useState } from 'react'
 import { SocialIcon } from 'react-social-icons'
 import { motion, useAnimation } from 'framer-motion'
-import Link from 'next/link'
 import '/styles/headerstyle.css'
 
 
@@ -76,10 +75,10 @@ export default function Header({ }: HeaderProps) {
                     duration: 1.5,
                 }}
                 className='hidden md:flex flex-row items-center justify-center md:space-x-8 lg:space-x-14'>
-                <Link href="/#about" className='nav-button'>About</Link>
-                <Link href="/#skills" className='nav-button'>Skills</Link>
-                <Link href="/#projects" className='nav-button'>Projects</Link>
-                <Link href="/#contact" className='nav-button'>Contact</Link>
+                <a href="/#about" className='nav-button'>About</a>
+                <a href="/#skills" className='nav-button'>Skills</a>
+                <a href="/#projects" className='nav-button'>Projects</a>
+                <a href="/#contact" className='nav-button'>Contact</a>
             </motion.div>
 
             {/* Hamburger Icon */}
@@ -108,10 +107,10 @@ export default function Header({ }: HeaderProps) {
                     initial="hidden"
                     animate={animationControls}
                     transition={{ duration: 0.5, ease: 'circOut' }}>
-                    <Link href="#about" className="menu-link" onClick={(e) => setMenuOpen(false)}>About</Link>
-                    <Link href="#skills" className="menu-link" onClick={(e) => setMenuOpen(false)}>Skills</Link>
-                    <Link href="#projects" className="menu-link" onClick={(e) => setMenuOpen(false)}>Projects</Link>
-                    <Link href="#contact" className="menu-link" onClick={(e) => setMenuOpen(false)}>Contact</Link>
+                    <a href="/#about" className="menu-link" onClick={(e) => setMenuOpen(false)}>About</a>
+                    <a href="/#skills" className="menu-link" onClick={(e) => setMenuOpen(false)}>Skills</a>
+                    <a href="/#projects" className="menu-link" onClick={(e) => setMenuOpen(false)}>Projects</a>
+                    <a href="/#contact" className="menu-link" onClick={(e) => setMenuOpen(false)}>Contact</a>
                 </motion.div>
             </div>
         </header >

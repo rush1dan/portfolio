@@ -7,15 +7,20 @@ export type TechProps = {
     altText: string,
     width: number,
     height: number,
-    background?: boolean
+    background?: boolean,
+    lazyLoadIcon?: boolean,
+    lazyLoadHoverIcon?: boolean
 }
 
-export default function Tech({ iconSrc, altText, hoverIconSrc, width, height, background = false }: TechProps) {
+export default function Tech({ iconSrc, altText, hoverIconSrc, width, height, background = false,
+    lazyLoadIcon = false, lazyLoadHoverIcon = true }: TechProps) {
     return (
         <div>
             <div className={(!background ? 'bg-transparent ' : 'bg-slate-800 overflow-clip ') + 'rounded-2xl relative group cursor-pointer'}
                 style={{ width: `${width}rem`, height: `${height}rem`}}>
-                <Image src={iconSrc} alt={altText ? altText : ''} fill className='absolute' />
+                <Image src={iconSrc} alt={altText ? altText : ''} fill className='absolute' loading={lazyLoadIcon ? "lazy" : "eager"} />
+
+                {/* Hover Card */}
                 <div className="invisible bg-slate-200 p-4 rounded-lg mb-2 absolute 
                 z-10 shadow-lg shadow-stone-800 group-hover:visible"
                     style={{
@@ -23,7 +28,7 @@ export default function Tech({ iconSrc, altText, hoverIconSrc, width, height, ba
                     }}>
                     <div className='h-full flex flex-col items-center justify-center relative'>
                         <div className='relative flex-none w-full h-full'>
-                            <Image src={hoverIconSrc ? hoverIconSrc : iconSrc} alt={altText} fill />
+                            <Image src={hoverIconSrc ? hoverIconSrc : iconSrc} alt={altText} fill loading={lazyLoadHoverIcon ? "lazy" : "eager"} />
                         </div>
                         {
                             !hoverIconSrc &&

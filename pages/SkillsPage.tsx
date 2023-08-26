@@ -12,7 +12,6 @@ import developer_lottie_json from '../public/developer_lottie.json'
 type SkillsPageProps = {}
 
 export default function SkillsPage({}: SkillsPageProps) {
-    // [iconSrc, iconAltText, hoverIconSrc, hoverIconAltText, hoverTitle]
 
     const frontEndSkillList = ["html", "css", "tailwindcss", "javascript", "typescript", "react", "redux", "flutter"]
     const backEndSkillList = ["nodejs", "expressjs", "nextjs", "mongodb", "dotnetcore", "microsoft-sql-server", "postgresql", "docker"]

@@ -11,6 +11,22 @@ interface Project {
 
 export const projectStack: Project[] = [
     { 
+        image: `${iconDir}/PortfolioZoomed.png`,
+        title: "Portfolio Website",
+        description: "My developer portfolio website",
+        techStackUsed: ["react", "typescript", "tailwindcss", "nextjs"],
+        gitHubURL: "https://github.com/rush1dan/portfolio",
+        demoURL: "http://rushidanislam.com"
+    },
+    { 
+        image: `${iconDir}/ReactDotNetCRUD.png`,
+        title: "Full Stack CRUD App",
+        description: "Simple full stack CRUD application",
+        techStackUsed: ["react", "javascript", "css", "dotnetcore", "postgresql", "docker"],
+        gitHubURL: "https://github.com/rush1dan/react-dotnet-CRUD",
+        demoURL: "https://rush1dan-react-dotnet-crud.onrender.com"
+    },
+    { 
         image: `${iconDir}/EzEncryptorIcon.png`,
         title: "EzEncryptor",
         description: "Windows GUI program to easily encrypt/decrypt files with password",
@@ -25,13 +41,5 @@ export const projectStack: Project[] = [
         techStackUsed: ["python"],
         gitHubURL: "https://github.com/rush1dan/subtitle-synchronizer",
         demoURL: "https://github.com/rush1dan/subtitle-synchronizer/releases/download/v1.0.0/SubtitleSynchronizer.exe"
-    },
-    { 
-        image: `${iconDir}/PortfolioZoomed.png`,
-        title: "Portfolio Website",
-        description: "My developer portfolio website",
-        techStackUsed: ["react", "tailwindcss", "typescript", "nextjs"],
-        gitHubURL: "https://github.com/rush1dan/portfolio",
-        demoURL: "http://rushidanislam.com"
     },
 ]

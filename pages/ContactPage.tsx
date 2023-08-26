@@ -24,10 +24,12 @@ function ContactPageContent({ animationControls }: AnimateableComponentProps) {
                 heading='CONTACT'
                 lineWidth='w-[20vw]'
             />
+            
             {/* Contact Form */}
-                <ContactFormSection />
+            <ContactFormSection />
+            
             {/* Footer */}
-                <Footer />
+            <Footer />
         </div>
     )
 }
@@ -84,9 +86,9 @@ function ContactFormSection({ }: ContactFormProps) {
     }
 
     return (
-        <section className='md:py-32 py-16 w-full relative'>
-            <div className={`max-w-2xl mx-auto px-12 ${submissionState ? 'hidden' : ''}`}>
-                <form action="#" className="space-y-8" method='post' ref={formRef} onSubmit={(e) => SendPostRequest(e)}>
+        <section className='md:pt-32 pt-16 md:pb-[18rem] pb-[14rem] w-full'>
+            <div className={`max-w-2xl mx-auto px-12 relative`}>
+                <form action="#" className={`space-y-8 ${submissionState ? 'invisible' : ''}`} method='post' ref={formRef} onSubmit={(e) => SendPostRequest(e)}>
                     <div>
                         <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-300">Your email</label>
                         <input type="email" id="email" name="email" className="text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 
@@ -109,20 +111,20 @@ function ContactFormSection({ }: ContactFormProps) {
                     <button type="submit" className="py-3 px-5 text-sm font-medium text-center bg-slate-600 text-white rounded-lg 
                      hover:bg-slate-500">Send message</button>
                 </form>
-            </div>
 
-            {/* Feedback */}
-            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-24 h-24 ${submissionState ? '' : 'hidden'}`}>
-                <Lottie
-                    play={playState}
-                    loop={loopState}
-                    animationData={lottieJson}
-                    segments={lottieSegements[lottieState]}
-                    onComplete={(e) => setTimeout(() => {
-                        setPlayState(false);
-                        setSubmissionState(false);
-                    }, 2000)}
-                />
+                {/* Feedback */}
+                <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-24 h-24 ${submissionState ? '' : 'hidden'}`}>
+                    <Lottie
+                        play={playState}
+                        loop={loopState}
+                        animationData={lottieJson}
+                        segments={lottieSegements[lottieState]}
+                        onComplete={(e) => setTimeout(() => {
+                            setPlayState(false);
+                            setSubmissionState(false);
+                        }, 2000)}
+                    />
+                </div>
             </div>
         </section>
     )
@@ -132,7 +134,7 @@ type FooterProps = {}
 
 function Footer({ }: FooterProps) {
     return (
-        <div className='h-[10rem] w-full bg-[rgb(46,47,49)] relative'>
+        <div className='h-[10rem] w-full bg-[rgb(46,47,49)] absolute bottom-0'>
             <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-start space-y-4'>
                 <div className='flex flex-row items-center justify-center space-x-2'>
                     <div className='w-6 h-6 relative'>

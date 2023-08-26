@@ -32,7 +32,7 @@ export default function Tech({ iconSrc, altText, hoverIconSrc, width, height, ba
                         </div>
                         {
                             !hoverIconSrc &&
-                            <p className={'text-gray-900 font-bold ' + (width < 3.5 ? 'text-sm' : 'text-md')} >
+                            <p className={'text-gray-900 font-bold ' + (width < 3.5 ? 'text-[0.5rem]' : 'text-md')} >
                                 {altText}
                             </p>
                         }

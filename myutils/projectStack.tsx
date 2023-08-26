@@ -14,7 +14,7 @@ export const projectStack: Project[] = [
         image: `${iconDir}/PortfolioZoomed.png`,
         title: "Portfolio Website",
         description: "My developer portfolio website",
-        techStackUsed: ["react", "tailwindcss", "typescript", "nextjs"],
+        techStackUsed: ["react", "typescript", "tailwindcss", "nextjs"],
         gitHubURL: "https://github.com/rush1dan/portfolio",
         demoURL: "http://rushidanislam.com"
     },

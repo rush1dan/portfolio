@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./public/icons/projecticons/PortfolioZoomed.png"/>
+    <img src="./public/icons/projecticons/PortfolioZoomed.png" width="656" height="256" />
     <h1>Portfolio</h1>
     <h2>Project for developing my personal portfolio website</h2>
     <h3><a href="https://www.rushidanislam.com" target="_blank">View Live Demo</a></h3>

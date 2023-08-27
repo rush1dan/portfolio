@@ -40,12 +40,12 @@ export default function HomePage({ }: Props) {
 
                     {/* Resume/Contact */}
                     <div className="flex flex-row gap-x-8 pt-6">
-                        <Link href="https://drive.google.com/file/d/10bnOKXtcn5pe1CYQiLR_14BtdXWJwjcq/view?usp=sharing" target='_blank' className='uppercase tracking-[0.15em] bg-transparent hover:bg-[rgb(255,239,156,0.75)] px-3 py-3 font-semibold rounded-lg border-4 border-accentColor text-accentColor text-lg'>
+                        <a href="https://drive.google.com/file/d/10bnOKXtcn5pe1CYQiLR_14BtdXWJwjcq/view?usp=sharing" target='_blank' className='uppercase tracking-[0.15em] bg-transparent hover:bg-[rgb(255,239,156,0.75)] px-3 py-3 font-semibold rounded-lg border-4 border-accentColor text-accentColor text-lg'>
                             Resume
-                        </Link>
-                        <Link href="#contact" className='uppercase bg-transparent hover:bg-[rgb(255,239,156,0.75)] px-3 py-3 font-semibold rounded-lg border-4 border-accentColor text-accentColor text-lg'>
+                        </a>
+                        <a href="/#contact" className='uppercase bg-transparent hover:bg-[rgb(255,239,156,0.75)] px-3 py-3 font-semibold rounded-lg border-4 border-accentColor text-accentColor text-lg'>
                             Contact
-                        </Link>
+                        </a>
                     </div>
                 </div>
 

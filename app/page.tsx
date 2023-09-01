@@ -22,14 +22,14 @@ export default function Home() {
         <title>Rushidan&apos;s Portfolio</title>
       </Head>
 
-      <Script async strategy='afterInteractive' src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID}`}></Script>
-      <Script  id="google-analytics">
+      <Script async strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-E0H02EF49W"></Script>
+      <Script id="google-analytics" strategy="afterInteractive">
         {
           `window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
         
-          gtag('config', ${process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID});`
+          gtag('config', 'G-E0H02EF49W');`
         }
       </Script>
 

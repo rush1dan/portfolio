@@ -7,11 +7,12 @@ import LoadingPage from '@/pages/LoadingPage'
 import { isMobile } from 'react-device-detect'
 import Head from 'next/head'
 import Loading from '@/components/Loading'
+import Script from 'next/script'
 
-const AboutPageComponent = dynamic(() => import('@/pages/AboutPage'), {loading: () => <Loading />})
-const SkillsPageComponent = dynamic(() => import('@/pages/SkillsPage'), {loading: () => <Loading />})
-const ProjectsPageComponent = dynamic(() => import('@/pages/ProjectsPage'), {loading: () => <Loading />})
-const ContactPageComponent = dynamic(() => import('@/pages/ContactPage'), {loading: () => <Loading />})
+const AboutPageComponent = dynamic(() => import('@/pages/AboutPage'), { loading: () => <Loading /> })
+const SkillsPageComponent = dynamic(() => import('@/pages/SkillsPage'), { loading: () => <Loading /> })
+const ProjectsPageComponent = dynamic(() => import('@/pages/ProjectsPage'), { loading: () => <Loading /> })
+const ContactPageComponent = dynamic(() => import('@/pages/ContactPage'), { loading: () => <Loading /> })
 
 export default function Home() {
   return (
@@ -20,6 +21,17 @@ export default function Home() {
       <Head>
         <title>Rushidan&apos;s Portfolio</title>
       </Head>
+
+      <Script async strategy='afterInteractive' src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID}`}></Script>
+      <Script  id="google-analytics">
+        {
+          `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', ${process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID});`
+        }
+      </Script>
 
       {/* Scroll To Top Button */}
       {/* <div className={`sticky top-[90vh] landscape:left-[93vw] left-[84vw] w-16 h-16 z-20 ${true ? 'hidden' : 'hidden'}`}>
@@ -53,7 +65,7 @@ export default function Home() {
 
       {/* Contact Me */}
       <section id="contact">
-        <LoadingPage  loadNow={!isMobile} Component={ContactPageComponent} />
+        <LoadingPage loadNow={!isMobile} Component={ContactPageComponent} />
       </section>
 
     </div>

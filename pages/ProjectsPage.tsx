@@ -206,6 +206,7 @@ function ProjectPageContent({ animationControls, isMobile, mediaQueries }: Anima
                                                 animate={animationControls}
                                                 transition={{ delay: 0.125 * index, duration: 0.5, ease: 'backOut' }} >
                                                 <GameCard
+                                                    inView={index < gameCardsToShow}
                                                     title={game.title}
                                                     logoSrc={game.iconSrc}
                                                     demoSrc={game.demoSrc}

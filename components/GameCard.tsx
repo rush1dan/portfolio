@@ -1,7 +1,8 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 type GameCardProps = {
+    inView: boolean,
     title: string,
     logoSrc: string,
     demoSrc?: string,
@@ -9,7 +10,19 @@ type GameCardProps = {
     appStoreLink?: string,
 }
 
-export default function GameCard({ title, logoSrc, demoSrc, playStoreLink, appStoreLink }: GameCardProps) {
+export default function GameCard({ inView, title, logoSrc, demoSrc, playStoreLink, appStoreLink }: GameCardProps) {
+    const [iFrameEnabled, setIFrameEnabled] = useState(false);
+    useEffect(() => {
+        if (inView) {
+            setTimeout(() => {
+                setIFrameEnabled(true);
+            }, 1000);
+        }
+        else {
+            setIFrameEnabled(true);
+        }
+     }, []);
+
     return (
         <div className='px-4 py-1'>
             <div className="flex flex-col items-center justify-start">
@@ -25,7 +38,7 @@ export default function GameCard({ title, logoSrc, demoSrc, playStoreLink, appSt
                 <div className="w-[9rem] h-[16rem] bg-cardBGColor rounded-lg overflow-hidden
                     shadow-lg shadow-[rgb(36,36,36,0.5] border-2 border-cardBorderColor
                     cursor-pointer hover:border-cardHighlightColor hover:scale-[1.025] hover:shadow-2xl transition-transform duration-100 relative">
-                    {   demoSrc &&
+                    {   (demoSrc && iFrameEnabled) &&
                         <iframe id={title} src={`${demoSrc}?controls=0&loop=1&mute=1&autoplay=0`} loading='lazy'
                             style={{ width: 'inherit', height: 'inherit', border: 'none' }}></iframe>
                     }

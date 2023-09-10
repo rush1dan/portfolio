@@ -1,13 +1,14 @@
 import { useInView } from 'framer-motion';
 import React, { ComponentType, useRef } from 'react'
 import Loading from '@/components/Loading';
+import { PageProps } from '@/app/page';
 
 type LoadingProps = {
     loadNow?: boolean,
-    Component: ComponentType<any>,
-}
+    Component: ComponentType<PageProps>,
+} & PageProps
 
-export default function LoadingPage({ loadNow = false, Component}: LoadingProps) {
+export default function LoadingPage({ loadNow = false, Component, isMobile, mediaQueries }: LoadingProps) {
 
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.1 });
@@ -16,7 +17,7 @@ export default function LoadingPage({ loadNow = false, Component}: LoadingProps)
         <div className='min-h-screen w-screen relative' ref={ref}>
             {
                 (
-                    !isInView && !loadNow ? <Loading /> : <Component />
+                    !isInView && !loadNow ? <Loading /> : <Component isMobile={isMobile} mediaQueries={mediaQueries} />
                 )
             }
         </div>

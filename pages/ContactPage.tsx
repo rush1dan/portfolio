@@ -7,10 +7,11 @@ import axios from 'axios'
 import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
 import lottieJson from '../public/loading_success_fail_lottie.json'
 import Image from 'next/image'
+import { PageProps } from '@/app/page'
 
-type ContactPageProps = {}
+type ContactPageProps = {} & PageProps
 
-export default function ContactPage({ }: ContactPageProps) {
+export default function ContactPage({ isMobile, mediaQueries }: ContactPageProps) {
     return (
         <AnimateOnView Component={ContactPageContent} />
     )

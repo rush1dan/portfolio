@@ -14,25 +14,22 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { motion } from 'framer-motion'
-import { MediaQueryDefault, defaultMediaQueries } from '@/myutils/defaultMediaQueries'
-import useMediaQueries from 'media-queries-in-react'
+import { PageProps } from '@/app/page'
 
-type Props = {}
+type ProjectPageProps = {} & PageProps
 
-export default function ProjectsPage({ }: Props) {
+export default function ProjectsPage({ isMobile, mediaQueries }: ProjectPageProps) {
     return (
-        <AnimateOnView Component={ProjectPageContent} />
+        <AnimateOnView Component={ProjectPageContent} isMobile={isMobile} mediaQueries={mediaQueries} />
     )
 }
 
-function ProjectPageContent({ animationControls }: AnimateableComponentProps) {
-    const mediaQueries: MediaQueryDefault = useMediaQueries(defaultMediaQueries);
-
+function ProjectPageContent({ animationControls, isMobile, mediaQueries }: AnimateableComponentProps) {
     const projects = projectStack.length;
     const games = gameStack.length;
 
-    const projectCardsToShow = mediaQueries.lg ? 3 : 1;
-    const gameCardsToShow = mediaQueries.xl ? 6 : (mediaQueries.lg ? 5 : (mediaQueries.md ? 3 : 1));
+    const projectCardsToShow = mediaQueries?.lg ? 3 : 1;
+    const gameCardsToShow = mediaQueries?.xl ? 6 : (mediaQueries?.lg ? 5 : (mediaQueries?.md ? 3 : 1));
 
     const [projectStart, setProjectStart] = useState(true);
     const [projectEnd, setProjectEnd] = useState(false);

@@ -8,13 +8,24 @@ import { isMobile } from 'react-device-detect'
 import Head from 'next/head'
 import Loading from '@/components/Loading'
 import Script from 'next/script'
+import { MediaQueryDefault, defaultMediaQueries } from '@/myutils/defaultMediaQueries'
+import useMediaQueries from 'media-queries-in-react'
 
 const AboutPageComponent = dynamic(() => import('@/pages/AboutPage'), { loading: () => <Loading /> })
 const SkillsPageComponent = dynamic(() => import('@/pages/SkillsPage'), { loading: () => <Loading /> })
 const ProjectsPageComponent = dynamic(() => import('@/pages/ProjectsPage'), { loading: () => <Loading /> })
 const ContactPageComponent = dynamic(() => import('@/pages/ContactPage'), { loading: () => <Loading /> })
 
+export type PageProps = {
+  isMobile?: boolean,
+  mediaQueries?: MediaQueryDefault
+}
+
 export default function Home() {
+
+  const mediaQueries: MediaQueryDefault = useMediaQueries(defaultMediaQueries);
+  const isMobileDevice: boolean = isMobile;
+
   return (
     <div className="bg-bgColor text-white h-screen scroll-smooth overflow-y-scroll overflow-x-hidden">
 
@@ -50,22 +61,22 @@ export default function Home() {
 
       {/* About */}
       <section id="about">
-        <LoadingPage loadNow={!isMobile} Component={AboutPageComponent} />
+        <LoadingPage loadNow={!isMobileDevice} Component={AboutPageComponent} isMobile={isMobileDevice} mediaQueries={mediaQueries} />
       </section>
 
       {/* Skills */}
       <section id="skills">
-        <LoadingPage loadNow={!isMobile} Component={SkillsPageComponent} />
+        <LoadingPage loadNow={!isMobileDevice} Component={SkillsPageComponent} isMobile={isMobileDevice} mediaQueries={mediaQueries} />
       </section>
 
       {/* Projects */}
       <section id="projects">
-        <LoadingPage loadNow={false} Component={ProjectsPageComponent} />
+        <LoadingPage loadNow={false} Component={ProjectsPageComponent} isMobile={isMobileDevice} mediaQueries={mediaQueries} />
       </section>
 
       {/* Contact Me */}
       <section id="contact">
-        <LoadingPage loadNow={!isMobile} Component={ContactPageComponent} />
+        <LoadingPage loadNow={!isMobileDevice} Component={ContactPageComponent} isMobile={isMobileDevice} mediaQueries={mediaQueries} />
       </section>
 
     </div>

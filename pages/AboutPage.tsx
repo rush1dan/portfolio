@@ -4,21 +4,18 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
 import HeadingLine from '@/components/HeadingLine'
-import { defaultMediaQueries, MediaQueryDefault } from '@/myutils/defaultMediaQueries'
-import useMediaQueries from 'media-queries-in-react'
 import Image from 'next/image'
+import { PageProps } from '@/app/page'
 
-type AboutPageProps = {}
+type AboutPageProps = {} & PageProps
 
-export default function AboutPage({ }: AboutPageProps) {
+export default function AboutPage({ isMobile, mediaQueries }: AboutPageProps) {
     return (
-        <AnimateOnView Component={AboutPageContent} />
+        <AnimateOnView Component={AboutPageContent} isMobile={isMobile} mediaQueries={mediaQueries} />
     )
 }
 
-function AboutPageContent({ animationControls }: AnimateableComponentProps) {
-    const mediaQueries: MediaQueryDefault = useMediaQueries(defaultMediaQueries);
-
+function AboutPageContent({ animationControls, isMobile, mediaQueries }: AnimateableComponentProps) {
     const kolpoverseCard = <InfoCard
         info={['Game Programmer', 'Kolpoverse Studios', 'November, 2022 - March, 2023']}
         icons={['/icons/laptop.svg', '/icons/Kolpoverse.png', '/icons/calendar.svg']}
@@ -32,7 +29,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
     const buetCard = <InfoCard
         info={['BSc in Mechanical Engineering,', 'Bangladesh University of Engineering and Technology', 'CGPA 3.45 out of 4.00', 'February, 2016 - February, 2021']}
         icons={['/icons/gear.svg', '/icons/buet.png', '/icons/notebook.svg', '/icons/calendar.svg']}
-        rightAligned={mediaQueries.xl} />
+        rightAligned={mediaQueries?.xl} />
 
     return (
         <div className='w-screen py-24'>
@@ -45,7 +42,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                         animationControls={animationControls}
                         heading='ABOUT'
                         lineWidth='w-[10vw]'
-                        textSizeClass={mediaQueries.xl ? undefined : 'text-2xl'}
+                        textSizeClass={mediaQueries?.xl ? undefined : 'text-2xl'}
                     />
                     {/* Description */}
                     <motion.p className='px-4 max-w-6xl font-medium text-sm md:text-base xl:text-lg text-justify'
@@ -59,7 +56,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                         }}
                         initial="hidden"
                         animate={animationControls}
-                        transition={{ duration: 0.75, delay: mediaQueries.xl ? 0.75 : 0.25 }}>
+                        transition={{ duration: 0.75, delay: mediaQueries?.xl ? 0.75 : 0.25 }}>
                         I&apos;m Rushidan Islam, a former game developer who is recently venturing into the world of fullstack software development.
                         I&apos;m always enthusiastic about learning new technologies and overcoming the challenges that come as a result.
                         Having skill and experience in a wide range of software development areas such as game development, desktop applications and web development,
@@ -70,7 +67,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                 {/* Only For XL Screens */}
 
                 {
-                    mediaQueries.xl &&
+                    mediaQueries?.xl &&
                     <>
                         {/* Experience/Education Headings Section*/}
                         <div className='pt-4 w-full flex flex-row items-center justify-center gap-x-[8rem]'>
@@ -203,7 +200,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                 {/* For Screens Below XL */}
 
                 {
-                    !mediaQueries.xl &&
+                    !mediaQueries?.xl &&
                     <>
                         {/* Experience Section */}
                         <div className='pt-2 w-full flex flex-col items-center justify-center gap-y-8'>
@@ -269,7 +266,7 @@ function AboutPageContent({ animationControls }: AnimateableComponentProps) {
                                 }}
                                 initial="hidden"
                                 animate={animationControls}
-                                transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut'}}>
+                                transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}>
                                 {buetCard}
                             </motion.div>
                         </div>

@@ -10,6 +10,7 @@ import Loading from '@/components/Loading'
 import Script from 'next/script'
 import { MediaQueryDefault, defaultMediaQueries } from '@/myutils/defaultMediaQueries'
 import useMediaQueries from 'media-queries-in-react'
+import { useEffect, useState } from 'react'
 
 const AboutPageComponent = dynamic(() => import('@/pages/AboutPage'), { loading: () => <Loading /> })
 const SkillsPageComponent = dynamic(() => import('@/pages/SkillsPage'), { loading: () => <Loading /> })
@@ -25,6 +26,14 @@ export default function Home() {
 
   const mediaQueries: MediaQueryDefault = useMediaQueries(defaultMediaQueries);
   const isMobileDevice: boolean = isMobile;
+
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div className="bg-bgColor text-white h-screen scroll-smooth overflow-y-scroll overflow-x-hidden">

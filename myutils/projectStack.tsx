@@ -6,7 +6,8 @@ interface Project {
     description: string,
     techStackUsed: string[],
     gitHubURL: string,
-    demoURL?: string
+    demoURL?: string,
+    defaultLink?: string
 }
 
 export const projectStack: Project[] = [
@@ -16,7 +17,8 @@ export const projectStack: Project[] = [
         description: "My developer portfolio website",
         techStackUsed: ["react", "typescript", "tailwindcss", "nextjs"],
         gitHubURL: "https://github.com/rush1dan/portfolio",
-        demoURL: "http://rushidanislam.com"
+        demoURL: "http://rushidanislam.com",
+        defaultLink: "http://rushidanislam.com"
     },
     { 
         image: `${iconDir}/ReactDotNetCRUD.png`,
@@ -24,7 +26,8 @@ export const projectStack: Project[] = [
         description: "Simple full stack CRUD application",
         techStackUsed: ["react", "javascript", "css", "dotnetcore", "postgresql", "docker"],
         gitHubURL: "https://github.com/rush1dan/react-dotnet-CRUD",
-        demoURL: "https://rush1dan-react-dotnet-crud.onrender.com"
+        demoURL: "https://rush1dan-react-dotnet-crud.onrender.com",
+        defaultLink: "https://rush1dan-react-dotnet-crud.onrender.com"
     },
     { 
         image: `${iconDir}/EzEncryptorIcon.png`,
@@ -32,7 +35,8 @@ export const projectStack: Project[] = [
         description: "Windows GUI program to easily encrypt/decrypt files with password",
         techStackUsed: ["python", "cpp"],
         gitHubURL: "https://github.com/rush1dan/file-encryptor",
-        demoURL: "https://github.com/rush1dan/file-encryptor/releases/download/EzEncryptor-v1.0/ezencryptor_installer_v1.0.exe"
+        demoURL: "https://github.com/rush1dan/file-encryptor/releases/download/EzEncryptor-v1.0/ezencryptor_installer_v1.0.exe",
+        defaultLink: "https://github.com/rush1dan/file-encryptor"
     },
     { 
         image: `${iconDir}/SubSyncIcon.png`,
@@ -40,6 +44,7 @@ export const projectStack: Project[] = [
         description: "Subtitle Time-stamp Modifier GUI Program",
         techStackUsed: ["python"],
         gitHubURL: "https://github.com/rush1dan/subtitle-synchronizer",
-        demoURL: "https://github.com/rush1dan/subtitle-synchronizer/releases/download/v1.0.0/SubtitleSynchronizer.exe"
+        demoURL: "https://github.com/rush1dan/subtitle-synchronizer/releases/download/v1.0.0/SubtitleSynchronizer.exe",
+        defaultLink: "https://github.com/rush1dan/subtitle-synchronizer"
     },
 ]

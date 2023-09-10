@@ -135,6 +135,7 @@ function ProjectPageContent({ animationControls, isMobile, mediaQueries }: Anima
                                                     techStackUsed={project.techStackUsed}
                                                     gitHubURL={project.gitHubURL}
                                                     demoURL={project.demoURL}
+                                                    defaultLink={project.defaultLink}
                                                 />
                                             </motion.div>
                                         </SwiperSlide>

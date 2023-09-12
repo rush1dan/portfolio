@@ -57,10 +57,11 @@ function AboutPageContent({ animationControls, isMobile, mediaQueries }: Animate
                         initial="hidden"
                         animate={animationControls}
                         transition={{ duration: 0.75, delay: mediaQueries?.xl ? 0.75 : 0.25 }}>
-                        I&apos;m Rushidan Islam, a former game developer who is recently venturing into the world of fullstack software development.
-                        I&apos;m always enthusiastic about learning new technologies and overcoming the challenges that come as a result.
-                        Having skill and experience in a wide range of software development areas such as game development, desktop applications and web development,
-                        allows me to analyze problems from multiple directions and come up with unique and effective solutions.
+                        I am a software engineer proficient in both frontend and backend technologies.
+                        I have ample coding experience through my earlier professional ventures and personal projects.
+                        I have working experience of game development, desktop app development and web app development, which makes me a well-rounded
+                        software developer. Equipped with an inquisitive mind and a knack for problem solving, I am always on the lookout for learning new things and growing myself 
+                        as an efficient and skilled software engineer.
                     </motion.p>
                 </section>
 

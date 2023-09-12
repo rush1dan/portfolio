@@ -1,20 +1,20 @@
 'use client'
 
+import { PageProps } from '@/app/page'
 import Image from 'next/image'
-import Link from 'next/link'
 import React, { useState } from 'react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
-type Props = {}
+type HomePageProps = {} & PageProps
 
-export default function HomePage({ }: Props) {
+export default function HomePage({ isMobile, mediaQueries }: HomePageProps) {
     const [text, count] = useTypewriter({
         words: ["A Software Engineer.", "A Game Developer.", "An avid learner."],
         loop: true,
         delaySpeed: 2000
     })
 
-    const [dpLoaded, setDpLoaded] = useState(false)
+    const [dpLoaded, setDpLoaded] = useState(false);
 
     return (
         <div className='h-screen w-screen relative'>

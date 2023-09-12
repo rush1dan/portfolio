@@ -10,13 +10,14 @@ type ProjectCardProps = {
     description: string,
     techStackUsed: string[],
     gitHubURL: string,
-    demoURL?: string
+    demoURL?: string,
+    defaultLink?: string
 }
 
-export default function ProjectCard({ image, title, description, techStackUsed, gitHubURL, demoURL }: ProjectCardProps) {
+export default function ProjectCard({ image, title, description, techStackUsed, gitHubURL, demoURL, defaultLink }: ProjectCardProps) {
     return (
         <div className='px-6 py-2'>
-            <a href={demoURL ? demoURL : gitHubURL} target='_blank'>
+            <a href={defaultLink ? defaultLink : gitHubURL} target='_blank'>
                 {/* Main Card */}
                 <div className="bg-cardBGColor w-[16rem] h-[22rem] rounded-lg shadow-lg shadow-[rgb(36,36,36,0.5] border-2 border-cardBorderColor
                     cursor-pointer hover:border-cardHighlightColor hover:scale-[1.025] hover:shadow-2xl transition-transform duration-100">

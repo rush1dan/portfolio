@@ -4,14 +4,13 @@ import React from 'react'
 import SkillCategory from '@/components/SkillCategory'
 import HeadingLine from '@/components/HeadingLine'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
-import { defaultMediaQueries, MediaQueryDefault } from '@/myutils/defaultMediaQueries'
-import useMediaQueries from 'media-queries-in-react'
 import Lottie from 'react-lottie-player'
 import developer_lottie_json from '../public/developer_lottie.json'
+import { PageProps } from '@/app/page'
 
-type SkillsPageProps = {}
+type SkillsPageProps = {} & PageProps
 
-export default function SkillsPage({}: SkillsPageProps) {
+export default function SkillsPage({ isMobile, mediaQueries }: SkillsPageProps) {
 
     const frontEndSkillList = ["html", "css", "tailwindcss", "javascript", "typescript", "react", "redux", "flutter"]
     const backEndSkillList = ["nodejs", "expressjs", "nextjs", "mongodb", "dotnetcore", "microsoft-sql-server", "postgresql", "docker"]
@@ -19,14 +18,14 @@ export default function SkillsPage({}: SkillsPageProps) {
     const languageSkillList = ["cpp", "csharp", "python"]
 
     return (
-        <AnimateOnView Component={SkillsPageContent} otherProps={{ frontEndSkillList, backEndSkillList, gameDevSkillList, languageSkillList }} />
+        <AnimateOnView Component={SkillsPageContent} otherProps={{ frontEndSkillList, backEndSkillList, gameDevSkillList, languageSkillList }}
+        isMobile={isMobile} mediaQueries={mediaQueries} />
     )
 }
 
-function SkillsPageContent({ animationControls, otherProps }: AnimateableComponentProps)
+function SkillsPageContent({ animationControls, otherProps, isMobile, mediaQueries }: AnimateableComponentProps)
 {
-    const mediaQueries: MediaQueryDefault = useMediaQueries(defaultMediaQueries);
-    const lottieSize: string = mediaQueries.xl ? '300px' : (mediaQueries.lg ? '250px' : (mediaQueries.md ? '250px' : (mediaQueries.thin ? '200px' : '150px')));
+    const lottieSize: string = mediaQueries?.xl ? '300px' : (mediaQueries?.lg ? '250px' : (mediaQueries?.md ? '250px' : (mediaQueries?.thin ? '200px' : '150px')));
 
     return (
         <div className='w-screen py-24 bg-gradient-radial from-[rgb(54,54,54)] from-5% to-[rgb(36,36,36)] to-70%'>
@@ -49,10 +48,10 @@ function SkillsPageContent({ animationControls, otherProps }: AnimateableCompone
 
                 {/* Skill flex container */}
                 <div className='flex flex-col xl:space-y-24 space-y-10'>
-                    <SkillCategory category='Front End' skillList={otherProps.frontEndSkillList} mediaQuery={mediaQueries} animationControls={animationControls} />
-                    <SkillCategory category='Back End' skillList={otherProps.backEndSkillList} mediaQuery={mediaQueries} animationControls={animationControls} />
-                    <SkillCategory category='Game Dev' skillList={otherProps.gameDevSkillList} mediaQuery={mediaQueries} animationControls={animationControls} />
-                    <SkillCategory category='Languages' skillList={otherProps.languageSkillList} mediaQuery={mediaQueries} animationControls={animationControls} />
+                    <SkillCategory category='Front End' skillList={otherProps.frontEndSkillList} mediaQuery={mediaQueries!} animationControls={animationControls} />
+                    <SkillCategory category='Back End' skillList={otherProps.backEndSkillList} mediaQuery={mediaQueries!} animationControls={animationControls} />
+                    <SkillCategory category='Game Dev' skillList={otherProps.gameDevSkillList} mediaQuery={mediaQueries!} animationControls={animationControls} />
+                    <SkillCategory category='Languages' skillList={otherProps.languageSkillList} mediaQuery={mediaQueries!} animationControls={animationControls} />
                 </div>
             </div>
         </div>

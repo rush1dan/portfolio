@@ -19,7 +19,7 @@ export const techStack: TechStack = {
   "redux": { icon: `${iconDir}/redux.svg`, iconWithTitle: "", altText: "Redux" },
   "flutter": { icon: `${iconDir}/flutter.svg`, iconWithTitle: "", altText: "Flutter" },
   "nodejs": { icon: `${iconDir}/nodejs.svg`, iconWithTitle: `${iconWithTitleDir}/nodejs.svg`, altText: "NodeJS" },
-  "expressjs": { icon: `${iconDir}/expressjs.svg`, iconWithTitle: `${iconWithTitleDir}/expressjs.svg`, altText: "ExpressJS" },
+  "socketio": { icon: `${iconDir}/socketio.svg`, iconWithTitle: `${iconWithTitleDir}/socketio.svg`, altText: "SocketIO" },
   "nextjs": { icon: `${iconDir}/nextjs.svg`, iconWithTitle: `${iconWithTitleDir}/nextjs.svg`, altText: "NextJS" },
   "mongodb": { icon: `${iconDir}/mongodb.svg`, iconWithTitle: `${iconWithTitleDir}/mongodb.svg`, altText: "MongoDB" },
   "dotnetcore": { icon: `${iconDir}/dotnetcore.svg`, iconWithTitle: "", altText: ".NET Core" },

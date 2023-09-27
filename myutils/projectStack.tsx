@@ -15,10 +15,19 @@ export const projectStack: Project[] = [
         image: `${iconDir}/PortfolioZoomed.png`,
         title: "Portfolio Website",
         description: "My developer portfolio website",
-        techStackUsed: ["react", "typescript", "tailwindcss", "nextjs"],
+        techStackUsed: ["nextjs", "react", "typescript", "tailwindcss"],
         gitHubURL: "https://github.com/rush1dan/portfolio",
         demoURL: "http://rushidanislam.com",
         defaultLink: "http://rushidanislam.com"
+    },
+    { 
+        image: `${iconDir}/VehicleTrackingThumbnail.png`,
+        title: "Tracky",
+        description: "Realtime Vehicle Tracking App",
+        techStackUsed: ["nextjs", "react", "redux", "javascript", "tailwindcss", "socketio", "nodejs"],
+        gitHubURL: "https://github.com/rush1dan/vehicle-tracking",
+        demoURL: "https://vehicle-tracking-rush1dan.vercel.app",
+        defaultLink: "https://vehicle-tracking-rush1dan.vercel.app"
     },
     { 
         image: `${iconDir}/ReactDotNetCRUD.png`,

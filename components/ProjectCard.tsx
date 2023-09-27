@@ -38,15 +38,15 @@ export default function ProjectCard({ image, title, description, techStackUsed, 
                                 <p className='text-xs'>{description}</p>
                             </div>
                             {/* Tech Stack */}
-                            <div className='mt-6 w-full flex flex-row items-center justify-start space-x-2 h-[1.75rem]'>
+                            <div className='mt-3 w-full flex flex-row items-start justify-start gap-x-2 h-[1.75rem]'>
                                 <p className='text-sm font-semibold'>
                                     Tech:
                                 </p>
-                                <div className='flex flex-row items-center justify-start space-x-2'>
+                                <div className='flex flex-wrap items-center justify-start gap-x-2 gap-y-2'>
                                     {
                                         techStackUsed.map((tech, index) => {
                                             return (
-                                                <div key={index}>
+                                                <div key={index} className='flex-none'>
                                                     <Tech
                                                         iconSrc={techStack[tech].icon}
                                                         hoverIconSrc={techStack[tech].iconWithTitle}
@@ -64,7 +64,7 @@ export default function ProjectCard({ image, title, description, techStackUsed, 
                                 </div>
                             </div>
                             {/* Project Links */}
-                            <div className="mt-6 w-full flex flex-row items-center justify-center space-x-8">
+                            <div className="mt-9 w-full flex flex-row items-center justify-center space-x-8">
                                 <ProjectLinkButton url={gitHubURL} iconSrc='icons/github-white.svg' title='Code'/>
                                 {demoURL && <ProjectLinkButton url={demoURL} iconSrc='icons/link-white.svg' title='Demo' />}
                             </div>

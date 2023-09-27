@@ -24,10 +24,10 @@ export const projectStack: Project[] = [
         image: `${iconDir}/VehicleTrackingThumbnail.png`,
         title: "Tracky",
         description: "Realtime Vehicle Tracking App",
-        techStackUsed: ["nextjs", "react", "redux", "javascript", "tailwindcss", "socketio"],
+        techStackUsed: ["nextjs", "react", "redux", "javascript", "tailwindcss", "socketio", "nodejs"],
         gitHubURL: "https://github.com/rush1dan/vehicle-tracking",
-        demoURL: "",
-        defaultLink: "https://github.com/rush1dan/vehicle-tracking"
+        demoURL: "https://vehicle-tracking-rush1dan.vercel.app",
+        defaultLink: "https://vehicle-tracking-rush1dan.vercel.app"
     },
     { 
         image: `${iconDir}/ReactDotNetCRUD.png`,

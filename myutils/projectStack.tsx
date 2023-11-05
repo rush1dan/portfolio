@@ -30,6 +30,15 @@ export const projectStack: Project[] = [
         defaultLink: "https://vehicle-tracking-rush1dan.vercel.app"
     },
     { 
+        image: `${iconDir}/DjangoProject.png`,
+        title: "InstaBook",
+        description: "Full stack modern social media app with Django",
+        techStackUsed: ["nextjs", "react", "typescript", "tailwindcss", "django", "postgresql", "docker"],
+        gitHubURL: "https://github.com/rush1dan/django-social-media",
+        //demoURL: "https://vehicle-tracking-rush1dan.vercel.app",
+        defaultLink: "https://github.com/rush1dan/django-social-media"
+    },
+    { 
         image: `${iconDir}/ReactDotNetCRUD.png`,
         title: "Full Stack CRUD App",
         description: "Simple full stack CRUD application",

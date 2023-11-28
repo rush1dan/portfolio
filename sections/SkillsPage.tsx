@@ -12,10 +12,10 @@ type SkillsPageProps = {} & PageProps
 
 export default function SkillsPage({ isMobile, mediaQueries }: SkillsPageProps) {
 
-    const frontEndSkillList = ["html", "css", "tailwindcss", "javascript", "typescript", "nextjs", "react", "redux"]
+    const frontEndSkillList = ["html", "css", "tailwindcss", "nextjs", "react", "redux"]
     const backEndSkillList = ["nodejs", "mongodb", "socketio", "django", "postgresql", "dotnetcore", "microsoft-sql-server", "docker"]
     const gameDevSkillList = ["unity", "blender"]
-    const languageSkillList = ["cpp", "csharp", "python"]
+    const languageSkillList = ["cpp", "csharp", "python", "javascript", "typescript"]
 
     return (
         <AnimateOnView Component={SkillsPageContent} otherProps={{ frontEndSkillList, backEndSkillList, gameDevSkillList, languageSkillList }}

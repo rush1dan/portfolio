@@ -1,9 +1,9 @@
 'use client'
 
 import Header from '@/components/Header'
-import HomePage from '@/pages/HomePage'
+import HomePage from '@/sections/HomePage'
 import dynamic from 'next/dynamic'
-import LoadingPage from '@/pages/LoadingPage'
+import LoadingPage from '@/sections/LoadingPage'
 import { isMobile } from 'react-device-detect'
 import Head from 'next/head'
 import Loading from '@/components/Loading'
@@ -12,10 +12,10 @@ import { MediaQueryDefault, defaultMediaQueries } from '@/myutils/defaultMediaQu
 import useMediaQueries from 'media-queries-in-react'
 import { useEffect, useState } from 'react'
 
-const AboutPageComponent = dynamic(() => import('@/pages/AboutPage'), { loading: () => <Loading /> })
-const SkillsPageComponent = dynamic(() => import('@/pages/SkillsPage'), { loading: () => <Loading /> })
-const ProjectsPageComponent = dynamic(() => import('@/pages/ProjectsPage'), { loading: () => <Loading /> })
-const ContactPageComponent = dynamic(() => import('@/pages/ContactPage'), { loading: () => <Loading /> })
+const AboutPageComponent = dynamic(() => import('@/sections/AboutPage'), { loading: () => <Loading /> })
+const SkillsPageComponent = dynamic(() => import('@/sections/SkillsPage'), { loading: () => <Loading /> })
+const ProjectsPageComponent = dynamic(() => import('@/sections/ProjectsPage'), { loading: () => <Loading /> })
+const ContactPageComponent = dynamic(() => import('@/sections/ContactPage'), { loading: () => <Loading /> })
 
 export type PageProps = {
   isMobile?: boolean,

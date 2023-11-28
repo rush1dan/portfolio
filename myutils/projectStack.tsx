@@ -23,11 +23,20 @@ export const projectStack: Project[] = [
     { 
         image: `${iconDir}/VehicleTrackingThumbnail.png`,
         title: "Tracky",
-        description: "Realtime Vehicle Tracking/Fleet Managment App with User Accounts",
+        description: "Realtime Vehicle Tracking/Fleet Managment App",
         techStackUsed: ["nextjs", "react", "redux", "javascript", "tailwindcss", "socketio", "nodejs", "mongodb", "expressjs", "nextauth"],
         gitHubURL: "https://github.com/rush1dan/vehicle-tracking",
         demoURL: "https://vehicle-tracking-rush1dan.vercel.app",
         defaultLink: "https://vehicle-tracking-rush1dan.vercel.app"
+    },
+    { 
+        image: `${iconDir}/FinDr.png`,
+        title: "FinDr.",
+        description: "Financial health indicator app",
+        techStackUsed: ["nextjs", "react", "javascript", "tailwindcss", "mongodb", "nextauth"],
+        gitHubURL: "https://github.com/rush1dan/financial-health",
+        demoURL: "https://rush1dan-financial-health.netlify.app",
+        defaultLink: "https://rush1dan-financial-health.netlify.app"
     },
     { 
         image: `${iconDir}/DjangoProject.png`,

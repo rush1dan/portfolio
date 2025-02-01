@@ -23,6 +23,30 @@ body {
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 } */
 
+/* Custom Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(208,210,216);
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(107,114,128);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255,239,156);
+}
+
 * {
   margin: 0;
   padding: 0;

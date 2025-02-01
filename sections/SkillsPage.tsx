@@ -13,7 +13,7 @@ type SkillsPageProps = {} & PageProps
 export default function SkillsPage({ isMobile, mediaQueries }: SkillsPageProps) {
 
     const frontEndSkillList = ["html", "css", "tailwindcss", "nextjs", "react", "redux"]
-    const backEndSkillList = ["nodejs", "mongodb", "socketio", "django", "postgresql", "dotnetcore", "microsoft-sql-server", "docker"]
+    const backEndSkillList = ["nodejs", "mongodb", "socketio", "django", "postgresql", "dotnetcore", "microsoft-sql-server", "docker", "rabbitmq", "nginx"]
     const gameDevSkillList = ["unity", "blender"]
     const languageSkillList = ["cpp", "csharp", "python", "javascript", "typescript"]
 

@@ -13,12 +13,13 @@ type SkillsPageProps = {} & PageProps
 export default function SkillsPage({ isMobile, mediaQueries }: SkillsPageProps) {
 
     const frontEndSkillList = ["html", "css", "tailwindcss", "nextjs", "react", "redux"]
-    const backEndSkillList = ["nodejs", "mongodb", "socketio", "django", "postgresql", "dotnetcore", "microsoft-sql-server", "docker", "rabbitmq", "nginx"]
+    const backEndSkillList = ["nodejs", "mongodb", "socketio", "fastapi", "django", "postgresql", "dotnetcore", "microsoft-sql-server", "redis", "rabbitmq"]
+    const opsSkillList = ["docker", "kubernetes", "nginx"]
     const gameDevSkillList = ["unity", "blender"]
     const languageSkillList = ["cpp", "csharp", "python", "javascript", "typescript"]
 
     return (
-        <AnimateOnView Component={SkillsPageContent} otherProps={{ frontEndSkillList, backEndSkillList, gameDevSkillList, languageSkillList }}
+        <AnimateOnView Component={SkillsPageContent} otherProps={{ frontEndSkillList, backEndSkillList, opsSkillList, gameDevSkillList, languageSkillList }}
         isMobile={isMobile} mediaQueries={mediaQueries} />
     )
 }
@@ -47,9 +48,10 @@ function SkillsPageContent({ animationControls, otherProps, isMobile, mediaQueri
                 />
 
                 {/* Skill flex container */}
-                <div className='flex flex-col xl:space-y-24 space-y-10'>
+                <div className='flex flex-col xl:space-y-16 space-y-10'>
                     <SkillCategory category='Front End' skillList={otherProps.frontEndSkillList} mediaQuery={mediaQueries!} animationControls={animationControls} />
                     <SkillCategory category='Back End' skillList={otherProps.backEndSkillList} mediaQuery={mediaQueries!} animationControls={animationControls} />
+                    <SkillCategory category='Ops' skillList={otherProps.opsSkillList} mediaQuery={mediaQueries!} animationControls={animationControls} />
                     <SkillCategory category='Game Dev' skillList={otherProps.gameDevSkillList} mediaQuery={mediaQueries!} animationControls={animationControls} />
                     <SkillCategory category='Languages' skillList={otherProps.languageSkillList} mediaQuery={mediaQueries!} animationControls={animationControls} />
                 </div>

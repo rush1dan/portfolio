@@ -26,11 +26,15 @@ export const techStack: TechStack = {
   "nextauth": {icon: `${iconDir}/nextauth.png`, iconWithTitle: "", altText: "Next-Auth"},
   "mongodb": { icon: `${iconDir}/mongodb.svg`, iconWithTitle: `${iconWithTitleDir}/mongodb.svg`, altText: "MongoDB" },
   "django": { icon: `${iconDir}/django.svg`, iconWithTitle: `${iconWithTitleDir}/django.svg`, altText: "Django" },
+  "fastapi": { icon: `${iconDir}/fastapi.svg`, iconWithTitle: `${iconWithTitleDir}/fastapi.svg`, altText: "FastAPI" },
   "postgresql": { icon: `${iconDir}/postgresql.svg`, iconWithTitle: `${iconWithTitleDir}/postgresql.svg`, altText: "PostgreSQL" },
   "dotnetcore": { icon: `${iconDir}/dotnetcore.svg`, iconWithTitle: "", altText: ".NET Core" },
   "microsoft-sql-server": { icon: `${iconDir}/microsoft-sql-server.svg`, iconWithTitle: `${iconWithTitleDir}/microsoft-sql-server.svg`, altText: "MS Sql Server" },
-  "docker": { icon: `${iconDir}/docker.svg`, iconWithTitle: `${iconWithTitleDir}/docker.svg`, altText: "Docker" },
   "rabbitmq": { icon: `${iconDir}/rabbitmq.svg`, iconWithTitle: `${iconWithTitleDir}/rabbitmq.svg`, altText: "RabbitMQ" },
+  "redis": { icon: `${iconDir}/redis.svg`, iconWithTitle: `${iconWithTitleDir}/redis.svg`, altText: "Redis" },
+  
+  "docker": { icon: `${iconDir}/docker.svg`, iconWithTitle: `${iconWithTitleDir}/docker.svg`, altText: "Docker" },
+  "kubernetes": { icon: `${iconDir}/kubernetes.svg`, iconWithTitle: `${iconWithTitleDir}/kubernetes.svg`, altText: "Kubernetes" },
   "nginx": { icon: `${iconDir}/nginx.svg`, iconWithTitle: `${iconWithTitleDir}/nginx.svg`, altText: "Nginx" },
   
   "unity": { icon: `${iconDir}/unity_white.svg`, iconWithTitle: `${iconWithTitleDir}/unity_black.svg`, altText: "Unity" },

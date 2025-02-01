@@ -9,7 +9,7 @@ type HomePageProps = {} & PageProps
 
 export default function HomePage({ isMobile, mediaQueries }: HomePageProps) {
     const [text, count] = useTypewriter({
-        words: ["A Software Engineer.", "A Game Developer.", "An avid learner."],
+        words: ["A Software Engineer.", "A tech enthusiast.", "An avid learner."],
         loop: true,
         delaySpeed: 2000
     })

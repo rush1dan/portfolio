@@ -36,7 +36,7 @@ function SkillsPageContent({ animationControls, otherProps, isMobile, mediaQueri
                 lineWidth='w-[30vw]'
             />
             {/* Main Flex Container */}
-            <div className='pt-20 h-full flex flex-col xl:flex-row items-center justify-center 2xl:space-x-40 xl:space-x-12 xl:space-y-0 space-y-8'>
+            <div className='pt-20 h-full flex flex-col xl:flex-row items-center justify-between px-[10%] space-y-8'>
 
                 {/* Lottie animation */}
                 <Lottie

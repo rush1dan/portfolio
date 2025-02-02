@@ -27,6 +27,7 @@ export const techStack: TechStack = {
   "mongodb": { icon: `${iconDir}/mongodb.svg`, iconWithTitle: `${iconWithTitleDir}/mongodb.svg`, altText: "MongoDB" },
   "django": { icon: `${iconDir}/django.svg`, iconWithTitle: `${iconWithTitleDir}/django.svg`, altText: "Django" },
   "fastapi": { icon: `${iconDir}/fastapi.svg`, iconWithTitle: `${iconWithTitleDir}/fastapi.svg`, altText: "FastAPI" },
+  "celery": { icon: `${iconDir}/celery.png`, iconWithTitle: `${iconWithTitleDir}/celery.png`, altText: "Celery" },
   "postgresql": { icon: `${iconDir}/postgresql.svg`, iconWithTitle: `${iconWithTitleDir}/postgresql.svg`, altText: "PostgreSQL" },
   "dotnetcore": { icon: `${iconDir}/dotnetcore.svg`, iconWithTitle: "", altText: ".NET Core" },
   "microsoft-sql-server": { icon: `${iconDir}/microsoft-sql-server.svg`, iconWithTitle: `${iconWithTitleDir}/microsoft-sql-server.svg`, altText: "MS Sql Server" },
@@ -36,6 +37,7 @@ export const techStack: TechStack = {
   "docker": { icon: `${iconDir}/docker.svg`, iconWithTitle: `${iconWithTitleDir}/docker.svg`, altText: "Docker" },
   "kubernetes": { icon: `${iconDir}/kubernetes.svg`, iconWithTitle: `${iconWithTitleDir}/kubernetes.svg`, altText: "Kubernetes" },
   "nginx": { icon: `${iconDir}/nginx.svg`, iconWithTitle: `${iconWithTitleDir}/nginx.svg`, altText: "Nginx" },
+  "locust": { icon: `${iconDir}/locust.png`, iconWithTitle: `${iconWithTitleDir}/locust.png`, altText: "Locust" },
   
   "unity": { icon: `${iconDir}/unity_white.svg`, iconWithTitle: `${iconWithTitleDir}/unity_black.svg`, altText: "Unity" },
   "blender": { icon: `${iconDir}/blender.svg`, iconWithTitle: `${iconWithTitleDir}/blender.svg`, altText: "Blender" },

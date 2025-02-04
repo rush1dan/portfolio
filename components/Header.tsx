@@ -74,9 +74,11 @@ export default function Header({ }: HeaderProps) {
                 transition={{
                     duration: 1.5,
                 }}
-                className='hidden md:flex flex-row items-center justify-center md:space-x-8 lg:space-x-14'>
+                className='hidden md:flex flex-row items-center justify-center md:space-x-8 lg:space-x-10'>
+                <a href="/#home" className='nav-button'>Home</a>
                 <a href="/#about" className='nav-button'>About</a>
                 <a href="/#skills" className='nav-button'>Skills</a>
+                <a href="/#work" className='nav-button'>Work</a>
                 <a href="/#projects" className='nav-button'>Projects</a>
                 <a href="/#contact" className='nav-button'>Contact</a>
             </motion.div>

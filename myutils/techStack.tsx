@@ -19,6 +19,7 @@ export const techStack: TechStack = {
   "react": { icon: `${iconDir}/react.svg`, iconWithTitle: `${iconWithTitleDir}/react.svg`, altText: "React" },
   "redux": { icon: `${iconDir}/redux.svg`, iconWithTitle: "", altText: "Redux" },
   "flutter": { icon: `${iconDir}/flutter.svg`, iconWithTitle: "", altText: "Flutter" },
+  "sanity": { icon: `${iconDir}/sanity.svg`, iconWithTitle: "", altText: "SanityCMS" },
 
   "nodejs": { icon: `${iconDir}/nodejs.svg`, iconWithTitle: `${iconWithTitleDir}/nodejs.svg`, altText: "Node.js" },
   "expressjs": { icon: `${iconDir}/expressjs.svg`, iconWithTitle: `${iconWithTitleDir}/expressjs.svg`, altText: "ExpressJS" },

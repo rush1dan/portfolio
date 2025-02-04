@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react'
 
 const AboutPageComponent = dynamic(() => import('@/sections/AboutPage'), { loading: () => <Loading /> })
 const SkillsPageComponent = dynamic(() => import('@/sections/SkillsPage'), { loading: () => <Loading /> })
+const WorkPageComponent = dynamic(() => import('@/sections/WorkPage'), { loading: () => <Loading /> })
 const ProjectsPageComponent = dynamic(() => import('@/sections/ProjectsPage'), { loading: () => <Loading /> })
 const ContactPageComponent = dynamic(() => import('@/sections/ContactPage'), { loading: () => <Loading /> })
 
@@ -76,6 +77,11 @@ export default function Home() {
       {/* Skills */}
       <section id="skills">
         <LoadingPage loadNow={!isMobileDevice} Component={SkillsPageComponent} isMobile={isMobileDevice} mediaQueries={mediaQueries} />
+      </section>
+
+      {/* Work */}
+      <section id="work">
+        <LoadingPage loadNow={false} Component={WorkPageComponent} isMobile={isMobileDevice} mediaQueries={mediaQueries} />
       </section>
 
       {/* Projects */}

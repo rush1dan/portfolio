@@ -29,7 +29,7 @@ export function WorkSlide({ workCardProps, extraDivs }: WorkSlideProps) {
             {
                 divArray.map((_, i) => {
                     return (
-                        <div className="w-full h-full bg-red-400">
+                        <div key={i} className="w-full h-full bg-red-400">
 
                         </div>
                     )

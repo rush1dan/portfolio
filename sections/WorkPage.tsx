@@ -4,7 +4,7 @@ import React, { useCallback, useState } from 'react'
 import HeadingLine from '@/components/HeadingLine'
 import { WorkSlide, WorkCard } from '@/components/WorkCard'
 import AnimateOnView, { AnimateableComponentProps } from '@/components/AnimateOnView'
-import { projectStack } from '@/myutils/projectStack'
+import { WorkProjects } from '@/myutils/workProjects'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
 import { PaginationOptions } from 'swiper/types/modules/pagination'
@@ -23,18 +23,18 @@ export default function WorkPage({ isMobile, mediaQueries }: WorkPageProps) {
 }
 
 function WorkPageContent({ animationControls, isMobile, mediaQueries }: AnimateableComponentProps) {
-    const projects = [1, 2, 3, 4, 5]
-    const projectCount = projects.length
+    const workProjectKeys = Object.keys(WorkProjects)
+    const projectCount = workProjectKeys.length
 
-    const workProjectsPerSlide = mediaQueries?.lg ? 6 : mediaQueries?.md ? 4 : 2
+    const workProjectsPerSlide = mediaQueries?.xl ? 6 : mediaQueries?.md ? 4 : 2
     const slideCount = Math.ceil(projectCount / workProjectsPerSlide);
 
-    const projectsDistributedAcrossSlides: Number[][] = [];
+    const projectsDistributedAcrossSlides: string[][] = [];
     for (let index = 0; index < projectCount; index++) {
         if (index % workProjectsPerSlide == 0) {
             projectsDistributedAcrossSlides[Math.floor(index / workProjectsPerSlide)] = []
         }
-        projectsDistributedAcrossSlides[Math.floor(index / workProjectsPerSlide)].push(projects[index])
+        projectsDistributedAcrossSlides[Math.floor(index / workProjectsPerSlide)].push(workProjectKeys[index])
     }
 
     const [projectStart, setProjectStart] = useState(true);
@@ -123,9 +123,11 @@ function WorkPageContent({ animationControls, isMobile, mediaQueries }: Animatea
                                                     initial="hidden"
                                                     animate={animationControls}
                                                     transition={{ delay: 0.25 * index, duration: 0.5, ease: 'backOut' }} >
-                                                    <WorkSlide workCardProps={projectSlide.map((num, i) => {
+                                                    <WorkSlide workCardProps={projectSlide.map((key, i) => {
+                                                        const workProject = WorkProjects[key];
+                                                        console.log(key);
                                                         return (
-                                                            {img: "", title: "", description: ""}
+                                                            {thumbnail: workProject.thumbnail, title: workProject.title, description: workProject.overview, slug: key}
                                                         )
                                                     })}
                                                     extraDivs={index == projectsDistributedAcrossSlides.length - 1 ? workProjectsPerSlide - projectSlide.length : 0}/>

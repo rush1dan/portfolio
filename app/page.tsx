@@ -1,6 +1,5 @@
 'use client'
 
-import Header from '@/components/Header'
 import HomePage from '@/sections/HomePage'
 import dynamic from 'next/dynamic'
 import LoadingPage from '@/sections/LoadingPage'

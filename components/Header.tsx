@@ -109,8 +109,10 @@ export default function Header({ }: HeaderProps) {
                     initial="hidden"
                     animate={animationControls}
                     transition={{ duration: 0.5, ease: 'circOut' }}>
+                    <a href="/#home" className='menu-link' onClick={(e) => setMenuOpen(false)}>Home</a>
                     <a href="/#about" className="menu-link" onClick={(e) => setMenuOpen(false)}>About</a>
                     <a href="/#skills" className="menu-link" onClick={(e) => setMenuOpen(false)}>Skills</a>
+                    <a href="/#work" className="menu-link" onClick={(e) => setMenuOpen(false)}>Work</a>
                     <a href="/#projects" className="menu-link" onClick={(e) => setMenuOpen(false)}>Projects</a>
                     <a href="/#contact" className="menu-link" onClick={(e) => setMenuOpen(false)}>Contact</a>
                 </motion.div>

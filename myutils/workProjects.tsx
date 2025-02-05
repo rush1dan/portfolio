@@ -1,23 +1,24 @@
-type HeadingWithDescription = {
+export type HeadingWithDescription = {
     heading: string,
     description: string
 }
 
 type TechnicalImplementation = {
-    systemDesignDiagram: string | null,
+    systemDesignDiagram?: string | null,
     toolsUsed: string[],
-    mlModelsUsed: string[] | null,
-    systemDesignDescription: string | null
+    mlModelsUsed?: string[] | null,
+    systemDesignDescription?: string[] | string | null
 }
 
 type WorkProject = {
-    thumbnail: string | null,
+    thumbnail: string,
     title: string,
     overview: string,
+    serviceDetails?: string | string[] | null,
     technicalImplementation: TechnicalImplementation,
     myRoles: HeadingWithDescription[] | string[] | string,
-    challengesAndSolutions: HeadingWithDescription[] | string[]
-    upcoming: HeadingWithDescription[]
+    challengesAndSolutions?: HeadingWithDescription[] | string[] | null
+    upcoming?: HeadingWithDescription[] | string[] | null
 }
 
 const thumbnailDir = "/workProjects/thumbnails"
@@ -28,6 +29,11 @@ export const WorkProjects: { [key: string]: WorkProject } = {
         thumbnail: `${thumbnailDir}/face_recognition.jpg`,
         title: "Face Recognition Service",
         overview: "Backend face recognition service for company wide person identification based applications like customer greeting in ACI motors, attendance system etc. through RTSP based CCTV cameras.",
+        serviceDetails: [
+            "Camera admin service with CLI and API functionality to control camera feeds and route their images to corresponding face vector databases",
+            "Camera feed reading and processing service that communicates with face recognition service API to get responses and store them in result queues",
+            "Face recognition API service that receives a frame as input and sends match results in output"
+        ],
         technicalImplementation: {
             systemDesignDiagram: `${systemDiagramDir}/fr_diagram.svg`,
             toolsUsed: ["Python", "FastAPI", "Uvicorn", "Streamlit", "Celery", "Redis", "Rabbitmq", "Docker"],

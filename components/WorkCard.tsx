@@ -35,7 +35,7 @@ export function WorkSlide({ workCardProps, extraDivs }: WorkSlideProps) {
             {
                 divArray.map((_, i) => {
                     return (
-                        <div key={i} className="w-full h-full bg-red-400">
+                        <div key={i} className="w-full h-full">
 
                         </div>
                     )
@@ -49,12 +49,12 @@ export function WorkCard({ thumbnail, title, description, slug, lazyLoadThumbnai
     return (
         <div className="bg-cardBGColor w-full h-full rounded-lg shadow-lg shadow-[rgb(36,36,36,0.5] border-2 border-cardBorderColor
                     cursor-pointer hover:border-cardHighlightColor hover:scale-[1.025] hover:shadow-2xl transition-transform duration-100">
-            <Link href={`/work/${slug}`} className="h-full w-full p-6 flex flex-col items-center justify-start gap-y-4">
+            <Link href={`/work/${slug}`} target="_blank" className="h-full w-full p-6 flex flex-col items-center justify-start gap-y-3">
                 <div className="relative w-1/3 aspect-square object-contain">
                     <Image src={thumbnail ?? ''} alt={title ? title : ''} fill className='w-full h-full absolute object-contain' loading={lazyLoadThumbnail ? "lazy" : "eager"} />
                 </div>
-                <p>{title}</p>
-                <p className="w-full h-6">{description}</p>
+                <p className="text-lg font-semibold">{title}</p>
+                <p className="w-full h-6 text-base">{description}</p>
             </Link>
         </div>
     )

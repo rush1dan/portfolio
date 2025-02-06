@@ -55,28 +55,28 @@ function WorkPageContent({ animationControls, isMobile, mediaQueries }: Animatea
     }
     
     return (
-        <div className='h-screen w-screen py-24 bg-red-600'>
+        <div className='h-screen w-screen py-24'>
             {/* ======== Work Projects ======== */}
 
-            <div className="h-full w-full flex flex-col items-center justify-center bg-blue-300 px-[10%]">
-                <div className="w-full h-full flex flex-col items-center bg-green-400">
+            <div className="h-full w-full flex flex-col items-center justify-center px-[10%]">
+                <div className="w-full h-full flex flex-col items-center">
                     <HeadingLine
                         animationControls={animationControls}
                         heading='WORK PROJECTS'
                         lineWidth='w-[10vw]'
                         textSizeClass={mediaQueries?.md ? 'text-3xl' : 'text-xl'}
                     />
-                    <div className='relative mt-8 h-full w-full bg-slate-300'>
-                        <div className={`absolute ${1 >= slideCount ? 'hidden' : 'swiper-button-prev'} -translate-x-8 -translate-y-4
+                    <div className='relative mt-8 h-full w-full'>
+                        <div className={`absolute ${1 >= slideCount ? 'hidden' : 'swiper-button-prev'} md:-translate-x-14 -translate-x-12 -translate-y-4
                         ${projectStart ? 'opacity-30 pointer-events-none' : ''}`}
                             onClick={handlePreviousProject}>
                         </div>
-                        <div className={`absolute ${1 >= slideCount ? 'hidden' : 'swiper-button-next'} translate-x-8 -translate-y-4 
+                        <div className={`absolute ${1 >= slideCount ? 'hidden' : 'swiper-button-next'} md:translate-x-14 translate-x-12 -translate-y-4 
                         ${projectEnd ? 'opacity-30 pointer-events-none' : ''}`}
                             onClick={handleNextProject}>
                         </div>
                         <Swiper onSwiper={setSwiperRefProject}
-                            className='w-full h-full bg-slate-800'
+                            className='w-full h-full'
                             modules={[Navigation, Pagination]}
                             spaceBetween={0}
                             slidesPerView={1}
@@ -107,7 +107,7 @@ function WorkPageContent({ animationControls, isMobile, mediaQueries }: Animatea
                                 {
                                     projectsDistributedAcrossSlides.map((projectSlide, index) => {
                                         return (
-                                            <SwiperSlide key={index} className='w-full h-full'>
+                                            <SwiperSlide key={index} className='w-full h-full p-4'>
                                                 <motion.div
                                                     className='w-full h-full'
                                                     variants={{

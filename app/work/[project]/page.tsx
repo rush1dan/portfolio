@@ -65,7 +65,7 @@ export default function Page({ params }: any) {
                             <img src="/icons/circle-solid.svg" alt="circle" className="w-2 h-2"/>
                             <p className="font-semibold text-lg text-gray-200">Tools Used:</p>
                         </div>
-                        <p className="pl-8">{workProject.technicalImplementation.toolsUsed.join(", ")}</p>
+                        <p className="pl-8 font-semibold">{workProject.technicalImplementation.toolsUsed.join(", ")}</p>
                     </div>
                     {/* ML Models Used */}
                     {
@@ -76,7 +76,7 @@ export default function Page({ params }: any) {
                                 <img src="/icons/circle-solid.svg" alt="circle" className="w-2 h-2"/>
                                 <p className="font-semibold text-lg text-gray-200">ML Models Used:</p>
                             </div>
-                            <p className="pl-8">{workProject.technicalImplementation.mlModelsUsed.join(", ")}</p>
+                            <p className="pl-8 font-semibold">{workProject.technicalImplementation.mlModelsUsed.join(", ")}</p>
                         </div> : <></>
                     }
                     {/* System Design Description */}

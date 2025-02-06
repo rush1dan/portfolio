@@ -29,6 +29,7 @@ const systemDiagramDir = "/workProjects/diagrams"
 export const WorkProjects: { [key: string]: WorkProject } = {
     "face_recognition": {
         thumbnail: `${thumbnailDir}/face_recognition.jpg`,
+        demoImg: `${demoDir}/face_recognition.gif`,
         title: "Face Recognition Service",
         overview: "Backend face recognition service for company wide person identification based applications like customer greeting in ACI motors, attendance system etc. through RTSP based CCTV cameras.",
         serviceDetails: [
@@ -183,16 +184,17 @@ export const WorkProjects: { [key: string]: WorkProject } = {
         ]
     },
     "weight_bridge_numberplate": {
-        thumbnail: `${thumbnailDir}/face_recognition.jpg`,
+        thumbnail: `${thumbnailDir}/truck.jpg`,
+        demoImg: `${demoDir}/truck.gif`,
         title: "Weight Bridge Truck Number Plate Detection",
-        overview: "Backend face recognition service for company wide person identification based applications like customer greeting in ACI motors, attendance system etc. through RTSP based CCTV cameras.",
+        overview: "Application to capture number plate details of any truck when they go over the weight machine in factories.",
         technicalImplementation: {
-            systemDesignDiagram: `${systemDiagramDir}/fr_diagram.svg`,
-            toolsUsed: ["Python", "FastAPI", "Uvicorn", "Streamlit", "Celery", "Redis", "Rabbitmq", "Docker"],
-            mlModelsUsed: ["OpenCV Haar Cascade", "RetinaFace", "Facenet512"],
-            systemDesignDescription: `
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            `
+            toolsUsed: ["Python", "FastAPI", "Uvicorn", "WPF", "C#", "Docker"],
+            mlModelsUsed: ["YOLOv5"],
+            systemDesignDescription: [
+                "Currently the frontend app polls the backend number plate extraction service at fixed intervals to see if any truck is standing over the weight bridge",
+                "On the backend, on every api hit the service opens the camera and reads and processes a series of frames to detect if any number plate is there utilizing yolo model. If found it sends the response to the frontend."
+            ]
         },
         myRoles: [
             {
@@ -201,23 +203,21 @@ export const WorkProjects: { [key: string]: WorkProject } = {
             },
             {
                 heading: "Deployment",
-                description: "Deploying the service on on premise servers with Docker and ensuring availability and reliability"
-            }
-        ],
-        challengesAndSolutions: [
+                description: "Deploying the backend service on on premise servers with Docker and ensuring availability and reliability"
+            },
             {
-                heading: "CV2 Videocapture Pointer Lag",
-                description: "Multi-threading and later multi processing"
-            }
+                heading: "Frontend App",
+                description: "Building the frontend desktop application with WPF framework and C#."
+            },
         ],
         upcoming: [
             {
-                heading: "ML Model Lifecycle Implementation",
-                description: "Training pipeline and CI/CD with MLFlow"
+                heading: "Event based architecture",
+                description: "Remove polling from frontend and implement event based message passing whenever the backend service finds a truck number plate on weight bridge"
             },
             {
-                heading: "Service monitoring",
-                description: "Monitoring service performance with Prometheus and Grafana."
+                heading: "Auto capture weight",
+                description: "Currently weight is captured in an old proprietary software. Plan is to integrate this weight capturing with the number plate detection service."
             }
         ]
     },

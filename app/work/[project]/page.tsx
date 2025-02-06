@@ -13,7 +13,7 @@ export default function Page({ params }: any) {
             {
                 workProject.demoImg ?
                 <div className="relative w-full h-96 aspect-square object-contain">
-                    <Image src={workProject.demoImg ?? ''} alt={workProject.title} fill className='w-full h-full absolute object-contain' loading="eager" />
+                    <Image src={workProject.demoImg ?? ''} alt={workProject.title} fill className='w-full h-full absolute object-contain' loading="lazy" unoptimized />
                 </div> : <></>
             }
             {/* Title */}

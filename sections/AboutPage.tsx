@@ -58,8 +58,8 @@ function AboutPageContent({ animationControls, isMobile, mediaQueries }: Animate
                         animate={animationControls}
                         transition={{ duration: 0.75, delay: mediaQueries?.xl ? 0.75 : 0.25 }}>
                         I am a software engineer proficient in both frontend and backend technologies.
-                        I have ample coding experience through my earlier professional ventures and personal projects.
-                        I have working experience of game development, desktop app development and web app development, which makes me a well-rounded
+                        I have ample coding experience through my professional ventures and personal projects.
+                        I have work experience in game development, both frontend and backend web app development and machine learning operations which makes me a well-rounded
                         software developer. Equipped with an inquisitive mind and a knack for problem solving, I am always on the lookout for learning new things and growing myself
                         as an efficient and skilled software engineer.
                     </motion.p>

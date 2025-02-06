@@ -23,6 +23,7 @@ type WorkProject = {
 }
 
 const thumbnailDir = "/workProjects/thumbnails"
+const demoDir = "/workProjects/demo"
 const systemDiagramDir = "/workProjects/diagrams"
 
 export const WorkProjects: { [key: string]: WorkProject } = {
@@ -104,43 +105,34 @@ export const WorkProjects: { [key: string]: WorkProject } = {
         ]
     },
     "virtual_assistant": {
-        thumbnail: `${thumbnailDir}/face_recognition.jpg`,
+        thumbnail: `${thumbnailDir}/virtual_assistant.jpg`,
+        demoImg: `${demoDir}/virtual_assistant.gif`,
         title: "Virtual Assistant App",
-        overview: "Backend face recognition service for company wide person identification based applications like customer greeting in ACI motors, attendance system etc. through RTSP based CCTV cameras.",
+        overview: "Cross platform 3D Virtual Assistant application with voice based interaction, powered by intelligent business specific knowledge enriched chat bot",
+        serviceDetails: "The app receives audio input from the user, processes it through backend API calls and plays back the generated response as audio to the user, all while playing interactive animations to make the assistant more engaging.",
         technicalImplementation: {
-            systemDesignDiagram: `${systemDiagramDir}/fr_diagram.svg`,
-            toolsUsed: ["Python", "FastAPI", "Uvicorn", "Streamlit", "Celery", "Redis", "Rabbitmq", "Docker"],
-            mlModelsUsed: ["OpenCV Haar Cascade", "RetinaFace", "Facenet512"],
+            toolsUsed: ["Unity", "C#", "Github Actions", "Dropbox", "Discord", "Python", "Flask", "Redis"],
             systemDesignDescription: `
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                The frontend is built with C# and leverages the 3D rendering and animation capabilites of Unity. The app makes 3 sequential API calls to 3 different ML powered backend services.
+                Firstly the input speech is converted to text via the Automatic Speech Recognition service, the text is then fed to the RAG powered intelligent AI chatbot to generate appropriate 
+                reply, this reply is then sent to the Text To Speech service which converts the reply to audio and is then played in the client app. The ASR and TTS engines have both Bangla and English
+                language capabilities. Appropriate 3D animations are played in the frontend app in the various stages of the app flow to make the app more interactive and engaging.
             `
         },
         myRoles: [
             {
-                heading: "Backend API",
-                description: "Designing the backend API service with Python and FastAPI to serve the machine learning models powering the application"
+                heading: "Frontend Application",
+                description: "Built the entire cross platform frontend application using Unity and C#"
             },
             {
-                heading: "Deployment",
-                description: "Deploying the service on on premise servers with Docker and ensuring availability and reliability"
-            }
-        ],
-        challengesAndSolutions: [
-            {
-                heading: "CV2 Videocapture Pointer Lag",
-                description: "Multi-threading and later multi processing"
-            }
-        ],
-        upcoming: [
-            {
-                heading: "ML Model Lifecycle Implementation",
-                description: "Training pipeline and CI/CD with MLFlow"
+                heading: "Backend Chat Session Management",
+                description: "Enabled user specific chat session management on the chat bot backend service using Flask session and Redis"
             },
             {
-                heading: "Service monitoring",
-                description: "Monitoring service performance with Prometheus and Grafana."
+                heading: "CI/CD Pipeline",
+                description: "Built a CI/CD pipeline for easy sharing of app to concerned personnel/businesses right after development changes"
             }
-        ]
+        ],
     },
     "resource_monitoring": {
         thumbnail: `${thumbnailDir}/face_recognition.jpg`,

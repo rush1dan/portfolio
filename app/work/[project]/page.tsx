@@ -13,7 +13,7 @@ export default function Page({ params }: any) {
             {
                 workProject.demoImg ?
                 <div className="relative w-full h-96 aspect-square object-contain">
-                    <Image src={workProject.demoImg ?? ''} alt={workProject.title} fill className='w-full h-full absolute' loading="eager" />
+                    <Image src={workProject.demoImg ?? ''} alt={workProject.title} fill className='w-full h-full absolute object-contain' loading="eager" />
                 </div> : <></>
             }
             {/* Title */}
@@ -36,7 +36,7 @@ export default function Page({ params }: any) {
                                                 )
                                             })
                                         }
-                                    </ol> : <></>
+                                    </ol> : <p>{workProject.serviceDetails}</p>
                             }
                         </div>
                 </div> : <></>       
@@ -89,7 +89,7 @@ export default function Page({ params }: any) {
                                 <p className="font-semibold text-lg text-gray-200">System Design:</p>
                             </div>
                                 {/* Description */}
-                                <div className="pl-12">
+                                <div className={`${Array.isArray(workProject.technicalImplementation.systemDesignDescription) ? 'pl-12' : 'pl-8'}`}>
                                     {
                                         Array.isArray(workProject.technicalImplementation.systemDesignDescription) ?
                                             <ol className="list-decimal list-outside">

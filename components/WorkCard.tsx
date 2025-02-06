@@ -51,7 +51,7 @@ export function WorkCard({ thumbnail, title, description, slug, lazyLoadThumbnai
                     cursor-pointer hover:border-cardHighlightColor hover:scale-[1.025] hover:shadow-2xl transition-transform duration-100">
             <Link href={`/work/${slug}`} className="h-full w-full p-6 flex flex-col items-center justify-start gap-y-4">
                 <div className="relative w-1/3 aspect-square object-contain">
-                    <Image src={thumbnail ?? ''} alt={title ? title : ''} fill className='w-full h-full absolute' loading={lazyLoadThumbnail ? "lazy" : "eager"} />
+                    <Image src={thumbnail ?? ''} alt={title ? title : ''} fill className='w-full h-full absolute object-contain' loading={lazyLoadThumbnail ? "lazy" : "eager"} />
                 </div>
                 <p>{title}</p>
                 <p className="w-full h-6">{description}</p>

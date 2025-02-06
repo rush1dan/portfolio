@@ -112,12 +112,14 @@ export const WorkProjects: { [key: string]: WorkProject } = {
         serviceDetails: "The app receives audio input from the user, processes it through backend API calls and plays back the generated response as audio to the user, all while playing interactive animations to make the assistant more engaging.",
         technicalImplementation: {
             toolsUsed: ["Unity", "C#", "Github Actions", "Dropbox", "Discord", "Python", "Flask", "Redis"],
-            systemDesignDescription: `
+            systemDesignDescription: [`
                 The frontend is built with C# and leverages the 3D rendering and animation capabilites of Unity. The app makes 3 sequential API calls to 3 different ML powered backend services.
                 Firstly the input speech is converted to text via the Automatic Speech Recognition service, the text is then fed to the RAG powered intelligent AI chatbot to generate appropriate 
                 reply, this reply is then sent to the Text To Speech service which converts the reply to audio and is then played in the client app. The ASR and TTS engines have both Bangla and English
                 language capabilities. Appropriate 3D animations are played in the frontend app in the various stages of the app flow to make the app more interactive and engaging.
-            `
+            `,
+                "Upon changes, a C# utility function is fired from the Unity editor which creates necessary app builds for required platforms. Then the built app is sent to Dropbox triggering a local bash script or through GitHub actions on code push. The updated link to the app is sent to a Discord channel as notification for easy use."
+            ]
         },
         myRoles: [
             {
@@ -135,41 +137,48 @@ export const WorkProjects: { [key: string]: WorkProject } = {
         ],
     },
     "resource_monitoring": {
-        thumbnail: `${thumbnailDir}/face_recognition.jpg`,
+        thumbnail: `${thumbnailDir}/resource_monitoring.png`,
+        demoImg: `${demoDir}/resource_monitoring.png`,
         title: "Resource Monitoring and Alerting",
-        overview: "Backend face recognition service for company wide person identification based applications like customer greeting in ACI motors, attendance system etc. through RTSP based CCTV cameras.",
+        overview: "Monitoring service to continuously analyze available resources on on-premise servers and create alerts on the event of a server reaching resource limits",
+        serviceDetails: `The service monitors several on-premise server nodes connected in a kubernetes cluster. An hourly report is created on basis of the analysis and urgent alerts are sent in real-time to Discord channels for proper intervention`,
         technicalImplementation: {
-            systemDesignDiagram: `${systemDiagramDir}/fr_diagram.svg`,
-            toolsUsed: ["Python", "FastAPI", "Uvicorn", "Streamlit", "Celery", "Redis", "Rabbitmq", "Docker"],
-            mlModelsUsed: ["OpenCV Haar Cascade", "RetinaFace", "Facenet512"],
-            systemDesignDescription: `
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            `
+            toolsUsed: ["Python", "Docker", "Kubernetes(microk8s)", "Discord"],
+            systemDesignDescription: [
+                "Python application leveraging psutil library to get resource metrics",
+                "App containerized with docker",
+                "Multiple on-premise server nodes are connected in a kubernetes cluster using Microk8s",
+                "The container image is deployed across kubernetes cluster as a Daemonset ensuring one pod per node"
+            ]
         },
         myRoles: [
             {
-                heading: "Backend API",
-                description: "Designing the backend API service with Python and FastAPI to serve the machine learning models powering the application"
+                heading: "Python Application",
+                description: "Developing the python application to monitor resource usage"
             },
             {
-                heading: "Deployment",
-                description: "Deploying the service on on premise servers with Docker and ensuring availability and reliability"
+                heading: "Containerization",
+                description: "Building a container image of the app using docker"
+            },
+            {
+                heading: "Kubernetes Cluster Setup and Deployment",
+                description: "Setting up kubernetes cluster across several server nodes and deploying the containerized application as Daemonset in it"
             }
         ],
         challengesAndSolutions: [
             {
-                heading: "CV2 Videocapture Pointer Lag",
-                description: "Multi-threading and later multi processing"
+                heading: "GPU detection error",
+                description: "There was some trouble detecting the GPU driver on one of the machines. Solved it by editing the cluster policy and setting a driver check validator environment variable to true"
+            },
+            {
+                heading: "Difficulty getting storage mounts and server IP",
+                description: "Leveraged kubernetes downward api and volume mounting in read-only mode to solve it."
             }
         ],
         upcoming: [
             {
-                heading: "ML Model Lifecycle Implementation",
-                description: "Training pipeline and CI/CD with MLFlow"
-            },
-            {
-                heading: "Service monitoring",
-                description: "Monitoring service performance with Prometheus and Grafana."
+                heading: "Better monitoring and dashboard",
+                description: "Better metric scraping with Prometheus and visual dashboard with Grafana"
             }
         ]
     },

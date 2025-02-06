@@ -66,12 +66,17 @@ function ProjectPageContent({ animationControls, isMobile, mediaQueries }: Anima
 
     return (
         <div className='w-screen py-24'>
+            {/* ======== Personal Projects and Game Dev ======== */}
+
             <div className="flex flex-col items-center justify-start gap-y-8">
+                {/* ======== Personal Projects ======== */}
+
                 <div className="w-full flex flex-col items-center">
                     <HeadingLine
                         animationControls={animationControls}
-                        heading='PROJECTS'
+                        heading='PERSONAL PROJECTS'
                         lineWidth='w-[10vw]'
+                        textSizeClass={mediaQueries?.md ? 'text-3xl' : 'text-xl'}
                     />
                     <div className='relative mt-8'>
                         <div className={`absolute ${projectCardsToShow >= projectStack.length ? 'hidden' : 'swiper-button-prev'} -translate-x-8 -translate-y-4
@@ -109,7 +114,7 @@ function ProjectPageContent({ animationControls, isMobile, mediaQueries }: Anima
                                 }
                             }}
                         >
-                            <div className="swiper-pagination"></div>
+                            <div className="swiper-pagination">
                             {
                                 projectStack.map((project, index) => {
                                     return (
@@ -142,14 +147,19 @@ function ProjectPageContent({ animationControls, isMobile, mediaQueries }: Anima
                                     )
                                 })
                             }
+                            </div>
                         </Swiper>
                     </div>
                 </div>
+
+                {/* ======== Game Dev ======== */}
+
                 <div className="w-full flex flex-col items-center">
                     <HeadingLine
                         animationControls={animationControls}
-                        heading='GAMES'
+                        heading='GAME DEV'
                         lineWidth='w-[10vw]'
+                        textSizeClass={mediaQueries?.md ? 'text-3xl' : 'text-xl'}
                     />
                     <div className='relative mt-6'>
                         <div className={`absolute swiper-button-prev -translate-x-8 ${gameStart ? 'opacity-30 pointer-events-none' : ''}`}

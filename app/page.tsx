@@ -1,6 +1,5 @@
 'use client'
 
-import Header from '@/components/Header'
 import HomePage from '@/sections/HomePage'
 import dynamic from 'next/dynamic'
 import LoadingPage from '@/sections/LoadingPage'
@@ -14,6 +13,7 @@ import { useEffect, useState } from 'react'
 
 const AboutPageComponent = dynamic(() => import('@/sections/AboutPage'), { loading: () => <Loading /> })
 const SkillsPageComponent = dynamic(() => import('@/sections/SkillsPage'), { loading: () => <Loading /> })
+const WorkPageComponent = dynamic(() => import('@/sections/WorkPage'), { loading: () => <Loading /> })
 const ProjectsPageComponent = dynamic(() => import('@/sections/ProjectsPage'), { loading: () => <Loading /> })
 const ContactPageComponent = dynamic(() => import('@/sections/ContactPage'), { loading: () => <Loading /> })
 
@@ -36,8 +36,7 @@ export default function Home() {
   }
 
   return (
-    <div className="bg-bgColor text-white h-screen scroll-smooth overflow-y-scroll overflow-x-hidden">
-
+    <>
       <Head>
         <title>Rushidan&apos;s Portfolio</title>
       </Head>
@@ -58,11 +57,6 @@ export default function Home() {
         <img src="icons/arrow-up.png" alt="Up Arrow" />
       </div> */}
 
-      {/* Header */}
-      <section className='sticky top-0 z-20' id="header">
-        <Header />
-      </section>
-
       {/* Hero */}
       <section id="home">
         <LoadingPage loadNow={true} Component={HomePage} />
@@ -78,6 +72,11 @@ export default function Home() {
         <LoadingPage loadNow={!isMobileDevice} Component={SkillsPageComponent} isMobile={isMobileDevice} mediaQueries={mediaQueries} />
       </section>
 
+      {/* Work */}
+      <section id="work">
+        <LoadingPage loadNow={false} Component={WorkPageComponent} isMobile={isMobileDevice} mediaQueries={mediaQueries} />
+      </section>
+
       {/* Projects */}
       <section id="projects">
         <LoadingPage loadNow={false} Component={ProjectsPageComponent} isMobile={isMobileDevice} mediaQueries={mediaQueries} />
@@ -87,7 +86,6 @@ export default function Home() {
       <section id="contact">
         <LoadingPage loadNow={!isMobileDevice} Component={ContactPageComponent} isMobile={isMobileDevice} mediaQueries={mediaQueries} />
       </section>
-
-    </div>
+    </>
   )
 }

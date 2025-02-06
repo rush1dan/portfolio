@@ -19,6 +19,7 @@ export const techStack: TechStack = {
   "react": { icon: `${iconDir}/react.svg`, iconWithTitle: `${iconWithTitleDir}/react.svg`, altText: "React" },
   "redux": { icon: `${iconDir}/redux.svg`, iconWithTitle: "", altText: "Redux" },
   "flutter": { icon: `${iconDir}/flutter.svg`, iconWithTitle: "", altText: "Flutter" },
+  "sanity": { icon: `${iconDir}/sanity.svg`, iconWithTitle: "", altText: "SanityCMS" },
 
   "nodejs": { icon: `${iconDir}/nodejs.svg`, iconWithTitle: `${iconWithTitleDir}/nodejs.svg`, altText: "Node.js" },
   "expressjs": { icon: `${iconDir}/expressjs.svg`, iconWithTitle: `${iconWithTitleDir}/expressjs.svg`, altText: "ExpressJS" },
@@ -26,10 +27,19 @@ export const techStack: TechStack = {
   "nextauth": {icon: `${iconDir}/nextauth.png`, iconWithTitle: "", altText: "Next-Auth"},
   "mongodb": { icon: `${iconDir}/mongodb.svg`, iconWithTitle: `${iconWithTitleDir}/mongodb.svg`, altText: "MongoDB" },
   "django": { icon: `${iconDir}/django.svg`, iconWithTitle: `${iconWithTitleDir}/django.svg`, altText: "Django" },
+  "fastapi": { icon: `${iconDir}/fastapi.svg`, iconWithTitle: `${iconWithTitleDir}/fastapi.svg`, altText: "FastAPI" },
+  "celery": { icon: `${iconDir}/celery.png`, iconWithTitle: `${iconWithTitleDir}/celery.png`, altText: "Celery" },
   "postgresql": { icon: `${iconDir}/postgresql.svg`, iconWithTitle: `${iconWithTitleDir}/postgresql.svg`, altText: "PostgreSQL" },
   "dotnetcore": { icon: `${iconDir}/dotnetcore.svg`, iconWithTitle: "", altText: ".NET Core" },
   "microsoft-sql-server": { icon: `${iconDir}/microsoft-sql-server.svg`, iconWithTitle: `${iconWithTitleDir}/microsoft-sql-server.svg`, altText: "MS Sql Server" },
+  "rabbitmq": { icon: `${iconDir}/rabbitmq.svg`, iconWithTitle: `${iconWithTitleDir}/rabbitmq.svg`, altText: "RabbitMQ" },
+  "redis": { icon: `${iconDir}/redis.svg`, iconWithTitle: `${iconWithTitleDir}/redis.svg`, altText: "Redis" },
+  
+  "linux": { icon: `${iconDir}/linux.svg`, iconWithTitle: "", altText: "Linux" },
   "docker": { icon: `${iconDir}/docker.svg`, iconWithTitle: `${iconWithTitleDir}/docker.svg`, altText: "Docker" },
+  "kubernetes": { icon: `${iconDir}/kubernetes.svg`, iconWithTitle: `${iconWithTitleDir}/kubernetes.svg`, altText: "Kubernetes" },
+  "nginx": { icon: `${iconDir}/nginx.svg`, iconWithTitle: `${iconWithTitleDir}/nginx.svg`, altText: "Nginx" },
+  "locust": { icon: `${iconDir}/locust.png`, iconWithTitle: `${iconWithTitleDir}/locust.png`, altText: "Locust" },
   
   "unity": { icon: `${iconDir}/unity_white.svg`, iconWithTitle: `${iconWithTitleDir}/unity_black.svg`, altText: "Unity" },
   "blender": { icon: `${iconDir}/blender.svg`, iconWithTitle: `${iconWithTitleDir}/blender.svg`, altText: "Blender" },

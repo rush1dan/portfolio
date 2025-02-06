@@ -18,9 +18,9 @@ export default function SkillCategory({ category, skillList, mediaQuery, iconBg 
 
     return (
         <div>
-            <div className='flex flex-row space-x-4 items-center xl:px-0 px-8 w-full md:w-auto'>
-                <p className={`uppercase font-medium ${categoryHeaderSizeClass} w-[6.5rem] lg:w-40 md:w-32 flex-none`}>{category + ":"}</p>
-                <div className='flex lg:w-auto lg:flex-row lg:space-x-6 lg:space-y-0 lg:border-0 lg:gap-0
+            <div className='flex flex-row space-x-8 items-center xl:px-0 px-8 w-full md:w-auto'>
+                <p className={`uppercase text-right font-medium ${categoryHeaderSizeClass} w-[6.5rem] lg:w-40 md:w-32 flex-none`}>{category + ":"}</p>
+                <div className='flex lg:w-auto lg:flex-row lg:gap-x-6 lg:gap-y-4 lg:border-0 lg:gap-0
                     flex-wrap items-center w-fit gap-4 border border-white rounded-lg p-4'>
                     {
                         skillList?.map((skill, index) => {

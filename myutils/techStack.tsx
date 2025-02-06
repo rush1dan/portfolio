@@ -35,6 +35,7 @@ export const techStack: TechStack = {
   "rabbitmq": { icon: `${iconDir}/rabbitmq.svg`, iconWithTitle: `${iconWithTitleDir}/rabbitmq.svg`, altText: "RabbitMQ" },
   "redis": { icon: `${iconDir}/redis.svg`, iconWithTitle: `${iconWithTitleDir}/redis.svg`, altText: "Redis" },
   
+  "linux": { icon: `${iconDir}/linux.svg`, iconWithTitle: "", altText: "Linux" },
   "docker": { icon: `${iconDir}/docker.svg`, iconWithTitle: `${iconWithTitleDir}/docker.svg`, altText: "Docker" },
   "kubernetes": { icon: `${iconDir}/kubernetes.svg`, iconWithTitle: `${iconWithTitleDir}/kubernetes.svg`, altText: "Kubernetes" },
   "nginx": { icon: `${iconDir}/nginx.svg`, iconWithTitle: `${iconWithTitleDir}/nginx.svg`, altText: "Nginx" },

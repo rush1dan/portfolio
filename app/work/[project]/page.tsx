@@ -2,7 +2,6 @@ import React from "react"
 import Image from "next/image";
 import { WorkProjects } from "@/myutils/workProjects";
 import { ImagePreview } from "@/components/ImagePreview";
-import { HeadingWithDescription } from "@/myutils/workProjects";
 
 export default function Page({ params }: any) {
     const { project } = params;  //This project is the .../work/[project]/
@@ -10,10 +9,13 @@ export default function Page({ params }: any) {
 
     return (
         <div className="h-full w-full flex flex-col items-center justify-start px-[10%] py-12 gap-y-8">
-            {/* Thumbnail */}
-            <div className="relative w-52 aspect-square object-contain">
-                <Image src={workProject.thumbnail ?? ''} alt={workProject.title} fill className='w-full h-full absolute' loading="eager" />
-            </div>
+            {/* Demo */}
+            {
+                workProject.demoImg ?
+                <div className="relative w-full h-96 aspect-square object-contain">
+                    <Image src={workProject.demoImg ?? ''} alt={workProject.title} fill className='w-full h-full absolute' loading="eager" />
+                </div> : <></>
+            }
             {/* Title */}
             <p className="md:text-3xl text-xl font-bold text-white">{workProject.title}</p>
             {/* Overview */}
@@ -59,7 +61,10 @@ export default function Page({ params }: any) {
                     {/* Tools Used */}
                     <div className="w-full">
                         {/* Heading */}
-                        <p className="font-semibold text-lg text-gray-200">Tools Used:</p>
+                        <div className="flex flex-row items-center justify-start gap-x-2">
+                            <img src="/icons/circle-solid.svg" alt="circle" className="w-2 h-2"/>
+                            <p className="font-semibold text-lg text-gray-200">Tools Used:</p>
+                        </div>
                         <p className="pl-8">{workProject.technicalImplementation.toolsUsed.join(", ")}</p>
                     </div>
                     {/* ML Models Used */}
@@ -67,7 +72,10 @@ export default function Page({ params }: any) {
                         workProject.technicalImplementation.mlModelsUsed ? 
                         <div className="w-full">
                             {/* Heading */}
-                            <p className="font-semibold text-lg text-gray-200">ML Models Used:</p>
+                            <div className="flex flex-row items-center justify-start gap-x-2">
+                                <img src="/icons/circle-solid.svg" alt="circle" className="w-2 h-2"/>
+                                <p className="font-semibold text-lg text-gray-200">ML Models Used:</p>
+                            </div>
                             <p className="pl-8">{workProject.technicalImplementation.mlModelsUsed.join(", ")}</p>
                         </div> : <></>
                     }
@@ -76,16 +84,19 @@ export default function Page({ params }: any) {
                         workProject.technicalImplementation.systemDesignDescription ? 
                         <div className="w-full">
                             {/* Heading */}
-                                <p className="font-semibold text-lg text-gray-200 flex-none">System Design:</p>
+                            <div className="flex flex-row items-center justify-start gap-x-2">
+                                <img src="/icons/circle-solid.svg" alt="circle" className="w-2 h-2"/>
+                                <p className="font-semibold text-lg text-gray-200">System Design:</p>
+                            </div>
                                 {/* Description */}
-                                <div className="pl-8">
+                                <div className="pl-12">
                                     {
                                         Array.isArray(workProject.technicalImplementation.systemDesignDescription) ?
                                             <ol className="list-decimal list-outside">
                                                 {
                                                     workProject.technicalImplementation.systemDesignDescription.map((desc, index) => {
                                                         return (
-                                                            <p key={index}>{desc}</p>
+                                                            <li key={index}>{desc}</li>
                                                         )
                                                     })
                                                 }
@@ -108,7 +119,7 @@ export default function Page({ params }: any) {
                                     {
                                         workProject.myRoles.map((role, index) => {
                                             return (
-                                                <li>
+                                                <li key={index}>
                                                     <p className="inline font-semibold">{typeof role === "object" ? role.heading : role}:</p>
                                                     <p className="w-full pl-8">{typeof role === "object" ? role.description : ''}</p>
                                                 </li>
@@ -133,7 +144,7 @@ export default function Page({ params }: any) {
                                 {
                                     workProject.challengesAndSolutions.map((chal, index) => {
                                         return (
-                                            <li>
+                                            <li key={index}>
                                                 <p className="inline font-semibold">{typeof chal === "object" ? chal.heading : chal}:</p>
                                                 <p className="w-full pl-8">{typeof chal === "object" ? chal.description : ''}</p>
                                             </li>
@@ -159,7 +170,7 @@ export default function Page({ params }: any) {
                                 {
                                     workProject.upcoming.map((upcomingFeature, index) => {
                                         return (
-                                            <li>
+                                            <li key={index}>
                                                 <p className="inline font-semibold">{typeof upcomingFeature === "object" ? upcomingFeature.heading : upcomingFeature}:</p>
                                                 <p className="w-full pl-8">{typeof upcomingFeature === "object" ? upcomingFeature.description : ''}</p>
                                             </li>

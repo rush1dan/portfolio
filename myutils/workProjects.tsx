@@ -12,6 +12,7 @@ type TechnicalImplementation = {
 
 type WorkProject = {
     thumbnail: string,
+    demoImg?: string | null,
     title: string,
     overview: string,
     serviceDetails?: string | string[] | null,
@@ -36,36 +37,69 @@ export const WorkProjects: { [key: string]: WorkProject } = {
         ],
         technicalImplementation: {
             systemDesignDiagram: `${systemDiagramDir}/fr_diagram.svg`,
-            toolsUsed: ["Python", "FastAPI", "Uvicorn", "Streamlit", "Celery", "Redis", "Rabbitmq", "Docker"],
+            toolsUsed: ["Python", "FastAPI", "Uvicorn", "Streamlit", "Celery", "Qdrant", "Redis", "Rabbitmq", "Docker"],
             mlModelsUsed: ["OpenCV Haar Cascade", "RetinaFace", "Facenet512"],
-            systemDesignDescription: `
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            `
+            systemDesignDescription: [
+                "Camera Control/Admin Service receives admin input via cli or api and sends corresponding camera start/stop events to rabbitmq fanout exchange",
+                "Frame producer, Frame consumer and Result Consumer services are listeners of this event to know when to start and stop which camera",
+                "Frame producer service creates worker processes as per camera/project requirements. Each worker reads frames from the camera in full resolution (upto 4k) and sends the read frames to a redis list being used as a stack at fixed intervals and generates a frame generated event for the frame consumer",
+                "Frame consumer upon frame event pulls the top frame (latest frame) from the stack, downscales the image, uses a Haar cascade front filter to crop the face and map co-ordinates to the full res frame and sends the full res cropped faces to the face recognition backend service. The retrieved match responses are then sent to a fanout exchange for consumption by client applications",
+                "The face recognition api service uses Celery workers to run the input images through ML models to generate embeddings and sends match responses from vector database",
+                "End users/Client applications consume the result messages from the result exchange and uses them in their respective applications as required"
+            ]
         },
         myRoles: [
             {
+                heading: "System Design",
+                description: "Coming up with a solution for proper camera feed management, handling full res frames and being able to pass on results to concerned applications in a reliable and scalable manner"
+            },
+            {
                 heading: "Backend API",
-                description: "Designing the backend API service with Python and FastAPI to serve the machine learning models powering the application"
+                description: "Designing the backend API face recognition service with Python and FastAPI to serve the machine learning models powering the application"
+            },
+            {
+                heading: "Validation",
+                description: "Validating properties of input images on the backend to ensure proper resolution and face alignment for better recognition performance"
+            },
+            {
+                heading: "Logging and Testing",
+                description: "Running manual and automated tests to ensure everything works properly and maintaing proper server logs for debugging"
             },
             {
                 heading: "Deployment",
-                description: "Deploying the service on on premise servers with Docker and ensuring availability and reliability"
+                description: "Deploying the services on on-premise servers with Docker and ensuring availability and reliability"
             }
         ],
         challengesAndSolutions: [
             {
                 heading: "CV2 Videocapture Pointer Lag",
-                description: "Multi-threading and later multi processing"
-            }
+                description: "Using any computation within the cv2 video capturing loop causes frame pointer lag, meaning we gradually get much older frames treated as latest. The solution was to move computations to different threads or processes as needed."
+            },
+            {
+                heading: "False positives in recognition",
+                description: "Using client side frontal filter and backend validations to find out if the input frames meet proper requirments for recognition to reduce false positives."
+            },
+            {
+                heading: "API server locking due to GIL",
+                description: "Using celery workers for ML computations to keep the api service endpoints free to receive requests at all times."
+            },
+            {
+                heading: "Frame queue problem",
+                description: "Initially the generated frames were being stored in a rabbitmq queue which meant FIFO. Therefore the most important frame which is the latest one, goes to the back of the queue and is processed last. The solution was to use a redis list as stack for storing read frames which works in LIFO fashion."
+            },
+            {
+                heading: "Log rotation issue",
+                description: "Using a rotating log file handler meant race conditions and erroneous log file rotation in multi process, microservice architecture. Solved with concurrent rotating log file handler that uses temporary locks for writing logs and checking file properties for rotation."
+            },
         ],
         upcoming: [
             {
                 heading: "ML Model Lifecycle Implementation",
-                description: "Training pipeline and CI/CD with MLFlow"
+                description: "Training pipeline and model CI/CD pipeline with MLFlow"
             },
             {
                 heading: "Service monitoring",
-                description: "Monitoring service performance with Prometheus and Grafana."
+                description: "Monitoring service metrics with Prometheus and Grafana."
             }
         ]
     },

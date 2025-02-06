@@ -222,60 +222,65 @@ export const WorkProjects: { [key: string]: WorkProject } = {
         ]
     },
     "authentication_service": {
-        thumbnail: `${thumbnailDir}/face_recognition.jpg`,
+        thumbnail: `${thumbnailDir}/auth.jpg`,
         title: "Authentication Service",
-        overview: "Backend face recognition service for company wide person identification based applications like customer greeting in ACI motors, attendance system etc. through RTSP based CCTV cameras.",
+        overview: "Authentication micro service acting as an internal authentication SAAS to easily setup authentication and authorization for any internal project.",
+        serviceDetails: [
+            "API service that receives request to either create, update or delete database for new projects or authentication request for a particular project",
+            "Supports both header and cookie based authentication"
+        ],
         technicalImplementation: {
-            systemDesignDiagram: `${systemDiagramDir}/fr_diagram.svg`,
-            toolsUsed: ["Python", "FastAPI", "Uvicorn", "Streamlit", "Celery", "Redis", "Rabbitmq", "Docker"],
-            mlModelsUsed: ["OpenCV Haar Cascade", "RetinaFace", "Facenet512"],
-            systemDesignDescription: `
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            `
+            toolsUsed: ["Python", "FastAPI", "Uvicorn", "SQL Alchemy", "PostgreSQL", "Locust", "Nginx", "Docker"],
+            systemDesignDescription: [
+                "Uses jwt based authentication",
+                "A single token with a session ID embedded within that is validated on the backend, preventing the need for a refresh token",
+                "Uses admin level database operations to create new separate databases for different projects",
+                "URL based routing to determing which project the authentication/authorization request is for"
+            ]
         },
         myRoles: [
             {
                 heading: "Backend API",
-                description: "Designing the backend API service with Python and FastAPI to serve the machine learning models powering the application"
+                description: "Designing the backend API service with Python and FastAPI and all authn/authz logic"
             },
             {
                 heading: "Deployment",
                 description: "Deploying the service on on premise servers with Docker and ensuring availability and reliability"
+            },
+            {
+                heading: "Validation and Testing",
+                description: "Load testing and validating the service with proper request to response mapping"
             }
         ],
         challengesAndSolutions: [
             {
-                heading: "CV2 Videocapture Pointer Lag",
-                description: "Multi-threading and later multi processing"
+                heading: "Cookie based token resolution in Nginx",
+                description: "Using Nginx to emulate same domain request for secure http cookie based authentication, but there is some latency issue when resolving the request inside Nginx with javascript module while load testing"
             }
         ],
         upcoming: [
             {
-                heading: "ML Model Lifecycle Implementation",
-                description: "Training pipeline and CI/CD with MLFlow"
-            },
-            {
-                heading: "Service monitoring",
-                description: "Monitoring service performance with Prometheus and Grafana."
+                heading: "Improvements",
+                description: "Project still in development"
             }
         ]
     },
     "motors_service": {
-        thumbnail: `${thumbnailDir}/face_recognition.jpg`,
+        thumbnail: `${thumbnailDir}/motors.jpg`,
         title: "Bike Parts Failure Forecasting",
-        overview: "Backend face recognition service for company wide person identification based applications like customer greeting in ACI motors, attendance system etc. through RTSP based CCTV cameras.",
+        overview: "Application that forecasts which motor bike parts may fail at certain mileage ranges given the bike identification number",
+        serviceDetails: "Takes the chassis number of the bike as input to retrive all the data of that bike, then computes against parts failure data of that bike model to give predictions",
         technicalImplementation: {
-            systemDesignDiagram: `${systemDiagramDir}/fr_diagram.svg`,
-            toolsUsed: ["Python", "FastAPI", "Uvicorn", "Streamlit", "Celery", "Redis", "Rabbitmq", "Docker"],
-            mlModelsUsed: ["OpenCV Haar Cascade", "RetinaFace", "Facenet512"],
-            systemDesignDescription: `
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            `
+            toolsUsed: ["Python", "Django", "Microsoft SQL Server", "Docker"],
+            systemDesignDescription: [
+                "Full stack application + API service built with Django",
+                "Algorithmically generates predictions matching the bike data to part failure data"
+            ]
         },
         myRoles: [
             {
-                heading: "Backend API",
-                description: "Designing the backend API service with Python and FastAPI to serve the machine learning models powering the application"
+                heading: "Database Connection",
+                description: "The app was primarily made functional on static csv data. Later as per requirement, I connected the motors bike sales database to the application to work on continuously updated data"
             },
             {
                 heading: "Deployment",
@@ -284,57 +289,23 @@ export const WorkProjects: { [key: string]: WorkProject } = {
         ],
         challengesAndSolutions: [
             {
-                heading: "CV2 Videocapture Pointer Lag",
-                description: "Multi-threading and later multi processing"
-            }
-        ],
-        upcoming: [
-            {
-                heading: "ML Model Lifecycle Implementation",
-                description: "Training pipeline and CI/CD with MLFlow"
-            },
-            {
-                heading: "Service monitoring",
-                description: "Monitoring service performance with Prometheus and Grafana."
+                heading: "Large database query latency",
+                description: "Some queries took a while to compute due to the large size of the database. So, the queries that rely on data that don't change everyday, are pre-computed and cached inside the app everyday at midnight significantly reducing latency"
             }
         ]
     },
     "factory_visualization": {
-        thumbnail: `${thumbnailDir}/face_recognition.jpg`,
+        thumbnail: `${thumbnailDir}/factory.png`,
         title: "Factory Visualization",
-        overview: "Backend face recognition service for company wide person identification based applications like customer greeting in ACI motors, attendance system etc. through RTSP based CCTV cameras.",
+        serviceDetails: "Makes request to internal backend data serving APIs and presents the response in an interactive 3D visual environment on the frontend app",
+        overview: "Frontend application with 3D visualization of running factory processes with data like production paths, machine capacity, units produced etc.",
         technicalImplementation: {
-            systemDesignDiagram: `${systemDiagramDir}/fr_diagram.svg`,
-            toolsUsed: ["Python", "FastAPI", "Uvicorn", "Streamlit", "Celery", "Redis", "Rabbitmq", "Docker"],
-            mlModelsUsed: ["OpenCV Haar Cascade", "RetinaFace", "Facenet512"],
-            systemDesignDescription: `
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            `
+            toolsUsed: ["Unity", "C#"]
         },
         myRoles: [
             {
-                heading: "Backend API",
-                description: "Designing the backend API service with Python and FastAPI to serve the machine learning models powering the application"
-            },
-            {
-                heading: "Deployment",
-                description: "Deploying the service on on premise servers with Docker and ensuring availability and reliability"
-            }
-        ],
-        challengesAndSolutions: [
-            {
-                heading: "CV2 Videocapture Pointer Lag",
-                description: "Multi-threading and later multi processing"
-            }
-        ],
-        upcoming: [
-            {
-                heading: "ML Model Lifecycle Implementation",
-                description: "Training pipeline and CI/CD with MLFlow"
-            },
-            {
-                heading: "Service monitoring",
-                description: "Monitoring service performance with Prometheus and Grafana."
+                heading: "Frontend App",
+                description: "Designing and developing the 3D frontend application with Unity and C#"
             }
         ]
     }

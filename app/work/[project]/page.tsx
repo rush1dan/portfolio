@@ -19,12 +19,12 @@ export default function Page({ params }: any) {
             {/* Title */}
             <p className="md:text-3xl text-xl font-bold text-white">{workProject.title}</p>
             {/* Overview */}
-            <p className="md:text-xl text-lg font-semibold text-white">{workProject.overview}</p>
+            <p className="md:text-xl text-lg font-semibold text-stone-100">{workProject.overview}</p>
             {/* Service Details */}
             {
                 workProject.serviceDetails ? 
                     <div className="w-full">
-                        <p className="md:text-xl text-lg font-bold">Service Details:</p>
+                        <p className="md:text-xl text-lg font-bold text-white">Service Details:</p>
                         <div className="w-full pl-8">
                             {
                                 Array.isArray(workProject.serviceDetails) ?
@@ -32,11 +32,11 @@ export default function Page({ params }: any) {
                                         {
                                             workProject.serviceDetails.map((detail, index) => {
                                                 return (
-                                                    <li key={index} className="font-normal">{detail}</li>
+                                                    <li key={index} className="font-normal text-stone-100">{detail}</li>
                                                 )
                                             })
                                         }
-                                    </ol> : <p>{workProject.serviceDetails}</p>
+                                    </ol> : <p className="text-stone-100">{workProject.serviceDetails}</p>
                             }
                         </div>
                 </div> : <></>       
@@ -63,9 +63,9 @@ export default function Page({ params }: any) {
                         {/* Heading */}
                         <div className="flex flex-row items-center justify-start gap-x-2">
                             <img src="/icons/circle-solid.svg" alt="circle" className="w-2 h-2"/>
-                            <p className="font-semibold text-lg text-gray-200">Tools Used:</p>
+                            <p className="font-semibold text-lg text-gray-100">Tools Used:</p>
                         </div>
-                        <p className="pl-8 font-semibold">{workProject.technicalImplementation.toolsUsed.join(", ")}</p>
+                        <p className="pl-8 font-semibold text-stone-100">{workProject.technicalImplementation.toolsUsed.join(", ")}</p>
                     </div>
                     {/* ML Models Used */}
                     {
@@ -74,9 +74,9 @@ export default function Page({ params }: any) {
                             {/* Heading */}
                             <div className="flex flex-row items-center justify-start gap-x-2">
                                 <img src="/icons/circle-solid.svg" alt="circle" className="w-2 h-2"/>
-                                <p className="font-semibold text-lg text-gray-200">ML Models Used:</p>
+                                <p className="font-semibold text-lg text-gray-100">ML Models Used:</p>
                             </div>
-                            <p className="pl-8 font-semibold">{workProject.technicalImplementation.mlModelsUsed.join(", ")}</p>
+                            <p className="pl-8 font-semibold text-stone-100">{workProject.technicalImplementation.mlModelsUsed.join(", ")}</p>
                         </div> : <></>
                     }
                     {/* System Design Description */}
@@ -86,7 +86,7 @@ export default function Page({ params }: any) {
                             {/* Heading */}
                             <div className="flex flex-row items-center justify-start gap-x-2">
                                 <img src="/icons/circle-solid.svg" alt="circle" className="w-2 h-2"/>
-                                <p className="font-semibold text-lg text-gray-200">System Design:</p>
+                                <p className="font-semibold text-lg text-gray-100">System Design:</p>
                             </div>
                                 {/* Description */}
                                 <div className={`${Array.isArray(workProject.technicalImplementation.systemDesignDescription) ? 'pl-12' : 'pl-8'}`}>
@@ -96,11 +96,11 @@ export default function Page({ params }: any) {
                                                 {
                                                     workProject.technicalImplementation.systemDesignDescription.map((desc, index) => {
                                                         return (
-                                                            <li key={index}>{desc}</li>
+                                                            <li key={index} className="text-stone-100">{desc}</li>
                                                         )
                                                     })
                                                 }
-                                            </ol> : <p>{workProject.technicalImplementation.systemDesignDescription}</p>
+                                            </ol> : <p className="text-stone-100">{workProject.technicalImplementation.systemDesignDescription}</p>
                                     }
                                 </div>
                         </div> : <></>
@@ -111,7 +111,7 @@ export default function Page({ params }: any) {
             <div className="w-full flex flex-col items-center justify-start gap-y-4">
                 <div className="w-full">
                         {/* Heading */}
-                        <p className="font-bold md:text-xl text-lg text-gray-200">My Role:</p>
+                        <p className="font-bold md:text-xl text-lg text-white">My Role:</p>
                         <div className="pl-8">
                             {
                                 Array.isArray(workProject.myRoles) ?
@@ -120,13 +120,13 @@ export default function Page({ params }: any) {
                                         workProject.myRoles.map((role, index) => {
                                             return (
                                                 <li key={index}>
-                                                    <p className="inline font-semibold">{typeof role === "object" ? role.heading : role}:</p>
-                                                    <p className="w-full pl-8">{typeof role === "object" ? role.description : ''}</p>
+                                                    <p className="inline font-semibold text-gray-100">{typeof role === "object" ? role.heading : role}:</p>
+                                                    <p className="w-full pl-8 text-stone-100">{typeof role === "object" ? role.description : ''}</p>
                                                 </li>
                                             )
                                         })
                                     }
-                                    </ol> : <p>{workProject.myRoles}</p>
+                                    </ol> : <p className="text-stone-100">{workProject.myRoles}</p>
                             }
                         </div>
                     </div>
@@ -137,7 +137,7 @@ export default function Page({ params }: any) {
                 <div className="w-full flex flex-col items-center justify-start gap-y-4">
                 <div className="w-full">
                         {/* Heading */}
-                        <p className="font-bold md:text-xl text-lg text-gray-200">Challenges and Solutions:</p>
+                        <p className="font-bold md:text-xl text-lg text-white">Challenges and Solutions:</p>
                         <div className="pl-8">
                             {
                                 <ol className="list-decimal list-inside">
@@ -145,8 +145,8 @@ export default function Page({ params }: any) {
                                     workProject.challengesAndSolutions.map((chal, index) => {
                                         return (
                                             <li key={index}>
-                                                <p className="inline font-semibold">{typeof chal === "object" ? chal.heading : chal}:</p>
-                                                <p className="w-full pl-8">{typeof chal === "object" ? chal.description : ''}</p>
+                                                <p className="inline font-semibold text-gray-100">{typeof chal === "object" ? chal.heading : chal}:</p>
+                                                <p className="w-full pl-8 text-stone-100">{typeof chal === "object" ? chal.description : ''}</p>
                                             </li>
                                         )
                                     })
@@ -163,7 +163,7 @@ export default function Page({ params }: any) {
                 <div className="w-full flex flex-col items-center justify-start gap-y-4">
                 <div className="w-full">
                         {/* Heading */}
-                        <p className="font-bold md:text-xl text-lg text-gray-200">Upcoming:</p>
+                        <p className="font-bold md:text-xl text-lg text-white">Upcoming:</p>
                         <div className="pl-8">
                             {
                                 <ol className="list-decimal list-inside">
@@ -171,8 +171,8 @@ export default function Page({ params }: any) {
                                     workProject.upcoming.map((upcomingFeature, index) => {
                                         return (
                                             <li key={index}>
-                                                <p className="inline font-semibold">{typeof upcomingFeature === "object" ? upcomingFeature.heading : upcomingFeature}:</p>
-                                                <p className="w-full pl-8">{typeof upcomingFeature === "object" ? upcomingFeature.description : ''}</p>
+                                                <p className="inline font-semibold text-gray-100">{typeof upcomingFeature === "object" ? upcomingFeature.heading : upcomingFeature}:</p>
+                                                <p className="w-full pl-8 text-stone-100">{typeof upcomingFeature === "object" ? upcomingFeature.description : ''}</p>
                                             </li>
                                         )
                                     })

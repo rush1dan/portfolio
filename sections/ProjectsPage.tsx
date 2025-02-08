@@ -74,9 +74,8 @@ function ProjectPageContent({ animationControls, isMobile, mediaQueries }: Anima
                 <div className="w-full flex flex-col items-center">
                     <HeadingLine
                         animationControls={animationControls}
-                        heading='PERSONAL PROJECTS'
+                        heading='PROJECTS'
                         lineWidth='w-[10vw]'
-                        textSizeClass={mediaQueries?.md ? 'text-3xl' : 'text-xl'}
                     />
                     <div className='relative mt-8'>
                         <div className={`absolute ${projectCardsToShow >= projectStack.length ? 'hidden' : 'swiper-button-prev'} -translate-x-8 -translate-y-4
@@ -157,9 +156,8 @@ function ProjectPageContent({ animationControls, isMobile, mediaQueries }: Anima
                 <div className="w-full flex flex-col items-center">
                     <HeadingLine
                         animationControls={animationControls}
-                        heading='GAME DEV'
+                        heading='GAMES'
                         lineWidth='w-[10vw]'
-                        textSizeClass={mediaQueries?.md ? 'text-3xl' : 'text-xl'}
                     />
                     <div className='relative mt-6'>
                         <div className={`absolute swiper-button-prev -translate-x-8 ${gameStart ? 'opacity-30 pointer-events-none' : ''}`}

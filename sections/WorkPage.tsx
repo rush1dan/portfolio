@@ -62,9 +62,8 @@ function WorkPageContent({ animationControls, isMobile, mediaQueries }: Animatea
                 <div className="w-full h-full flex flex-col items-center">
                     <HeadingLine
                         animationControls={animationControls}
-                        heading='WORK PROJECTS'
+                        heading='WORK'
                         lineWidth='w-[10vw]'
-                        textSizeClass={mediaQueries?.md ? 'text-3xl' : 'text-xl'}
                     />
                     <div className='relative mt-8 h-full w-full'>
                         <div className={`absolute ${1 >= slideCount ? 'hidden' : 'swiper-button-prev'} md:-translate-x-14 -translate-x-12 -translate-y-4

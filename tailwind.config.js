@@ -12,6 +12,9 @@ module.exports = {
         ultrathin: '300px',
         thin: '400px'
       },
+      containers: {
+        "2xs": "14rem",
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -30,5 +33,8 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/container-queries'),
+    // ...
+  ],
 }
